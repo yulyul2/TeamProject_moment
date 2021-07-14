@@ -4,7 +4,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.apache.ibatis.javassist.bytecode.stackmap.BasicBlock.Catch;
-import org.hamcrest.core.IsNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -28,14 +27,14 @@ public class MemberController {
 	@Inject
 	MemberService service;
 	
-	//�쉶�썝媛��엯 get
+	//회원가입 get
 	@RequestMapping(value = "/member/joinMember", method = RequestMethod.GET)
 	public void getjoinMember() {
 		logger.info("get joinMember");
 
 	}
 	
-	//�쉶�썝媛��엯 post
+	//회원가입 post
 	@RequestMapping(value = "/member/joinMember", method = RequestMethod.POST)
 	public String postjoinMember(memberVO boardVO, RedirectAttributes rttr) throws Exception {
 		
@@ -50,13 +49,13 @@ public class MemberController {
 	
 	
 	
-	//ID,PW李얘린 �럹�씠吏� 諛쏆븘�삤湲�
+	//ID,PW페이지 가져오기
 	@RequestMapping(value="/member/searchIdPw", method=RequestMethod.GET)
 	public void getsearchIdPw1() {
 		
 	}
 	
-	//ID異쒕젰
+	//ID찾기
 	@PostMapping(value="/member/searchId")
 	public String searchId(memberVO mvo, RedirectAttributes reat) {
 		
@@ -69,9 +68,9 @@ public class MemberController {
 			return "redirect:/member/searchIdPw";
 		
 	}
-	//媛믪쓣 媛�吏�怨� Id,Pw李얘린 �럹�씠吏�濡� �씠�룞
+	
 		
-	//PW異쒕젰
+	//PW찾기
 	@PostMapping(value="/member/searchPw")
 	public String searchPw(memberVO mmvo, RedirectAttributes reat) {
 		
@@ -82,18 +81,16 @@ public class MemberController {
 		
 		return "redirect:/member/searchIdPw";
 	}
-	//媛믪쓣 媛�吏�怨� Id,Pw李얘린 �럹�씠吏�濡� �씠�룞
 	
 	
 	
-	
-	//濡쒓렇�씤�럹�씠吏� 諛쏆븘�삤湲�
+	//로그인 페이지 불러오기
 	@RequestMapping(value="/member/login", method=RequestMethod.GET)
 	public void getlogin() {
 		
 	}
 	
-	@PostMapping(value="/member/loginPro")							//@RequestParam�쑝濡� login.jsp�뿉�꽌 member_pw諛쏆븘�삤湲�
+	@PostMapping(value="/member/loginPro")							//@RequestParam占쎌몵嚥∽옙 login.jsp占쎈퓠占쎄퐣 member_pw獄쏆룇釉섓옙�궎疫뀐옙
 	public String postlogin(memberVO membervo, HttpServletRequest req,@RequestParam("member_pw") String member_pw) {
 		memberVO vo = service.loginPro(membervo);
 		
@@ -119,16 +116,16 @@ public class MemberController {
 		try {
 		if(vo.getMember_id() != null ) {
 			if(vo.getMember_pw().equals(member_pw)) {
-				//�꽭�뀡�쑝濡� id, pw諛쏄린.
+				//占쎄쉭占쎈�∽옙�몵嚥∽옙 id, pw獄쏆룄由�.
 				session.setAttribute("id", id);
 				session.setAttribute("pw", pw);
 				return ("board/"+ "main");
 			}else {
-				System.out.println("鍮꾨�踰덊샇媛� ���졇�뒿�땲�떎!");//�뼱�뼸寃� 泥섎━�븷寃껋씤吏� �깮媛곹븯湲�
+				System.out.println("�뜮袁⑨옙甕곕뜇�깈揶쏉옙 占쏙옙占쎌죬占쎈뮸占쎈빍占쎈뼄!");//占쎈선占쎈섯野껓옙 筌ｌ꼶�봺占쎈막野껉퍔�뵥筌욑옙 占쎄문揶쏄낱釉�疫뀐옙
 				return "redirect:/member/login";
 			}
 		}else {
-			System.out.println("�븘�씠�뵒媛� �뾾�뒿�땲�떎!");//�뼱�뼸寃� 泥섎━�븷寃껋씤吏� �깮媛곹븯湲�, �븘�씠�뵒 �엯�젰 �썑 �븘�씠�뵒媛� 議댁옱�븯吏� �븡�쓣�븣 泥섎━�븷 諛⑸쾿 �깮媛곹븯湲�.
+			System.out.println("占쎈툡占쎌뵠占쎈탵揶쏉옙 占쎈씨占쎈뮸占쎈빍占쎈뼄!");//占쎈선占쎈섯野껓옙 筌ｌ꼶�봺占쎈막野껉퍔�뵥筌욑옙 占쎄문揶쏄낱釉�疫뀐옙, 占쎈툡占쎌뵠占쎈탵 占쎌뿯占쎌젾 占쎌뜎 占쎈툡占쎌뵠占쎈탵揶쏉옙 鈺곕똻�삺占쎈릭筌욑옙 占쎈륫占쎌뱽占쎈르 筌ｌ꼶�봺占쎈막 獄쎻뫖苡� 占쎄문揶쏄낱釉�疫뀐옙.
 			return "redirect:/member/login";
 		}
 		}catch(NullPointerException e){
