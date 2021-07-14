@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
 	String uiPath = "http://yul2study.dothome.co.kr";
-%>
+%> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
