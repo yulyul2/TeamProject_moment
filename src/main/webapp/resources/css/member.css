@@ -3,12 +3,14 @@
 /* section-wrap */
 #section-wrap{padding-top:0; width:100%; min-height:100%; background-color:#f76a3a;}
 #section-wrap .inner{background-color:#fff;}
+#section-wrap .inner > div{padding-top:60px; padding-bottom:60px;}
 #section-wrap.bg-image{background-color:transparent; background-image:url('../img/bg_member.jpg'); background-repeat:no-repeat; background-position:center center; background-size:cover;}
 #section-wrap.bg-image .inner{background-color:transparent;}
 
 /* member-section */
-.member-section .comm-tab-wrap{}
-.member-section .article-box{padding:80px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; width:550px; text-align:center;}
+.member-section .comm-tab-wrap{margin:0 auto; width:660px; text-align:center;}
+.member-section .comm-tab-wrap .tab-menu{padding:80px 0 40px;}
+.member-section .article-box{padding:0 80px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; width:550px; text-align:center;}
 
 /* member-section - image-area */
 .image-area form,
@@ -20,11 +22,14 @@
 .image-area .image-upload .button-upload::before{width:67px; height:77px; background-position:-33px 0;}
 
 /* member-section - form-area */
-.form-area{position:relative; padding-top:60px;}
-.form-area .button-back{position:absolute; right:10px; top:30px; color:#ee8059; font-size:13px;}
+.form-area{position:relative; margin-top:60px;}
+.form-area .button-back{position:absolute; right:10px; top:-30px; color:#ee8059; font-size:13px;}
 .form-area input[type="text"],
-.form-area input[type="email"]{display:block; margin-bottom:20px; padding:0 35px; width:100%; background-color:#fafafa; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-radius:15px; color:#7a7a7a; font-size:13px; line-height:70px;}
+.form-area input[type="password"],
+.form-area input[type="email"]{display:block; margin-bottom:20px; padding:0 35px; width:100%; background-color:#fafafa; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-radius:15px; color:#7a7a7a; font-size:14px; line-height:70px;}
 .form-area button[type="submit"]{display:block; width:100%; background-color:#ee8059; border-radius:15px; color:#fff; font-weight:600; font-size:16px; line-height:70px; box-shadow: 0px 5px 30px rgba(238,128,89,.4);}
+.form-area .output-box{padding:10px 0 30px;}
+.form-area .output-box > p{font-size:14px; letter-spacing:0;}
 
 /* member-section - link-area */
 .link-area{padding:60px 0 0 100px; text-align:left;}
