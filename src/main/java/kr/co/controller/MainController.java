@@ -9,7 +9,7 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String main()throws Exception {
-		System.out.println("¿‘¿Â!");
-		return "board/main";
+		
+		return "member/login";
 	}
 }
