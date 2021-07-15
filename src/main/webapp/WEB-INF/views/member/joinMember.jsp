@@ -13,15 +13,15 @@
 	<!-- css, javascript
 	* 회원가입 : member.css, member.js
 	--> 
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/common.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/member.css" media="all" />
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/common.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/member.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/member.css" media="all" />
+	<script type="text/javascript" src="resources/js/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="resources/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="resources/js/common.js"></script>
+	<script type="text/javascript" src="resources/js/member.js"></script>
 </head>
 <body>
 <!-- 이미지 리사이징 처리
@@ -34,7 +34,7 @@
 		<section class="member-section table-child">
 			<div class="inner clearfix">
 				<div class="article-box fr">
-					<h1 class="logo blind"><img src="<%=uiPath %>/img/logo_big.png" alt="moment"></h1>
+					<h1 class="logo blind"><img src="resources/img/logo_big.png" alt="moment"></h1>
 					<article class="image-area">
 						<form action="javascript:void(0)" method="post" name="formImageUpload">
 							<fieldset>
@@ -44,7 +44,7 @@
 										<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) 
 											기본 이미지일 경우 class 'default' 추가 / 그 외엔 제거
 										-->
-										<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load default">
+										<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load default">
 									</span>
 									<span class="button-upload sp-button"><span class="blind">이미지 수정</span></span>
 								</label>

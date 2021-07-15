@@ -14,15 +14,15 @@
 	<!-- css, javascript
 	* 아이디/비밀번호 찾기 : member.css, member.js
 	-->
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/common.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/member.css" media="all" />
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/common.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/member.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/member.css" media="all" />
+	<script type="text/javascript" src="resources/js/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="resources/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="resources/js/common.js"></script>
+	<script type="text/javascript" src="resources/js/member.js"></script>
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 			<div class="inner clearfix full-height table-parent">
 				<div class="table-child">
 					<div class="comm-tab-wrap">
-						<h1 class="logo"><img src="<%=uiPath %>/img/logo_big.png" alt="moment"></h1>
+						<h1 class="logo"><img src="resources/img/logo_big.png" alt="moment"></h1>
 						<ul class="tab-menu">
 							<!-- li : class 'on' 추가/제거 -->
 							<li class="tab-id">아이디 찾기</li>

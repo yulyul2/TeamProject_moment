@@ -14,15 +14,15 @@
 	<!-- css, javascript
 	* 메인 : main.css, main.js
 	-->
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/common.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="<%=uiPath %>/css/main.css" media="all" />
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/common.js"></script>
-	<script type="text/javascript" src="<%=uiPath %>/js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" media="all" />
+	<script type="text/javascript" src="resources/js/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="resources/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="resources/js/common.js"></script>
+	<script type="text/javascript" src="resources/js/main.js"></script>
 </head>
 <body>
 <!-- 이미지 리사이징 처리
@@ -38,7 +38,7 @@
         <header class="inner clearfix">
 			<h1 class="logo">
 				<!-- [Dev] 페이지 연결 : 메인 -->
-				<a href="javascript:void(0)"><img src="<%=uiPath %>/img/logo.png" alt="moment"></a>
+				<a href="javascript:void(0)"><img src="resources/img/logo.png" alt="moment"></a>
 			</h1>
 			<div class="search-input-wrap has-comm-layer">
 				<h2 class="blind">검색하기</h2>
@@ -64,7 +64,7 @@
 									<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Lee_sy</span>
 									</a>
@@ -74,7 +74,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">kim_hw</span>
 									</a>
@@ -83,7 +83,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Park_hg</span>
 									</a>
@@ -110,7 +110,7 @@
 							<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) 
 								기본 이미지일 경우 class 'default' 추가 / 그 외엔 제거
 							-->
-							<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load default">
+							<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load default">
 						</span>
 					</a>
 				</div>
@@ -133,7 +133,7 @@
 									<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Jang_yr</span>
 									</a>
@@ -141,7 +141,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">kim_hw</span>
 									</a>
@@ -149,7 +149,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Park_hg</span>
 									</a>
@@ -157,7 +157,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Lee_sy</span>
 									</a>
@@ -165,7 +165,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">bubblyJang</span>
 									</a>
@@ -187,7 +187,7 @@
 									<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Jang_yr</span>
 									</a>
@@ -197,7 +197,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">kim_hw</span>
 									</a>
@@ -206,7 +206,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Park_hg</span>
 									</a>
@@ -215,7 +215,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Lee_sy</span>
 									</a>
@@ -224,7 +224,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">bubblyJang</span>
 									</a>
@@ -233,7 +233,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Jang_yr</span>
 									</a>
@@ -242,7 +242,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">kim_hw</span>
 									</a>
@@ -251,7 +251,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Park_hg</span>
 									</a>
@@ -260,7 +260,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">Lee_sy</span>
 									</a>
@@ -269,7 +269,7 @@
 								<li>
 									<a href="javascript:void(0)">
 										<span class="profile-img image-parent">
-											<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+											<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 										</span>
 										<span class="profile-id">bubblyJang</span>
 									</a>
@@ -338,11 +338,11 @@
 							<a href="javascript:void(0)">
 								<div class="thumbnail image-parent">
 									<!-- [Dev] 게시물 사진 경로 : ./img/photo/sample_s_01.jpg -->
-									<img src="<%=uiPath %>/img/photo/sample_s_01.jpg" alt="게시물 썸네일" class="image-load">
+									<img src="resources/img/photo/sample_s_01.jpg" alt="게시물 썸네일" class="image-load">
 								</div>
 								<div class="profile">
 									<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) -->
-									<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+									<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 									<span class="profile-id">yulyul2</span>
 								</div>
 							</a>
@@ -350,10 +350,10 @@
 						<li>
 							<a href="javascript:void(0)">
 								<div class="thumbnail image-parent image-parent">
-									<img src="<%=uiPath %>/img/photo/sample_s_02.jpg" alt="게시물 썸네일" class="image-load">
+									<img src="resources/img/photo/sample_s_02.jpg" alt="게시물 썸네일" class="image-load">
 								</div>
 								<div class="profile">
-									<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+									<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 									<span class="profile-id">Park_hg</span>
 								</div>
 							</a>
@@ -361,10 +361,10 @@
 						<li>
 							<a href="javascript:void(0)">
 								<div class="thumbnail image-parent">
-									<img src="<%=uiPath %>/img/photo/sample_s_03.jpg" alt="게시물 썸네일" class="image-load">
+									<img src="resources/img/photo/sample_s_03.jpg" alt="게시물 썸네일" class="image-load">
 								</div>
 								<div class="profile">
-									<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+									<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 									<span class="profile-id">kim_hw</span>
 								</div>
 							</a>
@@ -372,10 +372,10 @@
 						<li>
 							<a href="javascript:void(0)">
 								<div class="thumbnail image-parent">
-									<img src="<%=uiPath %>/img/photo/sample_s_04.jpg" alt="게시물 썸네일" class="image-load">
+									<img src="resources/img/photo/sample_s_04.jpg" alt="게시물 썸네일" class="image-load">
 								</div>
 								<div class="profile">
-									<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+									<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 									<span class="profile-id">Lee_sy</span>
 								</div>
 							</a>
@@ -383,10 +383,10 @@
 						<li>
 							<a href="javascript:void(0)">
 								<div class="thumbnail image-parent">
-									<img src="<%=uiPath %>/img/photo/sample01.jpg" alt="게시물 썸네일" class="image-load">
+									<img src="resources/img/photo/sample01.jpg" alt="게시물 썸네일" class="image-load">
 								</div>
 								<div class="profile">
-									<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+									<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 									<span class="profile-id">bubblyJang</span>
 								</div>
 							</a>
@@ -405,7 +405,7 @@
 						<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 						<a href="javascript:void(0)" class="profile">
 							<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) -->
-							<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+							<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 							<span class="profile-id">yulyul2</span>
 						</a>
 						<div class="button">
@@ -432,7 +432,7 @@
 					</div>
 					<div class="photo-area image-parent">
 						<!-- [Dev] 게시물 사진 경로 : ./img/photo/sample_s_01.jpg -->
-						<img src="<%=uiPath %>/img/photo/sample01.jpg" alt="게시물 이미지" class="image-load">
+						<img src="resources/img/photo/sample01.jpg" alt="게시물 이미지" class="image-load">
 					</div>
 					<div class="info-area">
 						<div class="post-info">
@@ -504,7 +504,7 @@
 				<div class="post-wrap comm-post">
 					<div class="head-area clearfix has-comm-layer">
 						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+							<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 							<span class="profile-id">kim_hw</span>
 						</a>
 						<div class="button">
@@ -525,7 +525,7 @@
 						</div>
 					</div>
 					<div class="photo-area image-parent">
-						<img src="<%=uiPath %>/img/photo/sample02.jpg" alt="게시물 이미지" class="image-load">
+						<img src="resources/img/photo/sample02.jpg" alt="게시물 이미지" class="image-load">
 					</div>
 					<div class="info-area">
 						<div class="post-info">
@@ -570,7 +570,7 @@
 				<div class="post-wrap comm-post">
 					<div class="head-area clearfix has-comm-layer">
 						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+							<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 							<span class="profile-id">Lee_sy</span>
 						</a>
 						<div class="button">
@@ -591,7 +591,7 @@
 						</div>
 					</div>
 					<div class="photo-area image-parent">
-						<img src="<%=uiPath %>/img/photo/sample03.jpg" alt="게시물 이미지" class="image-load">
+						<img src="resources/img/photo/sample03.jpg" alt="게시물 이미지" class="image-load">
 					</div>
 					<div class="info-area">
 						<div class="post-info">
@@ -640,7 +640,7 @@
 				<div class="post-wrap comm-post">
 					<div class="head-area clearfix has-comm-layer">
 						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+							<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 							<span class="profile-id">Park_hg</span>
 						</a>
 						<div class="button">
@@ -661,7 +661,7 @@
 						</div>
 					</div>
 					<div class="photo-area image-parent">
-						<img src="<%=uiPath %>/img/photo/sample04.jpg" alt="게시물 이미지" class="image-load">
+						<img src="resources/img/photo/sample04.jpg" alt="게시물 이미지" class="image-load">
 					</div>
 					<div class="info-area">
 						<div class="post-info">
@@ -706,7 +706,7 @@
 				<div class="post-wrap comm-post">
 					<div class="head-area clearfix has-comm-layer">
 						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+							<span class="profile-img image-parent"><img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 							<span class="profile-id">bubblyJang</span>
 						</a>
 						<div class="button">
@@ -727,7 +727,7 @@
 						</div>
 					</div>
 					<div class="photo-area image-parent">
-						<img src="<%=uiPath %>/img/photo/sample05.jpg" alt="게시물 이미지" class="image-load">
+						<img src="resources/img/photo/sample05.jpg" alt="게시물 이미지" class="image-load">
 					</div>
 					<div class="info-area">
 						<div class="post-info">
@@ -797,7 +797,7 @@
 				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
@@ -805,7 +805,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">kim_hw</span>
 				</a>
@@ -813,7 +813,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
@@ -821,7 +821,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
@@ -829,7 +829,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">bubblyJang</span>
 				</a>
@@ -837,7 +837,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
@@ -845,7 +845,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
@@ -853,7 +853,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">bubblyJang</span>
 				</a>
@@ -871,7 +871,7 @@
 				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
@@ -881,7 +881,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">kim_hw</span>
 				</a>
@@ -890,7 +890,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
@@ -912,7 +912,7 @@
 				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%=uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
