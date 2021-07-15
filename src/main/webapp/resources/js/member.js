@@ -11,13 +11,13 @@ $(window).load(function(){
 // login - form check
 function loginFormCheck(){
     var form = document.loginForm;
-    if(form.id.value == ""){
+    if(form.member_id.value == ""){
         alert("아이디 값을 입력하세요.");
-        form.id.focus();
+        form.member_id.focus();
         return false;
-    }else if(form.password.value == ""){
+    }else if(form.member_pw.value == ""){
         alert("비밀번호 값을 입력하세요.");
-        form.password.focus();
+        form.member_pw.focus();
         return false;
     }else{
         return true;
