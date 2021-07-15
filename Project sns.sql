@@ -1,20 +1,20 @@
-create sequence member_seq
+create sequence user_seq
     start with 1
     INCREMENT by 1
     minvalue 1;
 --member_no 1부터 시작, 1씩 증가, 최소값 1
-create table sns_member(
-    member_no number not null,
-    member_id varchar2(50) constraint member_pk primary key ,
-    member_pw  varchar2(50) not null,
-    member_name varchar2(30) not null,
-    member_tel varchar2(50) not null,
-    member_email varchar2(50) not null,
-    member_image varchar2(300),
-    member_info varchar2(500)
+create table users(
+    user_no number not null,
+    user_id varchar2(50) constraint member_pk primary key ,
+    user_pw  varchar2(50) not null,
+    user_name varchar2(30) not null,
+    user_tel varchar2(50) not null,
+    user_email varchar2(50) not null,
+    user_image varchar2(300),
+    user_info varchar2(500)
 );
 
-create table sns_post(
+create table post(
     post_no number constraint post_pk primary key,
     post_id varchar2(50) not null
         constraint post_fk1 references sns_member(member_id)on delete cascade,
@@ -39,7 +39,7 @@ create SEQUENCE post_seq
     minvalue 1;
 
 
-create table sns_notice(
+create table notice(
     notice_no number constraint notice_pk primary key,
     id varchar2(50) not null,
     title varchar(200),
@@ -51,7 +51,7 @@ create SEQUENCE notice_seq
     increment by 1
     MINVALUE 1;
 
-create table sns_like(
+create table post_like(
     like_id varchar(50) not null
         constraint like_fk1 references sns_member(member_id) on delete cascade,
 --sns_member 테이블의 member_id를 부모키로 like_id만듬./ on delete cascade = 부모키 삭제시 자식도 삭제
@@ -61,7 +61,7 @@ create table sns_like(
     like_check varchar2(60) constraint like_pk primary key
 );
 
-create table sns_follow(
+create table user_follow(
     my_id varchar2(50) not null
         constraint follow_fk1 references sns_member(member_id) on delete cascade,
     other_id varchar2(50) not null
