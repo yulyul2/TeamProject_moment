@@ -6,7 +6,7 @@ create sequence user_seq
 create table users(
     user_no number not null,
     user_id varchar2(50) constraint member_pk primary key ,
-    user_pw  varchar2(50) not null,
+    user_pw  varchar2(50) nkot null,
     user_name varchar2(30) not null,
     user_tel varchar2(50) not null,
     user_email varchar2(50) not null,
