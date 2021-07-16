@@ -21,7 +21,7 @@ import kr.co.vo.postVO;
 
 
 @Controller
-@RequestMapping("/board/*")
+@RequestMapping("/post/*")
 public class postController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(postController.class);

@@ -36,8 +36,8 @@ public class userController {
 	}
 	
 	//회원가입 post
-	@PostMapping(value = "/user/userJoin")
-	public String postjoinuser(userVO uservo, RedirectAttributes rttr) throws Exception {
+	@PostMapping(value = "/user/joinMember")
+	public String joinMember(userVO uservo, RedirectAttributes rttr) throws Exception {
 		
 		
 		logger.info("post userJoin");
@@ -51,7 +51,7 @@ public class userController {
 	
 	
 	//ID,PW페이지 가져오기
-	@RequestMapping(value="/user/searchIdPw", method=RequestMethod.GET)
+	@RequestMapping(value="/user/accountFind", method=RequestMethod.GET)
 	public void getsearchIdPw1() {
 		
 	}
@@ -62,9 +62,9 @@ public class userController {
 		
 		userVO mVO = service.searchId(mvo);
 		
-			reat.addFlashAttribute("Id",mVO.getuser_id());
+			reat.addFlashAttribute("Id",mVO.getmember_id());
 		
-			return "redirect:/user/searchIdPw";
+			return "/user/accountFind";
 		
 	}
 	
@@ -76,9 +76,9 @@ public class userController {
 		userVO mmVO = service.searchPw(mmvo);
 		
 			
-			reat.addFlashAttribute("Pw",mmVO.getuser_pw());
+			reat.addFlashAttribute("Pw",mmVO.getmember_pw());
 		
-		return "redirect:/user/searchIdPw";
+		return "/user/accountFind";
 	}
 	
 	
@@ -89,19 +89,18 @@ public class userController {
 		
 	}
 	
-	@PostMapping(value="/user/loginPro")							//@RequestParam 은 login.jsp 에서 user_pw값을 가져옴.
-	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("user_pw") String user_pw) {
+	@PostMapping(value="/user/loginPro")							//@RequestParam 은 login.jsp 에서 member_pw값을 가져옴.
+	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("member_pw") String member_pw) {
 		userVO vo = service.loginPro(uservo);
 		
-		String id = vo.getuser_id();
-		String pw = vo.getuser_pw();
+		String id = vo.getmember_id();
+		String pw = vo.getmember_pw();
 		
 		HttpSession session = req.getSession();
 		
-		
 		try {
-		if(vo.getuser_id() != null ) {
-			if(vo.getuser_pw().equals(user_pw)) {
+		if(vo.getmember_id() != null ) {
+			if(vo.getmember_pw().equals(member_pw)) {
 				//세션으로 ID,PW 저장.
 				session.setAttribute("id", id);
 				session.setAttribute("pw", pw);
@@ -116,7 +115,7 @@ public class userController {
 			return "/user/login";
 		}
 	
-	//&& vo.getuser_pw() == null
+	//&& vo.getmember_pw() == null
 	}
 	
 	

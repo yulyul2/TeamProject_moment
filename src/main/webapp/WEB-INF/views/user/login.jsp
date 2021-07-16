@@ -44,9 +44,9 @@
 					<article class="link-area">
 						<ul>
 							<!-- [Dev] 페이지 연결 : 아이디 / 비밀번호 찾기 -->
-							<li><a href="/member/searchIdPw">아이디 / 비밀번호 찾기</a></li>
+							<li><a href="/user/accountFind">아이디 / 비밀번호 찾기</a></li>
 							<!-- [Dev] 페이지 연결 : 회원가입 -->
-							<li><a href="/member/joinMember">회원가입 하기</a></li>
+							<li><a href="/user/userJoin">회원가입 하기</a></li>
 						</ul>
 					</article>
 				</div>

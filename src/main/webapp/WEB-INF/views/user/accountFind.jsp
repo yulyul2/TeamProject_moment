@@ -44,7 +44,7 @@
 						<div class="article-box tab-box m-auto">
 							<article class="form-area">
 								<!-- [Dev] 페이지 연결 : 로그인 -->
-								<a href="/member/login" class="button-back">돌아가기</a>
+								<a href="/user/login" class="button-back">돌아가기</a>
 								<!-- [Dev] 아이디 찾기 기능 구현 -->
 								<form action="/user/searchId" method="post" name="findIdForm" onsubmit="return findIdFormCheck()">
 									<fieldset>

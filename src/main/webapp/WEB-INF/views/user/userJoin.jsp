@@ -56,7 +56,7 @@
 						<!-- [Dev] 페이지 연결 : 로그인 -->
 						<a href="/member/login" class="button-back">돌아가기</a>
 						<!-- [Dev] 회원가입 기능 구현 -->
-						<form action="/member/joinMember" method="post" name="joinForm" onsubmit="return joinFormCheck()">
+						<form action="/user/joinMember" method="post" name="joinForm" onsubmit="return joinFormCheck()">
 							<fieldset>
 								<legned class="blind">회원가입</legned>
 								<input type="text" id="member_id" name="member_id" placeholder="아이디">
