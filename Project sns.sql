@@ -14,13 +14,7 @@ create table member(
     member_info varchar2(500)
 );
 
-<<<<<<< HEAD
-select * from sns_member;
-
-create table sns_post(
-=======
 create table post(
->>>>>>> 39e3138f36d1e947b721b2f2eeb8939a557e8c96
     post_no number constraint post_pk primary key,
     post_id varchar2(50) not null
         constraint post_fk1 references member(member_id)on delete cascade,
