@@ -10,6 +10,7 @@
 	<!-- css, javascript
 	* 회원가입 : member.css, member.js
 	--> 
+<<<<<<< HEAD:src/main/webapp/WEB-INF/views/member/joinMember.jsp
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css" media="all" />
@@ -19,6 +20,17 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member.js"></script>
+=======
+	<link rel="stylesheet" type="text/css" href="<%= uiPath %>/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%= uiPath %>/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%= uiPath %>/css/common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="<%= uiPath %>/css/member.css" media="all" />
+	<script type="text/javascript" src="<%= uiPath %>/js/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="<%= uiPath %>/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="<%= uiPath %>/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="<%= uiPath %>/js/common.js"></script>
+	<script type="text/javascript" src="<%= uiPath %>/js/member.js"></script>
+>>>>>>> 39e3138f36d1e947b721b2f2eeb8939a557e8c96:src/main/webapp/WEB-INF/views/user/userJoin.jsp
 </head>
 <body>
 <!-- 이미지 리사이징 처리
@@ -31,7 +43,11 @@
 		<section class="member-section table-child">
 			<div class="inner clearfix">
 				<div class="article-box fr">
+<<<<<<< HEAD:src/main/webapp/WEB-INF/views/member/joinMember.jsp
 					<h1 class="logo blind"><img src="${pageContext.request.contextPath}/resources/img/logo_big.png" alt="moment"></h1>
+=======
+					<h1 class="logo blind"><img src="<%= uiPath %>/img/logo_big.png" alt="moment"></h1>
+>>>>>>> 39e3138f36d1e947b721b2f2eeb8939a557e8c96:src/main/webapp/WEB-INF/views/user/userJoin.jsp
 					<article class="image-area">
 						<form action="javascript:void(0)" method="post" name="formImageUpload">
 							<fieldset>
@@ -41,7 +57,11 @@
 										<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) 
 											기본 이미지일 경우 class 'default' 추가 / 그 외엔 제거
 										-->
+<<<<<<< HEAD:src/main/webapp/WEB-INF/views/member/joinMember.jsp
 										<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load default">
+=======
+										<img src="<%= uiPath %>/img/profile/default.png" alt="프로필 이미지" class="image-load default">
+>>>>>>> 39e3138f36d1e947b721b2f2eeb8939a557e8c96:src/main/webapp/WEB-INF/views/user/userJoin.jsp
 									</span>
 									<span class="button-upload sp-button"><span class="blind">이미지 수정</span></span>
 								</label>
@@ -53,7 +73,11 @@
 						<!-- [Dev] 페이지 연결 : 로그인 -->
 						<a href="${pageContext.request.contextPath}" class="button-back">돌아가기</a>
 						<!-- [Dev] 회원가입 기능 구현 -->
+<<<<<<< HEAD:src/main/webapp/WEB-INF/views/member/joinMember.jsp
 						<form action="${pageContext.request.contextPath}/user/join" method="post" name="joinForm" onsubmit="return joinFormCheck()">
+=======
+						<form action="/user/joinMember" method="post" name="joinForm" onsubmit="return joinFormCheck()">
+>>>>>>> 39e3138f36d1e947b721b2f2eeb8939a557e8c96:src/main/webapp/WEB-INF/views/user/userJoin.jsp
 							<fieldset>
 								<legend class="blind">회원가입</legend>
 								<input type="text" id="member_id" name="member_id" placeholder="아이디">
