@@ -18,76 +18,17 @@ import kr.co.service.userService;
 import kr.co.vo.userVO;
 
 @Controller
-//@RequestMapping("/user/*")
 public class userController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(postController.class);
-	private String post = "redirect:/post/";
-	
+	private static final Logger logger = LoggerFactory.getLogger(postController.class);	
 	
 	@Inject
 	userService service;
 	
-	//회원가입 페이지 불러오기
-	@GetMapping(value = "/user/userJoin")
-	public void getjoinuser() {
-		logger.info("get userJoin");
-
-	}
-	
-	//회원가입 post
-	@PostMapping(value = "/user/joinMember")
-	public String joinMember(userVO uservo, RedirectAttributes rttr) throws Exception {
-		
-		
-		logger.info("post userJoin");
-		
-		service.userJoin(uservo);
-		
-		return "redirect:/user/login";
-	}
-	
-	
-	
-	
-	//ID,PW페이지 가져오기
-	@RequestMapping(value="/user/accountFind", method=RequestMethod.GET)
-	public void getsearchIdPw1() {
-		
-	}
-	
-	//ID찾기
-	@PostMapping(value="/user/searchId")
-	public String searchId(userVO mvo, RedirectAttributes reat) {
-		
-		userVO mVO = service.searchId(mvo);
-		
-			reat.addFlashAttribute("Id",mVO.getmember_id());
-		
-			return "/user/accountFind";
-		
-	}
-	
-		
-	//PW찾기
-	@PostMapping(value="/user/searchPw")
-	public String searchPw(userVO mmvo, RedirectAttributes reat) {
-		
-		userVO mmVO = service.searchPw(mmvo);
-		
-			
-			reat.addFlashAttribute("Pw",mmVO.getmember_pw());
-		
-		return "/user/accountFind";
-	}
-	
-	
-	
 	//로그인 페이지 불러오기
-	@RequestMapping(value="/user/login", method=RequestMethod.GET)
-	public void getlogin() {
-		
-	}
+	@GetMapping("/user/login")
+	public String getlogin() {
+	   return "user/login";
+    }
 	
 	@PostMapping(value="/user/loginPro")							//@RequestParam 은 login.jsp 에서 member_pw값을 가져옴.
 	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("member_pw") String member_pw) {
@@ -106,18 +47,57 @@ public class userController {
 				session.setAttribute("pw", pw);
 				return ("post/"+ "main");
 			}else {
-				return "/user/login_pw_fail";
+				return "user/login_pw_fail";
 			}
 		}else {
-			return "/user/login_id_fail";
+			return "user/login_id_fail";
 		}
 		}catch(NullPointerException e){
-			return "/user/login";
+			return "user/login";
 		}
-	
 	//&& vo.getmember_pw() == null
 	}
 	
+	//회원가입 페이지 불러오기
+	@GetMapping("/user/join")
+	public String getjoinuser() {
+		logger.info("get userJoin");
+		return "user/userJoin";
+	}
 	
+	//회원가입 post
+	@PostMapping(value = "/user/join")
+	public String joinMember(userVO uservo, RedirectAttributes rttr) throws Exception {
+		logger.info("post userJoin");
+		
+		service.userJoin(uservo);
+		
+		return "user/login";
+	}
 	
+	//ID,PW페이지 가져오기
+	@GetMapping("/user/searchIdPw")
+	public String getsearchIdPw1() {
+		return "/user/accountFind";
+	}
+	
+	//ID찾기
+	@PostMapping("/user/searchId")
+	public String searchId(userVO mvo, RedirectAttributes reat) {
+		userVO mVO = service.searchId(mvo);
+		
+		reat.addFlashAttribute("Id",mVO.getmember_id());
+		
+		return "user/accountFind";
+	}
+		
+	//PW찾기
+	@PostMapping("/user/searchPw")
+	public String searchPw(userVO mmvo, RedirectAttributes reat) {
+		userVO mmVO = service.searchPw(mmvo);
+			
+		reat.addFlashAttribute("Pw",mmVO.getmember_pw());
+		
+		return "user/accountFind";
+	}
 }
