@@ -1,7 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
 <%
 	String uiPath = "http://yul2study.dothome.co.kr";
+	String isLogon = request.getParameter("isLogon") == null ? " " : request.getParameter("isLogon");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -34,7 +36,6 @@
 						<!-- [Dev] 로그인 기능 구현 -->
 						<form action="/member/loginPro" method="post" name="loginForm" onsubmit="return loginFormCheck()">
 							<fieldset>
-								<legned class="blind">로그인</legned>
 								<input type="text" name="member_id" placeholder="아이디">
 								<input type="password" name="member_pw" placeholder="비밀번호">
 								<button type="submit" class="button-login">로그인</button>
@@ -53,6 +54,16 @@
 			</div>
 		</section>
 	</div><!-- // section-wrap -->
+	test = ${isLogon};
 </div>
+<script>
+	var isLogon = ${isLogon};
+	isLogon = (isLogon == '' || isLogon == undefined) ? false : isLogon ;
+	document.addEventListener("DOMContentLoaded", function(){
+		if(isLogon){
+			alert("아이디 혹은 비밀번호가 잘못되었습니다.");
+		}
+	});
+</script>
 </body>
 </html>
