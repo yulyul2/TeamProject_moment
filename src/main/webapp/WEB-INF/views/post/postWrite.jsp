@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="/board/writeBoardPro" method="post" enctype="multipart/form-data">
+	<form action="/board/postWritePro" method="post" enctype="multipart/form-data">
 		<table border="1">
 			<tr>
 				<td>

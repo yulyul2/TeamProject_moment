@@ -1,6 +1,6 @@
 package kr.co.vo;
 
-public class boardVO {
+public class postVO {
 
 	private int post_no;
 	private String post_id;

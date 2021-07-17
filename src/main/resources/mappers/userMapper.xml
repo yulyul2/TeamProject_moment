@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="memberMapper">
+<mapper namespace="userMapper">
 	<!-- 회원가입 -->
-	<insert id="joinMember">
-		insert into sns_member(
+	<insert id="userJoin">
+		insert into member(
 						 member_no,
 						 member_id, 
 						 member_pw,
@@ -21,15 +21,15 @@
 			 #{member_name},
 			 #{member_tel},
 			 #{member_email},
-			 #{image_path,jdbcType=VARCHAR},
-			 #{member_info,jdbcType=VARCHAR})
+			 #{image_path},
+			 #{member_info})
 		
 	</insert>
 	
 	
-	<select id="loginPro" resultType="kr.co.vo.memberVO">
+	<select id="loginPro" resultType="kr.co.vo.userVO">
 		select member_id, member_pw
-		from sns_member
+		from member
 		where member_id = #{member_id,jdbcType=VARCHAR}
 		<!-- and member_pw = #{member_pw} -->
 		
@@ -37,24 +37,24 @@
 	
 	
 	<!-- ID찾기 -->
-	<select id="searchId" resultType="kr.co.vo.memberVO">
+	<select id="searchId" resultType="kr.co.vo.userVO">
 		select member_id
-		from sns_member
+		from member
 		where member_name = #{member_name,jdbcType=VARCHAR}
 		and member_email = #{member_email}
 	</select>
 	
 	<!-- PW찾기 -->
-	<select id="searchPw" resultType="kr.co.vo.memberVO">
+	<select id="searchPw" resultType="kr.co.vo.userVO">
 		select member_pw
-		from sns_member
+		from member
 		where member_id = #{member_id}
 		and member_email = #{member_email}
 	</select>
 	<!-- 
 	<select id="loginPro">
 		select member_id, member_pw
-		from sns_member
+		from sns_user
 		where member_id = #{member_id}
 	</select> -->
 	

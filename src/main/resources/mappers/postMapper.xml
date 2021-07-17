@@ -2,17 +2,17 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="boardMapper">
+<mapper namespace="postMapper">
   
   	<!-- 게시판 등록 -->
-  	<insert id="writePro" parameterType="kr.co.vo.boardVO">
+  	<insert id="postWritePro" parameterType="kr.co.vo.postVO">
   		
   		
   		<selectKey resultType="int" keyProperty="ref" order="BEFORE">
   			select NVL(Max(ref),0) + 1
-  			from sns_post
+  			from post
   		</selectKey>
-  		insert into SNS_POST(
+  		insert into POST(
   		post_no,
   		post_id,
   		post_content,
@@ -44,9 +44,9 @@
   		)
   	</insert>
   	
-  	<select id="readBoard">
+  	<select id="readpost">
   		select *
-  		from sns_post
+  		from post
   		where 
   	
   	

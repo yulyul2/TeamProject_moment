@@ -77,7 +77,7 @@
 										<div class="output-box">
 											<p class="join-password">비밀번호 : ${Pw}</p>
 										</div>
-										<button type="submit" class="button-find-password"SS>비밀번호 찾기</button>
+										<button type="submit" class="button-find-password">비밀번호 찾기</button>
 									</fieldset>
 								</form>
 							</article>

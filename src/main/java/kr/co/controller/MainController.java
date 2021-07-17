@@ -10,6 +10,6 @@ public class MainController {
 	@RequestMapping("/")
 	public String main()throws Exception {
 		
-		return "member/login";
+		return "user/login";
 	}
 }
