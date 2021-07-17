@@ -73,7 +73,7 @@ public class userController {
 	}
 	
 	//ID,PW페이지 가져오기
-	@GetMapping("/searchId")
+	@GetMapping("/searchIdPw")
 	public String getsearchIdPw1() {
 		return "/user/accountFind";
 	}
@@ -82,15 +82,19 @@ public class userController {
 	@PostMapping("/searchId")
 	public String searchId(userVO mvo, RedirectAttributes reat) {
 		userVO mVO = service.searchId(mvo);
-		reat.addFlashAttribute("Id",mVO.getmember_id());
-		return "user/accountFind";
+		if(mVO != null) {
+			reat.addFlashAttribute("Id",mVO.getmember_id());
+		}
+		return "redirect:/user/searchIdPw";
 	}
 		
 	//PW찾기
 	@PostMapping("/searchPw")
 	public String searchPw(userVO mmvo, RedirectAttributes reat) {
 		userVO mmVO = service.searchPw(mmvo);
-		reat.addFlashAttribute("Pw",mmVO.getmember_pw());
-		return "user/accountFind";
+		if(mmVO != null) {
+			reat.addFlashAttribute("Pw",mmVO.getmember_pw());
+		}
+		return "redirect:/user/searchIdPw";
 	}
 }
