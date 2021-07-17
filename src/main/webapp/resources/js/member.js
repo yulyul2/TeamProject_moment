@@ -5,7 +5,12 @@ $(document).ready(function(){
 
 // DOM & css, image, js Loading
 $(window).load(function(){
-
+	// id/pw find
+	var hasValue = $('.output-box .join-password .value').text();
+		tabMenu = $('.tab-menu li');
+	if(hasValue != ""){
+		tabMenu.eq(1).click();
+	}
 });
 
 // login - form check

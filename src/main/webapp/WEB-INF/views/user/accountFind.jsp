@@ -48,7 +48,7 @@
 										<input type="text" name="member_name" id="member_name" placeholder="이름">
 										<input type="email" name="member_email" id="member_email" placeholder="이메일 주소">
 										<div class="output-box">
-    										<p class="join-id">아이디 : ${Id }</p>
+    										<p class="join-id">아이디 : <span class="value">${Id }</span></p>
 										</div>
 										<button type="submit" class="button-find-id">아이디 찾기</button>
 									</fieldset>
@@ -75,7 +75,7 @@
 										<input type="text" name="member_id" id="member_id" placeholder="아이디">
 										<input type="email" name="member_email" id="member_email" placeholder="이메일 주소">
 										<div class="output-box">
-											<p class="join-password">비밀번호 : ${Pw}</p>
+											<p class="join-password">비밀번호 : <span class="value">${Pw}</span></p>
 										</div>
 										<button type="submit" class="button-find-password">비밀번호 찾기</button>
 									</fieldset>
