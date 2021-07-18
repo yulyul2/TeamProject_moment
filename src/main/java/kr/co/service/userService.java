@@ -16,5 +16,4 @@ public interface userService {
 	//PW찾기
 	public userVO searchPw(userVO uservo);
 	
-	
 }

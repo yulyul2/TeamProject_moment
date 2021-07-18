@@ -1,7 +1,6 @@
 package kr.co.vo;
 
 public class postVO {
-
 	private int post_no;
 	private String post_id;
 	private String post_content;
@@ -12,7 +11,6 @@ public class postVO {
 	private int re_step;
 	private int re_level;
 	private int like_count;
-	
 	
 	public String getPost_content() {
 		return post_content;

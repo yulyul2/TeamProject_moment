@@ -28,7 +28,6 @@
 				<div class="article-box fr">
 					<h1 class="logo"><img src="${pageContext.request.contextPath}/resources/img/logo_big.png" alt="moment"></h1>
 					<article class="form-area">
-						<!-- [Dev] 로그인 기능 구현 -->
 						<form action="${pageContext.request.contextPath}/user/loginPro" method="post" name="loginForm" onsubmit="return loginFormCheck()">
 							<fieldset>
 								<legend class="blind">로그인</legend>
@@ -40,9 +39,7 @@
 					</article>
 					<article class="link-area">
 						<ul>
-							<!-- [Dev] 페이지 연결 : 아이디 / 비밀번호 찾기 -->
 							<li><a href="${pageContext.request.contextPath}/user/searchIdPw">아이디 / 비밀번호 찾기</a></li>
-							<!-- [Dev] 페이지 연결 : 회원가입 -->
 							<li><a href="${pageContext.request.contextPath}/user/join">회원가입 하기</a></li>
 						</ul>
 					</article>

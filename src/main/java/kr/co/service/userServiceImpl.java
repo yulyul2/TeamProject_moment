@@ -36,7 +36,4 @@ public class userServiceImpl implements userService{
 	public userVO searchPw(userVO uservo) {
 		return dao.searchPw(uservo);
 	}
-
-	
-
 }

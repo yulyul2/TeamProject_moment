@@ -16,6 +16,4 @@ public interface userDAO {
 	//PW찾기
 	public userVO searchPw(userVO uservo);
 	
-	
-	
-}//
+}

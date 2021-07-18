@@ -59,14 +59,14 @@ public class userController {
 	
 	//회원가입 페이지 불러오기
 	@GetMapping("/join")
-	public String getjoinuser() {
+	public String getjoin() {
 		logger.info("get userJoin");
 		return "user/join";
 	}
 	
 	//회원가입 post
 	@PostMapping("/join")
-	public String joinMember(userVO uservo, RedirectAttributes rttr) throws Exception {
+	public String postjoin(userVO uservo, RedirectAttributes rttr) throws Exception {
 		logger.info("post userJoin");
 		service.userJoin(uservo);
 		return "user/login";
@@ -74,8 +74,8 @@ public class userController {
 	
 	//ID,PW페이지 가져오기
 	@GetMapping("/searchIdPw")
-	public String getsearchIdPw1() {
-		return "/user/accountFind";
+	public String getsearchIdPw() {
+		return "user/searchIdPw";
 	}
 	
 	//ID찾기
