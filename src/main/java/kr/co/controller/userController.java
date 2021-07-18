@@ -33,28 +33,26 @@ public class userController {
 	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("member_pw") String member_pw) {
 		userVO vo = service.loginPro(uservo);
 		
-		String id = vo.getmember_id();
-		String pw = vo.getmember_pw();
-		
 		HttpSession session = req.getSession();
 		
 		try {
-		if(vo.getmember_id() != null ) {
-			if(vo.getmember_pw().equals(member_pw)) {
-				//세션으로 ID,PW 저장.
-				session.setAttribute("id", id);
-				session.setAttribute("pw", pw);
-				return ("post/"+ "main");
+			if (vo != null) {
+				String id = vo.getmember_id();
+				String pw = vo.getmember_pw();
+
+				if (pw.equals(member_pw)) {
+					session.setAttribute("id", id);
+					session.setAttribute("pw", pw);
+					return ("post/main");
+				} else {
+					return "user/login_fail";
+				}
 			}else {
-				return "user/login_pw_fail";
+				return "user/login_fail";
 			}
-		}else {
-			return "user/login_id_fail";
-		}
-		}catch(NullPointerException e){
+		} catch (NullPointerException e) {
 			return "user/login";
 		}
-	//&& vo.getmember_pw() == null
 	}
 	
 	//회원가입 페이지 불러오기
