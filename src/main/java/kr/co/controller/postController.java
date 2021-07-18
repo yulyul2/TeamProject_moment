@@ -1,12 +1,9 @@
 package kr.co.controller;
 
-
-
 import java.io.File;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -14,15 +11,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
-
 import kr.co.service.postService;
 import kr.co.utils.UploadFileUtils;
 import kr.co.vo.postVO;
 
-
 @Controller
 @RequestMapping("/post/*")
 public class postController {
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(postController.class);
 	
@@ -82,3 +78,4 @@ public class postController {
 	};
 	
 }
+

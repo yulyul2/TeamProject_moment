@@ -1,45 +1,5 @@
 @charset "UTF-8";
 
-/* side-section */
-.side-section{float:left; padding:0 35px; width:330px; min-height:1100px; background-color:#fafafa;}
-
-/* side-section - profile */
-.side-section .profile{padding:100px 0 30px; text-align:center;}
-.side-section .profile form,
-.side-section .profile fieldset{width:100%; height:100%;}
-.side-section .profile .image-area{position:relative; margin:0 auto; width:108px; height:108px;}
-.side-section .profile .image-area a{display:block; width:100%; height:100%;}
-.side-section .profile .image-area .image{overflow:hidden; display:block; width:100%; height:100%; background-color:#fff; border-radius:50%;}
-.side-section .profile .image-area .image img.default{opacity:.5;}
-.side-section .profile .image-area .button-more{position:absolute; right:-25px; bottom:-25px; cursor:pointer;}
-.side-section .profile .image-area .button-more::before{width:67px; height:77px; background-position:-33px 0;}
-.side-section .profile .info-area{margin:20px auto 50px; width:200px;}
-.side-section .profile .info-area .my-id{overflow:hidden; color:#161616; font-weight:600; font-size:18px; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap;}
-.side-section .profile .info-area .my-name{margin-top:5px; color:#737373; font-weight:500; font-size:13px; letter-spacing:-1px;}
-.side-section .profile .button-post-write{display:block; width:100%; background-color:#ee8059; border-radius:12px; color:#fff; font-weight:800; font-size:14px; line-height:52px; box-shadow: 0px 0px 30px rgba(238,128,89,.4);}
-.side-section .profile .button-post-write span::before{position:relative; left:-15px; top:-2px; width:20px; height:16px; background-position:0 -251px;}
-
-/* side-section - navigation */
-.side-section .navigation .navi-area{margin-bottom:15px;}
-.side-section .navigation .navi-area:last-child{margin-bottom:0;}
-.side-section .navigation .navi-area-inner{overflow:hidden; background-color:#f5f5f5; border-radius:15px;}
-.side-section .navigation .navi-area .navi-title{display:block; padding:0 42px; width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; line-height:80px; text-align:left; color:#636363; font-weight:600; font-size:14px;}
-.side-section .navigation .navi-area .navi-title > span{position:relative; display:block; width:100%; padding-left:20px;}
-.side-section .navigation .navi-area .navi-title > span::before,
-.side-section .navigation .navi-area .navi-title > span::after{position:absolute; top:50%; margin:-4px;}
-.side-section .navigation .navi-area .navi-title > span::before{left:0; width:7px; height:7px; background-color:#969696; background-image:none; border-radius:50%;}
-.side-section .navigation .navi-area .navi-title > span::after{right:0; width:14px; height:7px; background-position:0 -33px;}
-.side-section .navigation .navi-area .navi-list{display:none;}
-.side-section .navigation .navi-area .navi-list .list-inner{overflow:hidden; max-height:265px; padding:10px 0;}
-.side-section .navigation .navi-area .navi-list .list-inner li{padding:0 42px 15px;}
-.side-section .navigation .navi-area .navi-list .list-inner li:last-child{padding-bottom:10px;}
-.side-section .navigation .navi-area.on .navi-title{color:#ee8059;}
-.side-section .navigation .navi-area.on .navi-title > span::before{background-color:#ee8059;}
-.side-section .navigation .navi-area:last-child .list-inner li a{width:100% !important;}
-
-/* main-section */
-.main-section{float:left; margin-left:40px; width:660px;}
-
 /* main-section - recommend-post */
 .main-section .recommend-post h2{color:#161616; font-weight:600; font-size:16px; line-height:65px; letter-spacing:-1.5px;}
 .main-section .recommend-post h2::before{content:''; position:relative;; top:-2px; display:inline-block; margin-right:15px; width:7px; height:7px; background-color:#ee8059; border-radius:50%;}
@@ -59,64 +19,10 @@
 
 /* main-section - main-post */
 .main-section .main-post .post-wrap{padding-top:80px;}
-.main-section .main-post .post-wrap .head-area{margin-bottom:20px; line-height:52px;}
-.main-section .main-post .post-wrap .head-area .profile{overflow:hidden; float:left;}
-.main-section .main-post .post-wrap .head-area .profile .profile-img{overflow:hidden; float:left; width:52px; height:52px; background-color:#f3f3f3; border-radius:50%;}
-.main-section .main-post .post-wrap .head-area .profile .profile-id{float:left; margin:0 13px; color:#161616; font-weight:600; font-size:16px; line-height:45px; letter-spacing:0;}
-.main-section .main-post .post-wrap .head-area .button{overflow:hidden; float:right; height:52px;}
-.main-section .main-post .post-wrap .head-area .button [class^="button-"]{position:relative; top:6px; float:left; padding:10px;}
-.main-section .main-post .post-wrap .head-area .button .button-bookmark::before{width:23px; height:20px; background-position:0 -87px;}
-.main-section .main-post .post-wrap .head-area .button .button-bookmark.on::before{background-position:-33px -87px;}
-.main-section .main-post .post-wrap .head-area .button .button-menu{top:7px;}
-.main-section .main-post .post-wrap .head-area .button .button-menu::before{width:3px; height:17px; background-position:0 -176px;}
-.main-section .main-post .post-wrap .head-area .layer-menu{right:-15px; top:60px; width:215px;}
-.main-section .main-post .post-wrap .head-area .layer-menu .layer-inner{padding:20px 15px;}
-.main-section .main-post .post-wrap .head-area .layer-menu .layer-inner li{border-bottom:1px solid #e2e2e2;}
-.main-section .main-post .post-wrap .head-area .layer-menu .layer-inner li:last-child{border-bottom:0;}
-.main-section .main-post .post-wrap .head-area .layer-menu .layer-inner li > a,
-.main-section .main-post .post-wrap .head-area .layer-menu .layer-inner li > button{display:block; width:100%; color:#393939; font-weight:600; font-size:13px; line-height:58px; text-align:center;}
-.main-section .main-post .post-wrap .photo-area{overflow:hidden; width:100%; height:400px;}
-.main-section .main-post .post-wrap .info-area{margin-top:20px;}
-.main-section .main-post .post-wrap .info-area .post-info{overflow:hidden; margin-bottom:15px;}
-.main-section .main-post .post-wrap .info-area .post-info button{overflow:hidden; float:left;}
-.main-section .main-post .post-wrap .info-area .post-info button .icon{float:left;}
-.main-section .main-post .post-wrap .info-area .post-info button .text{float:left; margin:0 17px 0 7px; color:#363636; font-weight:600; font-size:13px;}
-.main-section .main-post .post-wrap .info-area .post-info .button-like .icon::before{width:23px; height:20px; background-position:0 -117px;}
-.main-section .main-post .post-wrap .info-area .post-info .button-comment .icon::before{width:23px; height:19px; background-position:0 -147px;}
-.main-section .main-post .post-wrap .info-area .post-info .on .text{color:#ee8059;}
-.main-section .main-post .post-wrap .info-area .post-info .on .icon::before{background-position:-33px -117px;}
-.main-section .main-post .post-wrap .info-area .post-content{display:table;} 
-.main-section .main-post .post-wrap .info-area .post-content .id,
-.main-section .main-post .post-wrap .info-area .post-content .content{display:table-cell; color:#161616; }
-.main-section .main-post .post-wrap .info-area .post-content .id{padding-right:10px; font-weight:600; font-size:15px; line-height:1.2;}
-.main-section .main-post .post-wrap .info-area .post-content .content{font-size:13px; line-height:1.5;} 
-.main-section .main-post .post-wrap .info-area .post-comment .button-allcomment{padding:7px 0 5px; color:#9c9c9c; font-size:13px;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-list{overflow:hidden; max-height:45px;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-list li{display:table; line-height:1.7;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-list li .id,
-.main-section .main-post .post-wrap .info-area .post-comment .comment-list li .comment{display:table-cell; color:#161616; font-size:13px;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-list li .id{ padding-right:10px; font-weight:600;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-write{overflow:hidden; margin-top:20px; padding:0 22px 0 38px; width:100%; height:66px; background-color:#fafafa; border-radius:15px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-write .input-comment{float:left; width:-webkit-calc(100% - 36px); width:-moz-calc(100% - 36px); width:-o-calc(100% - 36px); width:calc(100% - 36px); background-color:transparent; color:#7a7a7a; font-weight:300; font-size:13px; line-height:66px;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-write .button-comment{position:relative; top:15px; float:right; width:36px; height:36px; background-color:#e5e5e5; border-radius:10px;}
-.main-section .main-post .post-wrap .info-area .post-comment .comment-write .button-comment::before{position:absolute; left:50%; top:50%; margin-left:-9px; margin-top:-7px; width:18px; height:14px; background-position:0 -203px;}
 
-/* main-section - main-post pagination */
-.main-section .main-post .pagination{display:table; margin:0 auto; padding:80px 0;}
-.main-section .main-post .pagination .paging{display:table-cell;}
-.main-section .main-post .pagination .paging .page-list{overflow:hidden; float:left; margin:0 20px;}
-.main-section .main-post .pagination .paging .page-list li{float:left;}
-.main-section .main-post .pagination .paging .page-list li > a{display:inline-block; width:35px; height:35px; background-color:transparent; border-radius:50%; color:#a3a3a3; font-size:15px; line-height:35px; text-align:center;}
-.main-section .main-post .pagination .paging .page-list li.on > a{background-color:#efefef; color:#2f2f2f; font-weight:600;}
-.main-section .main-post .pagination .paging button{position:relative; top:9px; float:left;}
-.main-section .main-post .pagination .paging .button-paging-next{-webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg);}
-.main-section .main-post .pagination .paging [class^="button-paging"]::before{width:7px; height:14px; background-position:0 -227px;}
+/* main-section - main-post : pagination */
+.main-section .main-post .pagination{padding:80px 0;}
 
-/* layer popup */
-#layerpop-navi-bookmark,
-#layerpop-navi-recommend{width:520px; height:410px;}
-#layerpop-navi-bookmark .list-inner,
-#layerpop-navi-recommend .list-inner{padding:30px 0 15px; max-height:280px;}
-#layerpop-navi-bookmark .list-inner li,
-#layerpop-navi-recommend .list-inner li{padding:0 70px 15px;}
-#layerpop-navi-notice{width:520px; height:410px;}
+/* popup */
+#popup-naviNotice{width:800px;}
+#popup-naviNotice .pagination{padding:45px;}

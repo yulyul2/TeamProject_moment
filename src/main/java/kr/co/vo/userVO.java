@@ -1,7 +1,5 @@
 package kr.co.vo;
 
-import java.util.Date;
-
 public class userVO {
 	private int member_no;
 	private String member_id;
@@ -12,7 +10,6 @@ public class userVO {
 	private String member_email;
 	private String image_path;
 	private String member_info;
-	
 	
 	public String getmember_pw2() {
 		return member_pw2;
@@ -68,7 +65,4 @@ public class userVO {
 	public void setmember_info(String member_info) {
 		this.member_info = member_info;
 	}
-	
-	
-	
 }

@@ -70,3 +70,5 @@ create table user_follow(
     follow_favorites number not null
 -- 버튼을 누르면 +1 이 되고 다시 해제하면 -1 인 형식으로 1 과 2로 구현?
 );
+
+commit

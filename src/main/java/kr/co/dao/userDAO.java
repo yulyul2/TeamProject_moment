@@ -16,6 +16,10 @@ public interface userDAO {
 	//PW찾기
 	public userVO searchPw(userVO uservo);
 	
+	//회원정보수정
+	public void userUpdate(userVO membervo)throws Exception;
 	
+	//회원탈퇴
+	public void userDelete(userVO vo)throws Exception;
 	
-}//
+}

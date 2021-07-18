@@ -6,14 +6,14 @@
 	<!-- 회원가입 -->
 	<insert id="userJoin">
 		insert into member(
-						 member_no,
-						 member_id, 
-						 member_pw,
-						 member_name,
-						 member_tel,
-						 member_email,
-						 member_image,
-						 member_info	)
+			 member_no,
+			 member_id, 
+			 member_pw,
+			 member_name,
+			 member_tel,
+			 member_email,
+			 member_image,
+			 member_info	)
 		values(
 			member_seq.nextval,
 			 #{member_id},
@@ -26,15 +26,12 @@
 		
 	</insert>
 	
-	
 	<select id="loginPro" resultType="kr.co.vo.userVO">
 		select member_id, member_pw
 		from member
 		where member_id = #{member_id,jdbcType=VARCHAR}
 		<!-- and member_pw = #{member_pw} -->
-		
 	</select>
-	
 	
 	<!-- ID찾기 -->
 	<select id="searchId" resultType="kr.co.vo.userVO">
@@ -57,11 +54,5 @@
 		from sns_user
 		where member_id = #{member_id}
 	</select> -->
-	
-	
-	
-	
-  
-  
-  
+
  </mapper>

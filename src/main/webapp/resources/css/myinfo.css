@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+@-webkit-keyframes fadeIn{from{opacity:0;} to{opacity:100%;}}
+@-moz-keyframes fadeIn{from{opacity:0;} to{opacity:100%;}}
+@-o-keyframes fadeIn{from{opacity:0;} to{opacity:100%;}}
+@keyframes fadeIn{from{opacity:0;} to{opacity:100%;}}
+
+/* side-section - profile */
+.side-section .profile .image-area{float:left; margin:0 30px 0 50px;}
+.side-section .profile .info-area{float:left; margin:25px 0 0 0; width:120px; text-align:left;}
+.side-section .profile [class^='button']{margin-top:15px;}
+.side-section .profile [class^='button']:first-of-type{margin-top:50px;}
+
+/* main-section - edit-profile, edit-account, delete-member */
+.main-section article{margin:0 65px; padding:45px 0; border-top:1px solid #e3e3e3;}
+.main-section article:first-child{border-top:0;}
+.main-section article h2{margin-bottom:65px; color:#161616; font-weight:600; font-size:16px; letter-spacing:-1.5px;}
+.main-section article h2::before{content:''; position:relative;; top:-2px; display:inline-block; margin-right:15px; width:7px; height:7px; background-color:#161616; border-radius:50%;}
+.main-section article form,
+.main-section article fieldset{width:100%; height:100%;}
+.main-section article fieldset{padding:0 30px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.main-section form label{display:block; color:#404040; font-weight:600; font-size:14px;}
+.main-section form input[type="text"], 
+.main-section form input[type="password"], 
+.main-section form input[type="email"]{display:inline-block; margin-bottom:20px; padding:0 35px; width:-webkit-calc(100% - 145px); width:-moz-calc(100% - 145px); width:-o-calc(100% - 145px); width:calc(100% - 145px); background-color:#fafafa; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-radius:15px; color:#7a7a7a; font-size:14px; line-height:55px;}
+.main-section form textarea{padding:20px 30px; width:100%; height:140px; background-color:#fafafa; border-radius:15px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border:0; outline:0; color:#636363; font-size:14px; line-height:1.7;} 
+.main-section form .button-area{float:left; padding:50px 0; width:100%; text-align:center;}
+.main-section form .button-area button{display:inline-block; margin-left:15px; padding:0 50px; background-color:#fff; border:1px solid #eae8e8; border-radius:10px; color:#616161; font-weight:600; font-size:14px; line-height:50px; box-shadow: 0px 5px 30px rgba(219,219,219,.4); letter-spacing:1px;}
+.main-section form .button-area button:first-child{margin-left:0;}
+
+/* main-section - edit-profile */
+.edit-profile h2{margin-bottom:50px;}
+.edit-profile .image-upload{position:relative; display:block; margin:0 auto 40px; width:108px; height:108px; cursor:pointer;}
+.edit-profile .image-upload .image{overflow:hidden; display:block; width:100%; height:100%; background-color:#fff; border-radius:50%; border:1px solid #eae8e8;}
+.edit-profile .image-upload .image img.default{opacity:.5;}
+.edit-profile .image-upload .button-upload{position:absolute; right:-25px; bottom:-25px; cursor:pointer;}
+.edit-profile .image-upload .button-upload::before{width:67px; height:77px; background-position:-33px 0;}
+
+/* main-section - edit-account */
+.edit-account label{float:left; width:145px; line-height:55px;}
+.edit-account input[type="text"], 
+.edit-account input[type="password"], 
+.edit-account input[type="email"]{float:left;}
+    
+/* main-section - delete-member */
+.delete-member label{margin-bottom:20px;}
+.delete-member input[type="text"], 
+.delete-member input[type="password"], 
+.delete-member input[type="email"]{margin-bottom:50px !important; width:100% !important;}
+.delete-member .button-area{padding:60px 0 !important;}

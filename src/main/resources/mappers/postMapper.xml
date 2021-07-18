@@ -3,11 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="postMapper">
-  
   	<!-- 게시판 등록 -->
   	<insert id="postWritePro" parameterType="kr.co.vo.postVO">
-  		
-  		
   		<selectKey resultType="int" keyProperty="ref" order="BEFORE">
   			select NVL(Max(ref),0) + 1
   			from post
@@ -48,7 +45,5 @@
   		select *
   		from post
   		where 
-  	
-  	
   	</select>
 </mapper>
