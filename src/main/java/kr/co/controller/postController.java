@@ -29,7 +29,7 @@ public class postController {
 	@Inject
 	postService service;
 	
-	@Resource(name="uploadPath") // servlet-context.xml ���� ���� uploadPath
+	@Resource(name="uploadPath") // servlet-context.xml 에서 불러온 uploadPath
 	private String uploadPath;
 	
 	@GetMapping("/main")
@@ -73,6 +73,11 @@ public class postController {
 	
 	@RequestMapping("/postViewList")
 	public void postViewList() {
+		
+	};
+	
+	@RequestMapping("/postViewBookmark")
+	public void PostViewBookmark() {
 		
 	};
 	

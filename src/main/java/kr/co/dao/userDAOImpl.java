@@ -24,8 +24,8 @@ public class userDAOImpl implements userDAO {
 		
 		return sqlSession.selectOne("userMapper.loginPro",uservo);
 	}
-	//login(userVO uservo)�뿉 �뙆�씪誘명꽣 媛믪씠 �쟾�떖�릺怨�
-	//userMapper.xml�뿉�꽌 議고쉶�븳 �뜲�씠�꽣�뱾�씠 userVO�뿉 �떞源�.
+	//loginPro(userVO uservo)
+	//userMapper.xml에서 loginPro 실행 userVO를 사용.
 	
 	//ID찾기
 	@Override
