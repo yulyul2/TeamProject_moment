@@ -6,9 +6,16 @@ $(document).ready(function(){
 // DOM & css, image, js Loading
 $(window).load(function(){
 	// id/pw find
-	var hasValue = $('.output-box .join-password .value').text();
+	var outputBox = $('.output-box');
+		hasValueId = outputBox.find('.join-id .value').text();
+		hasValuePw = outputBox.find('.join-password .value').text();
 		tabMenu = $('.tab-menu li');
-	if(hasValue != ""){
+		
+	outputBox.hide();
+	if(hasValueId != ""){
+		$('.join-id').closest(outputBox).show();
+	}else if(hasValuePw != ""){
+		$('.join-password').closest(outputBox).show();
 		tabMenu.eq(1).click();
 	}
 });

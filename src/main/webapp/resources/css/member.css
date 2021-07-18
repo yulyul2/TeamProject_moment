@@ -29,7 +29,7 @@
 .form-area input[type="email"]{display:block; margin-bottom:20px; padding:0 35px; width:100%; background-color:#fafafa; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-radius:15px; color:#7a7a7a; font-size:14px; line-height:70px;}
 .form-area button[type="submit"]{display:block; width:100%; background-color:#ee8059; border-radius:15px; color:#fff; font-weight:600; font-size:16px; line-height:70px; box-shadow: 0px 5px 30px rgba(238,128,89,.4);}
 .form-area .output-box{padding:10px 0 30px;}
-.form-area .output-box > p{font-size:14px; letter-spacing:0;}
+.form-area .output-box > p{font-weight:bold; font-size:14px; letter-spacing:0;}
 
 /* member-section - link-area */
 .link-area{padding:60px 0 0 100px; text-align:left;}
