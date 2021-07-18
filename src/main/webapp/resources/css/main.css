@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/* main-section - recommend-post */
+.main-section .recommend-post h2{color:#161616; font-weight:600; font-size:16px; line-height:65px; letter-spacing:-1.5px;}
+.main-section .recommend-post h2::before{content:''; position:relative;; top:-2px; display:inline-block; margin-right:15px; width:7px; height:7px; background-color:#ee8059; border-radius:50%;}
+.main-section .recommend-post .slider-wrap{position:relative;}
+.main-section .recommend-post .slider-wrap .slider{overflow:hidden;}
+.main-section .recommend-post .slider-wrap .slider li{float:left; margin-right:15px; width:185px;}
+.main-section .recommend-post .slider-wrap .slider li > a{display:block;}
+.main-section .recommend-post .slider-wrap .slider li > a .thumbnail{overflow:hidden; width:100%; height:230px; border-radius:15px;}
+.main-section .recommend-post .slider-wrap .slider li > a .profile{overflow:hidden; margin-top:12px;}
+.main-section .recommend-post .slider-wrap .slider li > a .profile .profile-img{overflow:hidden; float:left; width:20px; height:20px; background-color:#f3f3f3; border-radius:50%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.main-section .recommend-post .slider-wrap .slider li > a .profile .profile-id{overflow:hidden; float:left; padding-left:10px; width:-webkit-calc(100% - 30px); width:-moz-calc(100% - 30px); width:-o-calc(100% - 30px); width:calc(100% - 30px); color:#151515; font-weight:600; font-size:12px; line-height:18px; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrap;} 
+.main-section .recommend-post .slider-wrap [class^="button-"]{z-index:10; position:absolute; top:50%; margin-top:-14px; opacity:.3; cursor:pointer;}
+.main-section .recommend-post .slider-wrap [class^="button-"]::before{width:14px; height:27px; background-position:0 -50px;}
+.main-section .recommend-post .slider-wrap [class^="button-"]:hover{opacity:1;}
+.main-section .recommend-post .slider-wrap .button-prev{left:-30px; -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg);}
+.main-section .recommend-post .slider-wrap .button-next{right:-30px;}
+
+/* main-section - main-post */
+.main-section .main-post .post-wrap{padding-top:80px;}
+
+/* main-section - main-post : pagination */
+.main-section .main-post .pagination{padding:80px 0;}
+
+/* popup */
+#popup-naviNotice{width:800px;}
+#popup-naviNotice .pagination{padding:45px;}
