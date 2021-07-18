@@ -37,6 +37,17 @@ public class MemberServiceImpl implements MemberService{
 		return dao.searchPw(membervo);
 	}
 
+	@Override
+	public void memberUpdate(memberVO vo) throws Exception {
+		
+		//받은 vo를 DAO로 보내줍니다.
+		dao.memberUpdate(vo);
+		
+		
+	}
 	
-
+	@Override
+	public void memberDelete(memberVO vo) throws Exception {
+		dao.memberDelete(vo);
+	}
 }

@@ -139,5 +139,51 @@ public class MemberController {
 	}
 	
 	
+	// 회원정보 수정 post
+	@RequestMapping(value = "/member/memberUpdate", method = RequestMethod.GET)
+	public void getmemberUpdate() {
+		logger.info("get memberUpdate");
+
+	}
 	
+	
+	
+	
+	@RequestMapping(value = "member/memberUpdate", method = RequestMethod.POST)
+	public String postModify(HttpSession session, memberVO vo) throws Exception {
+	 logger.info("post memberUpdate");
+	 
+	 service.memberUpdate(vo);
+	 
+	 session.invalidate();
+	 
+	 return "redirect:/member/memberUpdate";
+	}
+	
+	
+	// 회원 탈퇴 get
+		@RequestMapping(value="/memberDelete", method = RequestMethod.GET)
+		public String memberDeleteView() throws Exception{
+			return "member/memberDelete";
+		}
+		
+		// 회원 탈퇴 post
+		@RequestMapping(value="/memberDelete", method = RequestMethod.POST)
+		public String memberDelete(memberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
+			
+			// 세션에 있는 member를 가져와 member변수에 넣어줍니다.
+			memberVO member = (memberVO) session.getAttribute("member");
+			// 세션에있는 비밀번호
+			Class<? extends memberVO> sessionPass = member.getClass();
+			// vo로 들어오는 비밀번호
+			Class<? extends memberVO> voPass = vo.getClass();
+			
+			if(!(sessionPass.equals(voPass))) {
+				rttr.addFlashAttribute("msg", false);
+				return "redirect:/member/memberDelete";
+			}
+			service.memberDelete(vo);
+			session.invalidate();
+			return "redirect:/";
+		}
 }

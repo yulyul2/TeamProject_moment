@@ -16,6 +16,9 @@ public interface MemberDAO {
 	//PW찾기
 	public memberVO searchPw(memberVO membervo);
 	
+	// 회원정보 수정
+	public void memberUpdate(memberVO membervo)throws Exception;
 	
-	
+	// 회원 탈퇴
+	public void memberDelete(memberVO vo)throws Exception;
 }//

@@ -16,5 +16,9 @@ public interface MemberService {
 	//PW찾기
 	public memberVO searchPw(memberVO membervo);
 	
+	//회원정보 수정
 	
+	public void memberUpdate(memberVO vo) throws Exception;
+	
+	public void memberDelete(memberVO vo) throws Exception;
 }
