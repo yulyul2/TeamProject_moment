@@ -33,6 +33,7 @@ public class postController {
 	
 	@Inject
 	postService service;
+	@Inject
 	userService uservice;
 	
 	@Resource(name="uploadPath") // servlet-context.xml 에서 불러온 uploadPath
@@ -45,12 +46,12 @@ public class postController {
 		String id = id1.getmember_id();
 		
 		vo.setmember_id(id);
-		System.out.println(vo.getmember_id());
-		System.out.println(id);
 		
-		uservice.userInfo(vo);
-		System.out.println(vo.getmember_name());
-		//model.addAttribute(id)
+		userVO uvo = uservice.userInfo(vo);
+		
+		String name = uvo.getmember_name();
+		
+		model.addAttribute("name",name);
 		
 		return "post/main";
 	}
@@ -60,7 +61,7 @@ public class postController {
 		return "post/home";
 	}
 	
-	@PostMapping("/postWrite")
+	@GetMapping("/postWrite")
 	public String write()throws Exception {
 		return "post/postWrite";
 	}
