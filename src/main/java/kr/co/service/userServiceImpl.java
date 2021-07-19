@@ -49,4 +49,10 @@ public class userServiceImpl implements userService{
 	public void userDelete(userVO vo) throws Exception {
 		dao.userDelete(vo);
 	}
+
+	@Override
+	public userVO userInfo(userVO vo) throws Exception {
+		System.out.println(vo.getmember_id());
+		return dao.userInfo(vo);
+	}
 }

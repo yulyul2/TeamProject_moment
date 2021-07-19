@@ -26,7 +26,7 @@ public class userDAOImpl implements userDAO {
 	}
 	//loginPro(userVO uservo)
 	//userMapper.xml에서 loginPro 실행 userVO를 사용.
-   
+
 	//ID찾기
 	@Override
 	public userVO searchId(userVO uservo) {
@@ -56,5 +56,12 @@ public class userDAOImpl implements userDAO {
 		// 그럼 xml에서 memberMapper.memberDelete에 보시면
 		//  #{userId}, #{userPass}에 파라미터값이 매칭이 되겠지요.
 		sqlSession.delete("userMapper.userDelete", vo);
+	}
+
+	//회원정보 불러오기
+	@Override
+	public userVO userInfo(userVO vo) throws Exception {
+		
+		return sqlSession.selectOne("userMapper.userInfo", vo);
 	}
 }

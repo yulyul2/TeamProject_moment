@@ -38,7 +38,7 @@
 						<!-- article-box : class 'show' 추가/제거 -->
 						<div class="article-box tab-box m-auto">
 							<article class="form-area">
-								<a href="${pageContext.request.contextPath}" class="button-back">돌아가기</a>
+								<a href="${pageContext.request.contextPath}/user/login" class="button-back">돌아가기</a>
 								<form action="${pageContext.request.contextPath}/user/searchId" method="post" name="findIdForm" onsubmit="return findIdFormCheck()">
 									<fieldset>
 										<legend class="blind">로그인</legend>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <%
 	String uiPath = "http://yul2study.dothome.co.kr";
@@ -10,9 +10,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>°Ô½Ã¹° »ó¼¼º¸±â</title>
+	<title>ê²Œì‹œë¬¼ ìƒì„¸ë³´ê¸°</title>
 	<!-- css, javascript
-	* °Ô½Ã¹° »ó¼¼º¸±â : post.css, post.js
+	* ê²Œì‹œë¬¼ ìƒì„¸ë³´ê¸° : post.css, post.js
 	-->
 	<link rel="stylesheet" type="text/css" href="<%= uiPath %>/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="<%= uiPath %>/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
@@ -29,94 +29,94 @@
 	String id = (String)session.getAttribute("id");
 
 %>
-<!-- ÀÌ¹ÌÁö ¸®»çÀÌÂ¡ Ã³¸®
-	* logo ÀÌ¹ÌÁö Á¦¿Ü 
-	* ¸ðµç ÀÌ¹ÌÁöÀÇ ºÎ¸ð¿¡´Â class 'image-parent' Ãß°¡
-	* ¸ðµç ÀÌ¹ÌÁö ÀÚ½Å¿¡°Ô´Â class 'image-load' Ãß°¡ 
+<!-- ì´ë¯¸ì§€ ë¦¬ì‚¬ì´ì§• ì²˜ë¦¬
+	* logo ì´ë¯¸ì§€ ì œì™¸ 
+	* ëª¨ë“  ì´ë¯¸ì§€ì˜ ë¶€ëª¨ì—ëŠ” class 'image-parent' ì¶”ê°€
+	* ëª¨ë“  ì´ë¯¸ì§€ ìžì‹ ì—ê²ŒëŠ” class 'image-load' ì¶”ê°€ 
 -->
-<!-- ÆË¾÷
-	* È£ÃâÇÒ ÆË¾÷ id °ª°ú click µÇ´Â ¹öÆ° data-name °ªÀ» µ¿ÀÏÇÏ°Ô ÁÜ 
+<!-- íŒì—…
+	* í˜¸ì¶œí•  íŒì—… id ê°’ê³¼ click ë˜ëŠ” ë²„íŠ¼ data-name ê°’ì„ ë™ì¼í•˜ê²Œ ì¤Œ 
 -->
 <div id="wrap">
 	<div id="header-wrap">
 	<header class="inner clearfix">
 		<h1 class="logo">
-			<!-- [Dev] ÆäÀÌÁö ¿¬°á : ¸ÞÀÎ -->
-			<a href="/board/main"><img src="<%= uiPath %>/img/logo.png" alt="moment"></a>
+			<!-- [Dev] íŽ˜ì´ì§€ ì—°ê²° : ë©”ì¸ -->
+			<a href="/post/main"><img src="<%= uiPath %>/img/logo.png" alt="moment"></a>
 		</h1>
 		<div class="search-input-wrap has-comm-layer">
-			<h2 class="blind">°Ë»öÇÏ±â</h2>
+			<h2 class="blind">ê²€ìƒ‰í•˜ê¸°</h2>
 			<div class="search-input">
-				<!-- [Dev] °Ë»ö ±â´É ±¸Çö -->
+				<!-- [Dev] ê²€ìƒ‰ ê¸°ëŠ¥ êµ¬í˜„ -->
 				<form action="javascript:void(0)" method="post" name="searchForm" >
 					<fieldset>
-						<legend class="blind">°Ë»ö</legend>
-						<input type="text" placeholder="°Ë»öÇÏ±â" class="input-search">
-						<button type="submit" class="button-search sp-button button-comm-layer-open"><span class="blind">°Ë»öÇÏ±â</span></button>
+						<legend class="blind">ê²€ìƒ‰</legend>
+						<input type="text" placeholder="ê²€ìƒ‰í•˜ê¸°" class="input-search">
+						<button type="submit" class="button-search sp-button button-comm-layer-open"><span class="blind">ê²€ìƒ‰í•˜ê¸°</span></button>
 					</fieldset>
 				</form>
 			</div>
-			<!-- ·¹ÀÌ¾î : °Ë»ö -->
+			<!-- ë ˆì´ì–´ : ê²€ìƒ‰ -->
 			<div class="layer-search comm-layer">
-				<h3 class="blind">°Ë»ö ·¹ÀÌ¾î</h3>
-				<button type="button" class="button-search-close sp-button button-comm-layer-close"><span class="blind">°Ë»ö ·¹ÀÌ¾î ´Ý±â</span></button>
+				<h3 class="blind">ê²€ìƒ‰ ë ˆì´ì–´</h3>
+				<button type="button" class="button-search-close sp-button button-comm-layer-close"><span class="blind">ê²€ìƒ‰ ë ˆì´ì–´ ë‹«ê¸°</span></button>
 				<div class="layer-inner">
 					<div class="list-area">
-						<p class="title">ÃÖ±Ù °Ë»ö ³»¿ª</p>
+						<p class="title">ìµœê·¼ ê²€ìƒ‰ ë‚´ì—­</p>
 						<ul class="list comm-list">
 							<li>
-								<!-- [Dev] ÆäÀÌÁö ¿¬°á : È¸¿ø »ó¼¼ º¸±â -->
+								<!-- [Dev] íŽ˜ì´ì§€ ì—°ê²° : íšŒì› ìƒì„¸ ë³´ê¸° -->
 								<a href="javascript:void(0)">
 									<span class="profile-img image-parent">
-										<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+										<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 									</span>
 									<span class="profile-id">Lee_sy</span>
 								</a>
-								<!-- [Dev] ÆÈ·Î¿ì ±â´É ±¸Çö -->
-								<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+								<!-- [Dev] íŒ”ë¡œìš° ê¸°ëŠ¥ êµ¬í˜„ -->
+								<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 							</li>
 							<li>
 								<a href="javascript:void(0)">
 									<span class="profile-img image-parent">
-										<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+										<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 									</span>
 									<span class="profile-id">kim_hw</span>
 								</a>
-								<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+								<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 							</li>
 							<li>
 								<a href="javascript:void(0)">
 									<span class="profile-img image-parent">
-										<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+										<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 									</span>
 									<span class="profile-id">Park_hg</span>
 								</a>
-								<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+								<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 							</li>
 						</ul>
-						<p class="title">ÃÖ±Ù °Ë»ö ³»¿ª</p>
-						<p class="message">ÃÖ±Ù °Ë»ö ³»¿ªÀÌ ¾ø½À´Ï´Ù.</p>
+						<p class="title">ìµœê·¼ ê²€ìƒ‰ ë‚´ì—­</p>
+						<p class="message">ìµœê·¼ ê²€ìƒ‰ ë‚´ì—­ì´ ì—†ìŠµë‹ˆë‹¤.</p>
 					</div>
-					<button type="button" class="button-search-delete comm-list-btn">°Ë»ö³»¿ª »èÁ¦</button>
+					<button type="button" class="button-search-delete comm-list-btn">ê²€ìƒ‰ë‚´ì—­ ì‚­ì œ</button>
 				</div>
 			</div>
 		</div>
 		<div class="all-menu-wrap parent-toggle">
-			<button type="button" class="button-all-menu sp-button button-parent-toggle"><span class="blind">ÀüÃ¼ ¸Þ´º</span></button>
+			<button type="button" class="button-all-menu sp-button button-parent-toggle"><span class="blind">ì „ì²´ ë©”ë‰´</span></button>
 			<div class="layer-all-menu comm-layer simple">
-				<h3 class="blind">ÀüÃ¼ ¸Þ´º ·¹ÀÌ¾î</h3>
+				<h3 class="blind">ì „ì²´ ë©”ë‰´ ë ˆì´ì–´</h3>
 				<div class="layer-inner">
 					<ul class="list">
-					<!-- °ü¸®ÀÚ °èÁ¤ -->
-						<!-- [Dev] È¸¿ø°ü¸® ÆäÀÌÁö·Î ¿¬°á -->
-						<li><a href="javascript:void(0)">È¸¿ø°ü¸®</a></li>
-						<!-- [Dev] °øÁö»çÇ× ÀÛ¼º ÆäÀÌÁö·Î ¿¬°á -->
-						<li><a href="javascript:void(0)">°øÁö»çÇ× ÀÛ¼º</a></li>
-					<!-- »ç¿ëÀÚ °èÁ¤ -->
-						<!-- [Dev] °³ÀÎÁ¤º¸ ÆäÀÌÁö·Î ¿¬°á -->
-						<li><a href="javascript:void(0)">°³ÀÎÁ¤º¸</a></li>
-						<!-- [Dev] °Ô½Ã¹° »ó¼¼ ÆäÀÌÁö·Î ¿¬°á -->
-						<li><a href="javascript:void(0)">°Ô½Ã¹° °ü¸®</a></li>
+					<!-- ê´€ë¦¬ìž ê³„ì • -->
+						<!-- [Dev] íšŒì›ê´€ë¦¬ íŽ˜ì´ì§€ë¡œ ì—°ê²° -->
+						<li><a href="javascript:void(0)">íšŒì›ê´€ë¦¬</a></li>
+						<!-- [Dev] ê³µì§€ì‚¬í•­ ìž‘ì„± íŽ˜ì´ì§€ë¡œ ì—°ê²° -->
+						<li><a href="javascript:void(0)">ê³µì§€ì‚¬í•­ ìž‘ì„±</a></li>
+					<!-- ì‚¬ìš©ìž ê³„ì • -->
+						<!-- [Dev] ê°œì¸ì •ë³´ íŽ˜ì´ì§€ë¡œ ì—°ê²° -->
+						<li><a href="javascript:void(0)">ê°œì¸ì •ë³´</a></li>
+						<!-- [Dev] ê²Œì‹œë¬¼ ìƒì„¸ íŽ˜ì´ì§€ë¡œ ì—°ê²° -->
+						<li><a href="javascript:void(0)">ê²Œì‹œë¬¼ ê´€ë¦¬</a></li>
 					</ul>
 				</div>
 			</div>
@@ -126,40 +126,40 @@
 	<div id="section-wrap" class="inner clearfix">
 		<section class="side-section clearfix full-height">
 			<article class="profile">
-				<h2 class="blind">ÇÁ·ÎÇÊ</h2>
-				<!-- [Dev] ÆäÀÌÁö ¿¬°á : È¸¿ø »ó¼¼ º¸±â -->
+				<h2 class="blind">í”„ë¡œí•„</h2>
+				<!-- [Dev] íŽ˜ì´ì§€ ì—°ê²° : íšŒì› ìƒì„¸ ë³´ê¸° -->
 				<a href="javascript:void(0)" class="clearfix">
 					<div class="image-area">
 						<span class="image image-parent">
-							<!-- [Dev] Default ÇÁ·ÎÇÊ ÀÌ¹ÌÁö °æ·Î : ./img/profile/default.png (´Ù¸¥ ÀÌ¹ÌÁö´Â jpg) 
-								±âº» ÀÌ¹ÌÁöÀÏ °æ¿ì class 'default' Ãß°¡ / ±× ¿Ü¿£ Á¦°Å
+							<!-- [Dev] Default í”„ë¡œí•„ ì´ë¯¸ì§€ ê²½ë¡œ : ./img/profile/default.png (ë‹¤ë¥¸ ì´ë¯¸ì§€ëŠ” jpg) 
+								ê¸°ë³¸ ì´ë¯¸ì§€ì¼ ê²½ìš° class 'default' ì¶”ê°€ / ê·¸ ì™¸ì—” ì œê±°
 							-->
-							<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load default">
+							<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load default">
 						</span>
 					</div>
 					<div class="info-area">
 						<p class="my-id"><%=id %></p>
-						<p class="my-name">ÀåÀ¯¸®</p>
+						<p class="my-name">ìž¥ìœ ë¦¬</p>
 					</div>
 				</a>
-				<!-- [Dev] Ä£±¸ °Ô½Ã¹°ÀÏ °æ¿ì ³ëÃâµÇ´Â ¹öÆ° : ÆÈ·Î¿ì ±â´É ±¸Çö (ÆÈ·Î¿ì ¹öÆ° ´©¸£¸é "ÆÈ·Î¿ì" -> "ÆÈ·ÎÀ×" À¸·Î ÅØ½ºÆ® º¯°æ) -->
-				<button type="button" class="button-follow"><span>ÆÈ·Î¿ì</span></button>
-				<!-- [Dev] ³» °Ô½Ã¹°ÀÏ °æ¿ì ³ëÃâµÇ´Â ¹öÆ° : ³» Á¤º¸ ¼öÁ¤ ÆäÀÌÁö·Î ¿¬°á  -->
-				<a href="javascript:void(0)" class="button-myinfo"><span>³» Á¤º¸ ¼öÁ¤</span></a>
+				<!-- [Dev] ì¹œêµ¬ ê²Œì‹œë¬¼ì¼ ê²½ìš° ë…¸ì¶œë˜ëŠ” ë²„íŠ¼ : íŒ”ë¡œìš° ê¸°ëŠ¥ êµ¬í˜„ (íŒ”ë¡œìš° ë²„íŠ¼ ëˆ„ë¥´ë©´ "íŒ”ë¡œìš°" -> "íŒ”ë¡œìž‰" ìœ¼ë¡œ í…ìŠ¤íŠ¸ ë³€ê²½) -->
+				<button type="button" class="button-follow"><span>íŒ”ë¡œìš°</span></button>
+				<!-- [Dev] ë‚´ ê²Œì‹œë¬¼ì¼ ê²½ìš° ë…¸ì¶œë˜ëŠ” ë²„íŠ¼ : ë‚´ ì •ë³´ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì—°ê²°  -->
+				<a href="javascript:void(0)" class="button-myinfo"><span>ë‚´ ì •ë³´ ìˆ˜ì •</span></a>
 				<div class="intro-area">
 					<div class="count-box">
-						<!-- [Dev] °Ô½Ã¹°ÀÇ ¼ö -->
-						<span class="post">°Ô½Ã¹° <span class="count">55</span>°³</span>
-						<!-- [Dev] "³ª¸¦" ÆÈ·Î¿ìÇÑ »ç¶÷ÀÇ ¼ö -->
-						<span class="follwer">ÆÈ·Î¿ö <span class="count">122</span>¸í</span>
-						<!-- [Dev] "³»°¡" ÆÈ·Î¿ìÇÑ »ç¶÷ÀÇ ¼ö -->
-						<span class="follwing">ÆÈ·ÎÀ× <span class="count">136</span>¸í</span>
+						<!-- [Dev] ê²Œì‹œë¬¼ì˜ ìˆ˜ -->
+						<span class="post">ê²Œì‹œë¬¼ <span class="count">55</span>ê°œ</span>
+						<!-- [Dev] "ë‚˜ë¥¼" íŒ”ë¡œìš°í•œ ì‚¬ëžŒì˜ ìˆ˜ -->
+						<span class="follwer">íŒ”ë¡œì›Œ <span class="count">122</span>ëª…</span>
+						<!-- [Dev] "ë‚´ê°€" íŒ”ë¡œìš°í•œ ì‚¬ëžŒì˜ ìˆ˜ -->
+						<span class="follwing">íŒ”ë¡œìž‰ <span class="count">136</span>ëª…</span>
 					</div>
 					<div class="intro-box">
-						<!-- [Dev] ¼Ò°³±Û : ±âº»À¸·Î´Â "¾È³çÇÏ¼¼¿ä." °ª ³ëÃâ / ³» Á¤º¸ ¼öÁ¤ ÆäÀÌÁö¿¡¼­ ¼öÁ¤ °¡´É
-							disabled : ºñÈ°¼ºÈ­ (¼öÁ¤ ºÒ°¡)
+						<!-- [Dev] ì†Œê°œê¸€ : ê¸°ë³¸ìœ¼ë¡œëŠ” "ì•ˆë…•í•˜ì„¸ìš”." ê°’ ë…¸ì¶œ / ë‚´ ì •ë³´ ìˆ˜ì • íŽ˜ì´ì§€ì—ì„œ ìˆ˜ì • ê°€ëŠ¥
+							disabled : ë¹„í™œì„±í™” (ìˆ˜ì • ë¶ˆê°€)
 						-->
-						<textarea name="myIntro" disabled>¾È³çÇÏ¼¼¿ä.</textarea>
+						<textarea name="myIntro" disabled>ì•ˆë…•í•˜ì„¸ìš”.</textarea>
 					</div>
 				</div>
 			</article>
@@ -167,21 +167,21 @@
 		<section class="main-section clearfix">
 			<div class="comm-tab-wrap">
 				<ul class="tab-menu">
-					<!-- li : class 'on' Ãß°¡/Á¦°Å / ºÏ¸¶Å©·Î ¸µÅ© ¿¬°á -->
-					<li class="tab-post on">°Ô½Ã¹°</li>
-					<li class="tab-bookmark"><a href="postViewBookmark.html">ºÏ¸¶Å©</a></li>
+					<!-- li : class 'on' ì¶”ê°€/ì œê±° / ë¶ë§ˆí¬ë¡œ ë§í¬ ì—°ê²° -->
+					<li class="tab-post on">ê²Œì‹œë¬¼</li>
+					<li class="tab-bookmark"><a href="/post/postViewBookmark">ë¶ë§ˆí¬</a></li>
 				</ul>
-				<!-- [Dev] °Ô½Ã¹° : ÃÖ½Å µî·ÏÇÑ °Ô½Ã¹°ºÎÅÍ ÇÑ ÆäÀÌÁö´ç 10°³¾¿ ³ëÃâ -->
+				<!-- [Dev] ê²Œì‹œë¬¼ : ìµœì‹  ë“±ë¡í•œ ê²Œì‹œë¬¼ë¶€í„° í•œ íŽ˜ì´ì§€ë‹¹ 10ê°œì”© ë…¸ì¶œ -->
 				<article class="post-list">
-					<h2 class="blind">°Ô½Ã¹° ¸®½ºÆ®</h2>
+					<h2 class="blind">ê²Œì‹œë¬¼ ë¦¬ìŠ¤íŠ¸</h2>
 					<ul class="list">
 						<li class="image-parent">
-							<!-- [Dev] Å¬¸¯ ½Ã °Ô½Ã¹° »ó¼¼ ÆË¾÷ -->
+							<!-- [Dev] í´ë¦­ ì‹œ ê²Œì‹œë¬¼ ìƒì„¸ íŒì—… -->
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_01.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_01.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
-									<!-- [Dev] ÁÁ¾Æ¿ä, ´ñ±Û °³¼ö °¡Á®¿È -->
+									<!-- [Dev] ì¢‹ì•„ìš”, ëŒ“ê¸€ ê°œìˆ˜ ê°€ì ¸ì˜´ -->
 										<div class="like">
 											<span class="count sp-button">87</span>
 										</div>
@@ -194,7 +194,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_02.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_02.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -209,7 +209,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_03.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_03.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -224,7 +224,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_04.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_04.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -239,7 +239,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_05.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_05.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -254,7 +254,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_06.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_06.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -269,7 +269,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_07.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_07.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -284,7 +284,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_08.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_08.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -299,7 +299,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_09.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_09.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -314,7 +314,7 @@
 						</li>
 						<li class="image-parent">
 							<button type="button" class="button-comm-popup-open" data-name="popup-postView">
-								<img src="<%= uiPath %>/img/photo/sample_b_10.jpg" alt="°Ô½Ã¹° ½æ³×ÀÏ" class="image-load">
+								<img src="<%= uiPath %>/img/photo/sample_b_10.jpg" alt="ê²Œì‹œë¬¼ ì¸ë„¤ì¼" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 										<div class="like">
@@ -328,19 +328,19 @@
 							</button>
 						</li>
 					</ul>
-					<!-- [Dev] °Ô½Ã¹° 10°³ ÀÌ»óÀÏ °æ¿ì ÆäÀÌÂ¡ Ã³¸® -->
+					<!-- [Dev] ê²Œì‹œë¬¼ 10ê°œ ì´ìƒì¼ ê²½ìš° íŽ˜ì´ì§• ì²˜ë¦¬ -->
 					<div class="pagination">
 						<div class="paging clearfix">
-							<button type="button" class="button-paging-prev sp-button"><span class="blind">ÀÌÀü ÆäÀÌÁö</span></button>
+							<button type="button" class="button-paging-prev sp-button"><span class="blind">ì´ì „ íŽ˜ì´ì§€</span></button>
 							<ul class="page-list">
-								<!-- [Dev] ÇöÀç ÆäÀÌÁö¿¡ class 'on' Ãß°¡ -->
+								<!-- [Dev] í˜„ìž¬ íŽ˜ì´ì§€ì— class 'on' ì¶”ê°€ -->
 								<li class="on"><a href="javascript:void(0)">1</a></li>
 								<li><a href="javascript:void(0)">2</a></li>
 								<li><a href="javascript:void(0)">3</a></li>
 								<li><a href="javascript:void(0)">4</a></li>
 								<li><a href="javascript:void(0)">5</a></li>
 							</ul>
-							<button type="button" class="button-paging-next sp-button"><span class="blind">´ÙÀ½ ÆäÀÌÁö</span></button>
+							<button type="button" class="button-paging-next sp-button"><span class="blind">ë‹¤ìŒ íŽ˜ì´ì§€</span></button>
 						</div>
 					</div>
 				</article>
@@ -351,284 +351,284 @@
 	<footer class="inner">Copyright &copy; 2021 moment</footer>
 </div><!-- // footer-wrap -->
 </div>
-<!-- ÆË¾÷ - ¸ÞÀÎ navi 1. Áñ°ÜÃ£´Â Ä£±¸ : ÀüÃ¼ Ä£±¸ ¸ñ·Ï Áß Áñ°ÜÃ£´Â Ä£±¸¸¦ »óÀ§¿¡ ³ëÃâ -->
+<!-- íŒì—… - ë©”ì¸ navi 1. ì¦ê²¨ì°¾ëŠ” ì¹œêµ¬ : ì „ì²´ ì¹œêµ¬ ëª©ë¡ ì¤‘ ì¦ê²¨ì°¾ëŠ” ì¹œêµ¬ë¥¼ ìƒìœ„ì— ë…¸ì¶œ -->
 <div class="comm-popup" id="popup-naviBookmark">
 	<div class="popup-inner">
-		<button type="button" class="sp-button button-comm-popup-close"><span class="blind">Áñ°ÜÃ£´Â Ä£±¸ ÆË¾÷ ´Ý±â</span></button>
-		<h3>Ä£±¸¸ñ·Ï ÀüÃ¼ º¸±â</h3>
+		<button type="button" class="sp-button button-comm-popup-close"><span class="blind">ì¦ê²¨ì°¾ëŠ” ì¹œêµ¬ íŒì—… ë‹«ê¸°</span></button>
+		<h3>ì¹œêµ¬ëª©ë¡ ì „ì²´ ë³´ê¸°</h3>
 		<ul class="list-inner comm-list">
 			<li>
-				<!-- [Dev] ÆäÀÌÁö ¿¬°á : È¸¿ø »ó¼¼ º¸±â -->
+				<!-- [Dev] íŽ˜ì´ì§€ ì—°ê²° : íšŒì› ìƒì„¸ ë³´ê¸° -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
-				<!-- [Dev] Áñ°ÜÃ£±â ±â´É ±¸Çö -->
-				<button type="button" class="button-bookmark sp-button button-toggle on"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<!-- [Dev] ì¦ê²¨ì°¾ê¸° ê¸°ëŠ¥ êµ¬í˜„ -->
+				<button type="button" class="button-bookmark sp-button button-toggle on"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li> 
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">kim_hw</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">bubblyJang</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">bubblyJang</span>
 				</a>
-				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">Áñ°ÜÃ£±â</span></button>
+				<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
 			</li>
 		</ul>
 	</div>
 </div>
 
-<!-- ÆË¾÷ - ¸ÞÀÎ navi 2. ÃßÃµÄ£±¸ ¸ñ·Ï : ÃßÃµÄ£±¸ ·£´ýÀ¸·Î 20¸í ³ëÃâ -->
+<!-- íŒì—… - ë©”ì¸ navi 2. ì¶”ì²œì¹œêµ¬ ëª©ë¡ : ì¶”ì²œì¹œêµ¬ ëžœë¤ìœ¼ë¡œ 20ëª… ë…¸ì¶œ -->
 <div class="comm-popup" id="popup-naviRecommend">
 	<div class="popup-inner">
-		<button type="button" class="sp-button button-comm-popup-close"><span class="blind">ÃßÃµÄ£±¸ ¸ñ·Ï ÆË¾÷ ´Ý±â</span></button>
-		<h3>ÃßÃµÄ£±¸ ÀüÃ¼ º¸±â</h3>
+		<button type="button" class="sp-button button-comm-popup-close"><span class="blind">ì¶”ì²œì¹œêµ¬ ëª©ë¡ íŒì—… ë‹«ê¸°</span></button>
+		<h3>ì¶”ì²œì¹œêµ¬ ì „ì²´ ë³´ê¸°</h3>
 		<ul class="list-inner comm-list">
 			<li>
-				<!-- [Dev] ÆäÀÌÁö ¿¬°á : È¸¿ø »ó¼¼ º¸±â -->
+				<!-- [Dev] íŽ˜ì´ì§€ ì—°ê²° : íšŒì› ìƒì„¸ ë³´ê¸° -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
-				<!-- [Dev] ÆÈ·Î¿ì ±â´É ±¸Çö -->
-				<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+				<!-- [Dev] íŒ”ë¡œìš° ê¸°ëŠ¥ êµ¬í˜„ -->
+				<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">kim_hw</span>
 				</a>
-				<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+				<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
-				<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+				<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 			</li>
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load">
+						<img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
-				<button type="button" class="button-follow">ÆÈ·Î¿ì</button>
+				<button type="button" class="button-follow">íŒ”ë¡œìš°</button>
 			</li>
 		</ul>
 	</div>
 </div>
 
-<!-- ÆË¾÷ - ¸ÞÀÎ navi 3. °øÁö»çÇ× : °øÁö»çÇ×¿¡ µî·ÏµÈ ÀüÃ¼ ¸ñ·ÏÀ» ÃÖ½Å¼øÀ¸·Î ³ëÃâ -->
+<!-- íŒì—… - ë©”ì¸ navi 3. ê³µì§€ì‚¬í•­ : ê³µì§€ì‚¬í•­ì— ë“±ë¡ëœ ì „ì²´ ëª©ë¡ì„ ìµœì‹ ìˆœìœ¼ë¡œ ë…¸ì¶œ -->
 <div class="comm-popup" id="popup-naviNotice">
 	<div class="popup-inner">
-		<button type="button" class="sp-button button-comm-popup-close"><span class="blind">°øÁö»çÇ× ÆË¾÷ ´Ý±â</span></button>
-		<h3 class="bg-none">°øÁö»çÇ× ÀüÃ¼ º¸±â</h3>
+		<button type="button" class="sp-button button-comm-popup-close"><span class="blind">ê³µì§€ì‚¬í•­ íŒì—… ë‹«ê¸°</span></button>
+		<h3 class="bg-none">ê³µì§€ì‚¬í•­ ì „ì²´ ë³´ê¸°</h3>
 		<div class="content-inner comm-toggle-wrap">
 			<dl class="toggle-area">
 				<dt class="button-comm-toggle">
-					<span class="title">±ÝÀÏ »çÀÌÆ® Á¡°Ë ¿¹Á¤</span><span class="date">2021.07.07</span>
+					<span class="title">ê¸ˆì¼ ì‚¬ì´íŠ¸ ì ê²€ ì˜ˆì •</span><span class="date">2021.07.07</span>
 				</dt>
 				<dd class="toggle-content">
-					±ÝÀÏ 14:00 - 17:00 ±îÁö 3½Ã°£ »çÀÌÆ® Á¡°Ë ¿¹Á¤ÀÔ´Ï´Ù.<br>
-					»çÀÌÆ® ÀÌ¿ë¿¡ Âü°í ºÎÅ¹µå¸³´Ï´Ù.
+					ê¸ˆì¼ 14:00 - 17:00 ê¹Œì§€ 3ì‹œê°„ ì‚¬ì´íŠ¸ ì ê²€ ì˜ˆì •ìž…ë‹ˆë‹¤.<br>
+					ì‚¬ì´íŠ¸ ì´ìš©ì— ì°¸ê³  ë¶€íƒë“œë¦½ë‹ˆë‹¤.
 				</dd>
 			</dl>
 			<dl class="toggle-area">
 				<dt class="button-comm-toggle">
-					<span class="title">°Ô½Ã¹° µî·Ï Á¤Ã¥ º¯°æ ¾È³»µå¸³´Ï´Ù.</span><span class="date">2021.07.03</span>
+					<span class="title">ê²Œì‹œë¬¼ ë“±ë¡ ì •ì±… ë³€ê²½ ì•ˆë‚´ë“œë¦½ë‹ˆë‹¤.</span><span class="date">2021.07.03</span>
 				</dt>
 				<dd class="toggle-content">
-					³»¿ëÀÔ´Ï´Ù.
+					ë‚´ìš©ìž…ë‹ˆë‹¤.
 				</dd>
 			</dl>
 			<dl class="toggle-area">
 				<dt class="button-comm-toggle">
-					<span class="title">IE ºê¶ó¿ìÀú Áö¿øÀÌ Á¾·áµË´Ï´Ù.</span><span class="date">2021.06.09</span>
+					<span class="title">IE ë¸Œë¼ìš°ì € ì§€ì›ì´ ì¢…ë£Œë©ë‹ˆë‹¤.</span><span class="date">2021.06.09</span>
 				</dt>
 				<dd class="toggle-content">
-					³»¿ëÀÔ´Ï´Ù.
+					ë‚´ìš©ìž…ë‹ˆë‹¤.
 				</dd>
 			</dl>
 		</div>
-		<!-- [Dev] °øÁö»çÇ× °Ô½Ã±Û 3°³ ÀÌ»óÀÏ °æ¿ì ÆäÀÌÂ¡ Ã³¸® -->
+		<!-- [Dev] ê³µì§€ì‚¬í•­ ê²Œì‹œê¸€ 3ê°œ ì´ìƒì¼ ê²½ìš° íŽ˜ì´ì§• ì²˜ë¦¬ -->
 		<div class="pagination">
 			<div class="paging clearfix">
-				<button type="button" class="button-paging-prev sp-button"><span class="blind">ÀÌÀü ÆäÀÌÁö</span></button>
+				<button type="button" class="button-paging-prev sp-button"><span class="blind">ì´ì „ íŽ˜ì´ì§€</span></button>
 				<ul class="page-list">
-					<!-- [Dev] ÇöÀç ÆäÀÌÁö¿¡ class 'on' Ãß°¡ -->
+					<!-- [Dev] í˜„ìž¬ íŽ˜ì´ì§€ì— class 'on' ì¶”ê°€ -->
 					<li class="on"><a href="javascript:void(0)">1</a></li>
 					<li><a href="javascript:void(0)">2</a></li>
 					<li><a href="javascript:void(0)">3</a></li>
 					<li><a href="javascript:void(0)">4</a></li>
 					<li><a href="javascript:void(0)">5</a></li>
 				</ul>
-				<button type="button" class="button-paging-next sp-button"><span class="blind">´ÙÀ½ ÆäÀÌÁö</span></button>
+				<button type="button" class="button-paging-next sp-button"><span class="blind">ë‹¤ìŒ íŽ˜ì´ì§€</span></button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- ÆË¾÷ - °Ô½Ã¹° »ó¼¼ : ¸®½ºÆ®¿¡¼­ Å¬¸¯ÇÑ °Ô½Ã¹°ÀÇ Á¤º¸¸¦ º¸¿©ÁÜ -->
+<!-- íŒì—… - ê²Œì‹œë¬¼ ìƒì„¸ : ë¦¬ìŠ¤íŠ¸ì—ì„œ í´ë¦­í•œ ê²Œì‹œë¬¼ì˜ ì •ë³´ë¥¼ ë³´ì—¬ì¤Œ -->
 <div class="comm-popup" id="popup-postView">
 	<div class="popup-inner">
-		<button type="button" class="button-comm-popup-close"><span class="blind">°Ô½Ã¹° »ó¼¼ ÆË¾÷ ´Ý±â</span></button>
-		<h3 class="blind">°Ô½Ã¹° »ó¼¼</h3>
+		<button type="button" class="button-comm-popup-close"><span class="blind">ê²Œì‹œë¬¼ ìƒì„¸ íŒì—… ë‹«ê¸°</span></button>
+		<h3 class="blind">ê²Œì‹œë¬¼ ìƒì„¸</h3>
 		<div class="post-wrap comm-post parent-toggle">
 			<div class="head-area clearfix">
 				<div class="profile">
-					<!-- [Dev] Default ÇÁ·ÎÇÊ ÀÌ¹ÌÁö °æ·Î : ./img/profile/default.png (´Ù¸¥ ÀÌ¹ÌÁö´Â jpg) -->
-					<span class="profile-img image-parent"><img src="<%= uiPath %>/img/profile/default.png" alt="ÇÁ·ÎÇÊ ÀÌ¹ÌÁö" class="image-load"></span>
+					<!-- [Dev] Default í”„ë¡œí•„ ì´ë¯¸ì§€ ê²½ë¡œ : ./img/profile/default.png (ë‹¤ë¥¸ ì´ë¯¸ì§€ëŠ” jpg) -->
+					<span class="profile-img image-parent"><img src="<%= uiPath %>/img/profile/default.png" alt="í”„ë¡œí•„ ì´ë¯¸ì§€" class="image-load"></span>
 					<span class="profile-id">yulyul2</span>
 				</div>
 				<div class="button">
-					<!-- [Dev] °Ô½Ã¹° Áñ°ÜÃ£±â ±â´É ±¸Çö : È¸¿ø »ó¼¼ ÆäÀÌÁö¿¡¼­ ³ëÃâ -->
-					<button type="button" class="button-bookmark sp-button button-toggle on"><span class="blind">Áñ°ÜÃ£±â</span></button>
-					<!-- [Dev] ·¹ÀÌ¾î È£Ãâ : °Ô½Ã¹° ¸Þ´º -->
-					<button type="button" class="button-menu sp-button button-parent-toggle"><span class="blind">°Ô½Ã¹° ¸Þ´º</span></button>
+					<!-- [Dev] ê²Œì‹œë¬¼ ì¦ê²¨ì°¾ê¸° ê¸°ëŠ¥ êµ¬í˜„ : íšŒì› ìƒì„¸ íŽ˜ì´ì§€ì—ì„œ ë…¸ì¶œ -->
+					<button type="button" class="button-bookmark sp-button button-toggle on"><span class="blind">ì¦ê²¨ì°¾ê¸°</span></button>
+					<!-- [Dev] ë ˆì´ì–´ í˜¸ì¶œ : ê²Œì‹œë¬¼ ë©”ë‰´ -->
+					<button type="button" class="button-menu sp-button button-parent-toggle"><span class="blind">ê²Œì‹œë¬¼ ë©”ë‰´</span></button>
 				</div>
-				<!-- ·¹ÀÌ¾î : °Ô½Ã¹° ¸Þ´º 1 -->
+				<!-- ë ˆì´ì–´ : ê²Œì‹œë¬¼ ë©”ë‰´ 1 -->
 				<div class="layer-menu comm-layer simple">
-					<h3 class="blind">°Ô½Ã¹° ¸Þ´º ·¹ÀÌ¾î</h3>
+					<h3 class="blind">ê²Œì‹œë¬¼ ë©”ë‰´ ë ˆì´ì–´</h3>
 					<div class="layer-inner">
 						<ul class="list">
-							<!-- [Dev] ÆäÀÌÁö ¿¬°á : °Ô½Ã¹° ¼öÁ¤ (º»ÀÎ or °ü¸®ÀÚ °èÁ¤¿¡¼­¸¸ ³ëÃâ) -->
-							<li><a href="javascript:void(0)" class="button-edit">¼öÁ¤ÇÏ±â</a></li>
-							<!-- [Dev] °Ô½Ã¹° »èÁ¦ ±â´É ±¸Çö (º»ÀÎ or °ü¸®ÀÚ °èÁ¤¿¡¼­¸¸ ³ëÃâ) -->
-							<li><button type="button" class="button-delete">»èÁ¦ÇÏ±â</button></li>
-							<!-- [Dev] °Ô½Ã¹° °øÀ¯ ±â´É ±¸Çö -->
-							<li><button type="button" class="button-share">°øÀ¯ÇÏ±â</button></li>
+							<!-- [Dev] íŽ˜ì´ì§€ ì—°ê²° : ê²Œì‹œë¬¼ ìˆ˜ì • (ë³¸ì¸ or ê´€ë¦¬ìž ê³„ì •ì—ì„œë§Œ ë…¸ì¶œ) -->
+							<li><a href="javascript:void(0)" class="button-edit">ìˆ˜ì •í•˜ê¸°</a></li>
+							<!-- [Dev] ê²Œì‹œë¬¼ ì‚­ì œ ê¸°ëŠ¥ êµ¬í˜„ (ë³¸ì¸ or ê´€ë¦¬ìž ê³„ì •ì—ì„œë§Œ ë…¸ì¶œ) -->
+							<li><button type="button" class="button-delete">ì‚­ì œí•˜ê¸°</button></li>
+							<!-- [Dev] ê²Œì‹œë¬¼ ê³µìœ  ê¸°ëŠ¥ êµ¬í˜„ -->
+							<li><button type="button" class="button-share">ê³µìœ í•˜ê¸°</button></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="photo-area image-parent">
-				<!-- [Dev] °Ô½Ã¹° »çÁø °æ·Î : ./img/photo/sample_s_01.jpg -->
-				<img src="<%= uiPath %>/img/photo/sample_b_01.jpg" alt="°Ô½Ã¹° ÀÌ¹ÌÁö" class="image-load">
+				<!-- [Dev] ê²Œì‹œë¬¼ ì‚¬ì§„ ê²½ë¡œ : ./img/photo/sample_s_01.jpg -->
+				<img src="<%= uiPath %>/img/photo/sample_b_01.jpg" alt="ê²Œì‹œë¬¼ ì´ë¯¸ì§€" class="image-load">
 			</div>
 			<div class="info-area">
 				<div class="post-info">
-					<!-- [Dev] ÁÁ¾Æ¿ä ±â´É ±¸Çö, °³¼ö Ä«¿îÆ® -->
+					<!-- [Dev] ì¢‹ì•„ìš” ê¸°ëŠ¥ êµ¬í˜„, ê°œìˆ˜ ì¹´ìš´íŠ¸ -->
 					<button type="button" class="button-like button-toggle on">
-						<span class="icon sp-button"><span class="blind">ÁÁ¾Æ¿ä</span></span>
-						<span class="text">ÁÁ¾Æ¿ä <span class="count">99</span>°³</span>
+						<span class="icon sp-button"><span class="blind">ì¢‹ì•„ìš”</span></span>
+						<span class="text">ì¢‹ì•„ìš” <span class="count">99</span>ê°œ</span>
 					</button>
-					<!-- [Dev] ´ñ±Û °³¼ö Ä«¿îÆ® -->
+					<!-- [Dev] ëŒ“ê¸€ ê°œìˆ˜ ì¹´ìš´íŠ¸ -->
 					<button type="button" class="button-comment">
-						<span class="icon sp-button"><span class="blind">´ñ±Û</span></span>
-						<span class="text">´ñ±Û  <span class="count">8</span>°³</span>
+						<span class="icon sp-button"><span class="blind">ëŒ“ê¸€</span></span>
+						<span class="text">ëŒ“ê¸€  <span class="count">8</span>ê°œ</span>
 					</button>
 				</div>
 				<div class="post-content">
 					<span class="id">yulyul2</span>
-					<p class="content">¿©Çà °¡°í ½ÍÀº ³¯¾¾</p>
+					<p class="content">ì—¬í–‰ ê°€ê³  ì‹¶ì€ ë‚ ì”¨</p>
 				</div>
 				<div class="post-comment">
-					<!-- [Dev] ´ñ±Û ÀüÃ¼ º¸¿©ÁÖ±â -->
+					<!-- [Dev] ëŒ“ê¸€ ì „ì²´ ë³´ì—¬ì£¼ê¸° -->
 					<ul class="comment-list short-bar">
 						<li>
 							<span class="id">bubblyJang</span>
-							<span class="comment">¿©Çà °í°í??</span>
+							<span class="comment">ì—¬í–‰ ê³ ê³ ??</span>
 						</li>
 						<li>
 							<span class="id">happyhappy</span>
-							<span class="comment">¿À´Ã ³¯¾¾ ÁÁ¾Æ¿ä~</span>
+							<span class="comment">ì˜¤ëŠ˜ ë‚ ì”¨ ì¢‹ì•„ìš”~</span>
 						</li>
 						<li>
 							<span class="id">hihi_o_o</span>
-							<span class="comment">¿ì¿Õ</span>
+							<span class="comment">ìš°ì™•</span>
 						</li>
 						<li>
 							<span class="id">abc_jjj</span>
-							<span class="comment">ÀÌÁ¦ ÁøÂ¥ ¿©¸§ÀÌ¾ß ¤Ð¤Ð</span>
+							<span class="comment">ì´ì œ ì§„ì§œ ì—¬ë¦„ì´ì•¼ ã… ã… </span>
 						</li>
 						<li>
 							<span class="id">qwer1234</span>
-							<span class="comment">³î·¯°¥±î~~</span>
+							<span class="comment">ë†€ëŸ¬ê°ˆê¹Œ~~</span>
 						</li>
 						<li>
 							<span class="id">pd_aaa</span>
-							<span class="comment">´õ¿ö´õ¿ö</span>
+							<span class="comment">ë”ì›Œë”ì›Œ</span>
 						</li>
 						<li>
 							<span class="id">hello</span>
-							<span class="comment">¾È³ç¾È³ç</span>
+							<span class="comment">ì•ˆë…•ì•ˆë…•</span>
 						</li>
 						<li>
 							<span class="id">Jang_yr</span>
-							<span class="comment">ÁøÂ¥ ³î·¯°¡°í ½Í´Ù!!</span>
+							<span class="comment">ì§„ì§œ ë†€ëŸ¬ê°€ê³  ì‹¶ë‹¤!!</span>
 						</li>
 					</ul>
 					<div class="comment-write">
 						<form action="javascript:void(0)" metohd="post" name="commentForm">
 							<fieldset>
-								<legend class="blind">´ñ±Û ÀÛ¼º</legend>
-								<input type="text" placeholder="´ñ±Û ÀÛ¼º" class="input-comment">
-								<button type="submit" class="button-comment sp-button"><span class="blind">´ñ±Û ÀÛ¼ºÇÏ±â</span></button>
+								<legend class="blind">ëŒ“ê¸€ ìž‘ì„±</legend>
+								<input type="text" placeholder="ëŒ“ê¸€ ìž‘ì„±" class="input-comment">
+								<button type="submit" class="button-comment sp-button"><span class="blind">ëŒ“ê¸€ ìž‘ì„±í•˜ê¸°</span></button>
 							</fieldset>
 						</form>
 					</div>
