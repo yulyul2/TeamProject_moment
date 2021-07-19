@@ -9,7 +9,7 @@
   			select NVL(Max(ref),0) + 1
   			from post
   		</selectKey>
-  		insert into POST(
+  		insert into post(
   		post_no,
   		post_id,
   		post_content,
@@ -24,7 +24,7 @@
   		re_level,
   		like_count)
   		
-  		values(
+  		 values(
   		post_seq.nextval,
   		#{post_id},
   		#{post_content},
@@ -33,17 +33,17 @@
   		null,
   		null,
   		null,
-  		sysdate,
+  		SYSDATE,
   		#{ref},
   		0,
   		0,
   		0
   		)
   	</insert>
-  	
+  	<!-- 
   	<select id="readpost">
   		select *
   		from post
   		where 
-  	</select>
+  	</select> -->
 </mapper>

@@ -56,6 +56,7 @@ public class postController {
 		return "post/main";
 	}
 	
+	
 	@GetMapping("/home")
 	public String home()throws Exception {
 		return "post/home";
@@ -66,16 +67,16 @@ public class postController {
 		return "post/postWrite";
 	}
 	
-	@RequestMapping(value="/postWritePro", method = RequestMethod.POST)
-	public String writepro(postVO vo, MultipartFile file)throws Exception{
-		
+	@RequestMapping(value="/postWritePro", method=RequestMethod.POST)
+	public String postWritePro(postVO vo, MultipartFile file)throws Exception{
+		System.out.println("여기까지1");
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";
-		
+		System.out.println("여기까지2");
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 		String fileName = null;
 
 		if(file != null) {
-		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+		 fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
 		} else {
 		 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
 		}
@@ -83,10 +84,11 @@ public class postController {
 		vo.setPost_photo2(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 		vo.setPost_photo1(File.separator + "imgUpload" + ymdPath + File.separator + "s_" + fileName);
 		
+		
 		service.postWritePro(vo);
 		
 		
-		return "redirect:/board/main";
+		return "/post/main";
 		
 	}
 	

@@ -50,7 +50,7 @@
 						</form>
 					</article>
 					<article class="form-area mt-45">
-						<a href="${pageContext.request.contextPath}" class="button-back">돌아가기</a>
+						<a href="${pageContext.request.contextPath}/" class="button-back">돌아가기</a>
 						<form action="${pageContext.request.contextPath}/user/join" method="post" name="joinForm" onsubmit="return joinFormCheck()">
 							<fieldset>
 								<legend class="blind">회원가입</legend>
