@@ -33,7 +33,7 @@ create table post(
     re_level number not null,
     like_count number not null
 );
-select * from sns_post;
+select * from post;
 
 create SEQUENCE post_seq
     start with 1

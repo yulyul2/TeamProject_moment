@@ -15,6 +15,6 @@ public class postDAOImpl implements postDAO {
 	
 	@Override
 	public void postWritePro(postVO vo) {
-		sqlSession.insert("postMapper.writePro", vo);
+		sqlSession.insert("postMapper.postWritePro", vo);
 	}
 }

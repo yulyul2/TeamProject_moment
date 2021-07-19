@@ -45,7 +45,7 @@
 							<div class="photo table-parent image-parent">
 								<!-- [Dev] button-add : 사진 등록 후에 삭제 -->
 								<div class="button-add table-child">
-									<label for="photoUpload" class="photo-upload">
+									<label for="post_photo2" class="photo-upload">
 										<span class="icon sp-button"><span class="blind">사진추가</span></span>
 										<span class="text">사진추가1</span>
 									</label>
