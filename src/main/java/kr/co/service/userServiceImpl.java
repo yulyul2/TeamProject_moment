@@ -17,7 +17,6 @@ public class userServiceImpl implements userService{
 	@Override
 	public void userJoin(userVO uservo) throws Exception {
 		dao.userJoin(uservo);
-		
 	}
 	
 	@Override
@@ -50,6 +49,7 @@ public class userServiceImpl implements userService{
 		dao.userDelete(vo);
 	}
 
+	//회원정보 불러오기
 	@Override
 	public userVO userInfo(userVO vo) throws Exception {
 		System.out.println(vo.getmember_id());

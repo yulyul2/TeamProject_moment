@@ -22,7 +22,7 @@ public interface userDAO {
 	//회원탈퇴
 	public void userDelete(userVO vo)throws Exception;
 	
-	//유저 정보 찾기
+	//회원정보 불러오기
 	public userVO userInfo(userVO vo)throws Exception;
 	
 }

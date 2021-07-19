@@ -10,6 +10,8 @@
 	//세션 정보가 없으면 로그인 페이지로 리다이렉트
 	if(currentSession == null)
 		response.sendRedirect("login");
+	
+	String name = (String)request.getAttribute("name");
 %>
 <!DOCTYPE html>
 <html >
@@ -59,8 +61,8 @@
 					</a>
 				</div>
 				<div class="info-area">
-					<p class="my-id"><a href="/post/postViewList/"><%=id %></a></p>
-					<p class="my-name">장유리</p>
+					<p class="my-id"><a href="/post/postViewList?id=<%=id%>"><%=id %></a></p>
+					<p class="my-name"><%=name %></p>
 				</div>
 				<!-- [Dev] 페이지 연결 : 게시물 작성 -->
 				<a href="/post/postWrite" class="button-post-write"><span class="sp-button">게시물 작성</span></a>
