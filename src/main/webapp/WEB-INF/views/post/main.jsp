@@ -59,7 +59,7 @@
 					</a>
 				</div>
 				<div class="info-area">
-					<p class="my-id"><a href="javascript:void(0)"><%=id %></a></p>
+					<p class="my-id"><a href="/post/postViewList/"><%=id %></a></p>
 					<p class="my-name">장유리</p>
 				</div>
 				<!-- [Dev] 페이지 연결 : 게시물 작성 -->
