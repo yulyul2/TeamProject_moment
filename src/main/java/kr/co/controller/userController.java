@@ -3,6 +3,8 @@ package kr.co.controller;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -25,7 +27,7 @@ public class userController {
 	userService service;
 	
 	//로그인 페이지 불러오기
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public String getlogin() {
 	   return "user/login";
     }
@@ -40,9 +42,16 @@ public class userController {
 			if (vo != null) {
 				if (vo.getmember_pw().equals(member_pw)) {
 					session.setAttribute("loginUser", uservo);
+					
+					/* 회원정보 불러오기 중
+					userVO id1 = (userVO)session.getAttribute("loginUser");
+					String id = id1.getmember_id();
+					vo.setmember_id(id);*/
+					
 					//로그인 성공
 		            model.addAttribute("message","로그인에 성공했습니다.");
 		            model.addAttribute("url","/post/main");
+		            
 					return ("messageCheck");
 				} else {
 					//로그인 실패 (비밀번호 틀렸을 경우) : 비밀번호 틀린 경우와 가입된 정보 없는 경우 문구 동일하게 해야 함
@@ -90,7 +99,7 @@ public class userController {
 		if(mVO != null) {
 			reat.addFlashAttribute("Id",mVO.getmember_id());
 		}
-		return "redirect:/user/searchIdPw";
+		return "/user/searchFail";
 	}
 		
 	//PW찾기
@@ -100,7 +109,7 @@ public class userController {
 		if(mmVO != null) {
 			reat.addFlashAttribute("Pw",mmVO.getmember_pw());
 		}
-		return "redirect:/user/searchIdPw";
+		return "/user/searchFail";
 	}
 	
 	//회원정보수정 get

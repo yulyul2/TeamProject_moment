@@ -57,4 +57,11 @@ public class userDAOImpl implements userDAO {
 		//  #{userId}, #{userPass}에 파라미터값이 매칭이 되겠지요.
 		sqlSession.delete("userMapper.userDelete", vo);
 	}
+
+	//회원정보 불러오기
+	@Override
+	public userVO userInfo(userVO vo) throws Exception {
+		
+		return sqlSession.selectOne("userMapper.userInfo", vo);
+	}
 }

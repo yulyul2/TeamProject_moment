@@ -48,16 +48,10 @@
 		where member_id = #{member_id}
 		and member_email = #{member_email}
 	</select>
-
-	<!-- 
-	<select id="loginPro">
-		select member_id, member_pw
-		from sns_user
-		where member_id = #{member_id}
-	</select> -->
 	
-	<select id="memberinfo" resultType="kr.co.vo.userVO">
-		select member_no, member_id, member_pw, member_name, member_tel, member_email, member_image, member_info
+	<!-- 회원정보 불러오기 회원번호, 아이디, 이름, 전화번호, 이메일, 사진, 정보까지. -->
+	<select id="userInfo" resultType="kr.co.vo.userVO">
+		select member_no, member_id, member_name, member_tel, member_email, member_image, member_info
 		from member
 		where member_id = #{member_id}
 		

@@ -21,4 +21,7 @@ public interface userService {
 	
 	//회원탈퇴
 	public void userDelete(userVO vo) throws Exception;
+	
+	//유저정보 불러오기
+	public userVO userInfo(userVO vo) throws Exception;
 }
