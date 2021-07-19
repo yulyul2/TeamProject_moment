@@ -48,6 +48,7 @@
 		where member_id = #{member_id}
 		and member_email = #{member_email}
 	</select>
+
 	<!-- 
 	<select id="loginPro">
 		select member_id, member_pw
@@ -61,5 +62,25 @@
 		where member_id = #{member_id}
 		
 	</select>
+
+
+	
+	<!-- 회원정보수정 -->
+	<update id="userUpdate" parameterType="kr.co.vo.userVO">
+		update member 
+		set 
+			member_name = #{member_name},
+			member_pw = #{member_pw},
+			member_tel = #{member_tel},
+			member_email = #{member_email},
+			member_info = #{member_info}			
+		where member_id = #{member_id, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="userDelete" parameterType="kr.co.vo.userVO">
+		delete member
+		where member_id = #{member_id, jdbcType=VARCHAR}
+	</delete>
 
  </mapper>

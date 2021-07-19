@@ -6,10 +6,10 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -17,7 +17,7 @@ import kr.co.service.userService;
 import kr.co.vo.userVO;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/user/*")
 public class userController {
 	private static final Logger logger = LoggerFactory.getLogger(postController.class);	
 	
@@ -31,27 +31,33 @@ public class userController {
     }
 	
 	@PostMapping("/loginPro")							//@RequestParam 은 login.jsp 에서 member_pw값을 가져옴.
-	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("member_pw") String member_pw) {
+	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("member_pw") String member_pw, Model model) {
 		userVO vo = service.loginPro(uservo);
 		
 		HttpSession session = req.getSession();
 		
 		try {
 			if (vo != null) {
-				String id = vo.getmember_id();
-				String pw = vo.getmember_pw();
-
-				if (pw.equals(member_pw)) {
-					session.setAttribute("id", id);
-					session.setAttribute("pw", pw);
-					return ("post/main");
+				if (vo.getmember_pw().equals(member_pw)) {
+					session.setAttribute("loginUser", uservo);
+					//로그인 성공
+		            model.addAttribute("message","로그인에 성공했습니다.");
+		            model.addAttribute("url","/post/main");
+					return ("messageCheck");
 				} else {
-					return "user/login_fail";
+					//로그인 실패 (비밀번호 틀렸을 경우) : 비밀번호 틀린 경우와 가입된 정보 없는 경우 문구 동일하게 해야 함
+		            model.addAttribute("message","가입한 정보가 없거나 비밀번호가 일치하지 않습니다.");
+		            model.addAttribute("url","/user/login");
+					return ("messageCheck");
 				}
 			}else {
-				return "user/login_fail";
+				//로그인 실패 (가입된 정보 없는 경우) : 비밀번호 틀린 경우와 가입된 정보 없는 경우 문구 동일하게 해야 함
+	            model.addAttribute("message","가입한 정보가 없거나 비밀번호가 일치하지 않습니다.");
+	            model.addAttribute("url","/user/login");
+				return ("messageCheck");
 			}
 		} catch (NullPointerException e) {
+			e.printStackTrace();
 			return "user/login";
 		}
 	}
@@ -105,14 +111,32 @@ public class userController {
 	}
 	
 	//회원정보수정 post
-	@PostMapping("/myInfo")
-	public String postuserUpdate(HttpSession session, userVO vo) throws Exception {
+	@PostMapping("/myInfoPro")
+	public String postuserUpdate(HttpSession session, userVO vo, @RequestParam("member_pw") String member_pw, Model model) throws Exception {
 		logger.info("post userUpdate");
-	 
-		service.userUpdate(vo);
-		session.invalidate();
-	 
-		return "user/myInfo";
+		
+		userVO currentUser = (userVO) session.getAttribute("loginUser");
+	
+		if(!currentUser.getmember_id().equals("")) {
+			if(currentUser.getmember_pw().equals(member_pw)) {
+				vo.setmember_id(currentUser.getmember_id());
+				service.userUpdate(vo);
+				//회원정보수정 성공
+				model.addAttribute("message","회원정보 수정이 완료되었습니다.");
+	            model.addAttribute("url","/post/main");
+				return ("messageCheck");
+			}else{
+				//회원정보수정 실패 (비밀번호 틀림)
+	            model.addAttribute("message","비밀번호를 다시 확인해주세요.");
+	            model.addAttribute("url","/user/myInfo");
+				return ("messageCheck");
+			}
+		}else{
+			//회원정보수정 실패 (세션에 저장된 정보 없음)
+            model.addAttribute("message","회원정보 수정에 실패했습니다. 다시 로그인 해주세요.");
+            model.addAttribute("url","/user/login");
+			return ("messageCheck");
+		}
 	}
 	
 	//회원탈퇴 get
@@ -124,22 +148,36 @@ public class userController {
 	
 	//회원탈퇴 post
 	@PostMapping("/leave")
-	public String postuserDelete(userVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
+	public String postuserDelete(userVO vo, HttpSession session, RedirectAttributes rttr, Model model) throws Exception{
 		logger.info("post userDelete");
 		
-		// 세션에 있는 member를 가져와 member변수에 넣어줍니다.
-		userVO member = (userVO) session.getAttribute("member");
-		// 세션에있는 비밀번호
-		Class<? extends userVO> sessionPass = member.getClass();
-		// vo로 들어오는 비밀번호
-		Class<? extends userVO> voPass = vo.getClass();
-		
-		if(!(sessionPass.equals(voPass))) {
-			rttr.addFlashAttribute("msg", false);
-			return "redirect:/user/leave";
+		// 세션에 있는 loginUser 를 가져와 session 변수에 넣어줍니다.
+		userVO currentUser = (userVO) session.getAttribute("loginUser");
+		if(currentUser != null) {
+			// 세션에있는 비밀번호
+			Class<? extends userVO> sessionPass = currentUser.getClass();
+			// vo로 들어오는 비밀번호
+			Class<? extends userVO> voPass = vo.getClass();
+			if((sessionPass.equals(voPass))) {
+				currentUser.setmember_pw(vo.getmember_pw());
+				service.userDelete(currentUser);
+				session.invalidate();
+				//회원탈퇴 성공
+				model.addAttribute("message","회원탈퇴가 완료되었습니다.");
+	            model.addAttribute("url","/user/login");
+				return ("messageCheck");
+			}else{
+				rttr.addFlashAttribute("msg", false);
+				//회원탈퇴 실패 (비밀번호 틀림)
+	            model.addAttribute("message","비밀번호를 다시 확인해주세요.");
+	            model.addAttribute("url","/user/leave");
+				return ("messageCheck");
+			}
+		}else{
+			//회원탈퇴 실패 (세션에 저장된 정보 없음)
+            model.addAttribute("message","회원탈퇴에 실패했습니다. 다시 로그인 해주세요.");
+            model.addAttribute("url","/user/login");
+			return ("messageCheck");
 		}
-		service.userDelete(vo);
-		session.invalidate();
-		return "redirect:/";
 	}
 }

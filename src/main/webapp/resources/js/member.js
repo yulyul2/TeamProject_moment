@@ -43,9 +43,7 @@ function joinFormCheck(){
         alert("아이디 값을 입력하세요.");
         form.member_id.focus();
         return false;
-    }
-    
-    if(form.member_pw.value == ""){
+    }else if(form.member_pw.value == ""){
         alert("비밀번호 값을 입력하세요.");
         form.member_pw.focus();
         return false;

@@ -14,6 +14,8 @@ create table member(
     member_info varchar2(500)
 );
 
+select * from member;
+
 create table post(
     post_no number constraint post_pk primary key,
     post_id varchar2(50) not null

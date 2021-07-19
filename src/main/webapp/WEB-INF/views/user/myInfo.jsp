@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import ="kr.co.vo.userVO" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,6 +23,14 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/myinfo.js"></script>
 </head>
 <body>
+<%
+	userVO currentSession = (userVO) session.getAttribute("loginUser");
+	
+	String id = currentSession.getmember_id();
+
+	// 세션 정보가 없으면 로그인 페이지로 리다이렉트
+	if(currentSession == null) response.sendRedirect("login");
+%>
 <!-- 이미지 리사이징 처리
 	* logo 이미지 제외 
 	* 모든 이미지의 부모에는 class 'image-parent' 추가
@@ -157,7 +167,7 @@
 					<li class="tab-bookmark on">개인정보 수정</li>
 					<li class="tab-post"><a href="${pageContext.request.contextPath}/user/leave">회원탈퇴</a></li>
 				</ul>
-				<form action="${pageContext.request.contextPath}/user/myInfo" method="post" name="myinfoEditFormCheck">
+				<form action="${pageContext.request.contextPath}/user/myInfoPro" method="post" name="myInfoForm" onsubmit="return myInfoFormFormCheck()">
 					<article class="edit-profile">
 						<h2>프로필 사진 / 소개글 수정</h2>
 						<fieldset>
@@ -172,23 +182,25 @@
 								<span class="button-upload sp-button"><span class="blind">이미지 수정</span></span>
 							</label>
 							<input type="file" name="imageUpload" id="imageUpload" style="display:none"/>
-							<textarea name="myIntro" maxlength="70"></textarea>
+							<textarea name="member_info" maxlength="70" placeholder="소개글을 작성해주세요."></textarea>
 						</fieldset>
 					</article>
 					<article class="edit-account">
 						<h2>계정 정보 수정</h2>
 						<fieldset class="clearfix">
 							<legend class="blind">계정 정보 수정</legend>
+							<label for="label-id">아이디</label>
+							<input type="text" name="member_id" id="label-id" placeholder="아이디" value="<%= id %>" disabled>
 							<label for="label-name">이름</label>
-							<input type="text" name="name" id="label-name" placeholder="이름" value="">
+							<input type="text" name="member_name" id="label-name" placeholder="이름" value="">
 							<label for="label-password">비밀번호</label>
-							<input type="password" name="password" id="label-password" placeholder="비밀번호" value="">
+							<input type="password" name="member_pw" id="label-password" placeholder="비밀번호" value="">
 							<label for="label-passwordCheck">비밀번호 확인</label>
-							<input type="password" name="passwordCheck" id="label-passwordCheck" placeholder="비밀번호 확인" value="">
+							<input type="password" name="member_pw2" id="label-passwordCheck" placeholder="비밀번호 확인" value="">
 							<label for="label-tel">휴대폰 번호</label>
-							<input type="text" name="tel" id="label-tel" placeholder="휴대폰 번호" value="">
+							<input type="text" name="member_tel" id="label-tel" placeholder="휴대폰 번호" value="">
 							<label for="label-email">이메일 주소</label>
-							<input type="text" name="email" id="label-email" placeholder="이메일 주소" value="">
+							<input type="text" name="member_email" id="label-email" placeholder="이메일 주소" value="">
 							<div class="button-area">
 								<button type="reset" class="button-reset">다시작성</button>
 								<button type="submit" class="button-edit button-bg-orange">수정완료</button>
