@@ -8,7 +8,7 @@
 </head>
 <body>
 	<script>
-		alert('정보가 없습니다. 다시입력해주세요')
+		alert('정보가 없습니다. 다시 입력해주세요.')
 		location.href="/user/searchIdPw"
 	</script>
 
