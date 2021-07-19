@@ -42,7 +42,7 @@
 	<header class="inner clearfix">
 		<h1 class="logo">
 			<!-- [Dev] 페이지 연결 : 메인 -->
-			<a href="/board/main"><img src="<%= uiPath %>/img/logo.png" alt="moment"></a>
+			<a href="/post/main"><img src="<%= uiPath %>/img/logo.png" alt="moment"></a>
 		</h1>
 		<div class="search-input-wrap has-comm-layer">
 			<h2 class="blind">검색하기</h2>
@@ -169,7 +169,7 @@
 				<ul class="tab-menu">
 					<!-- li : class 'on' 추가/제거 / 북마크로 링크 연결 -->
 					<li class="tab-post on">게시물</li>
-					<li class="tab-bookmark"><a href="postViewBookmark">북마크</a></li>
+					<li class="tab-bookmark"><a href="/post/postViewBookmark">북마크</a></li>
 				</ul>
 				<!-- [Dev] 게시물 : 최신 등록한 게시물부터 한 페이지당 10개씩 노출 -->
 				<article class="post-list">

@@ -30,6 +30,8 @@ public class postController {
 	
 	@GetMapping("/main")
 	public String main()throws Exception {
+		
+		
 		return "post/main";
 	}
 	

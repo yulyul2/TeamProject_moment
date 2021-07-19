@@ -54,5 +54,12 @@
 		from sns_user
 		where member_id = #{member_id}
 	</select> -->
+	
+	<select id="memberinfo" resultType="kr.co.vo.userVO">
+		select member_no, member_id, member_pw, member_name, member_tel, member_email, member_image, member_info
+		from member
+		where member_id = #{member_id}
+		
+	</select>
 
  </mapper>
