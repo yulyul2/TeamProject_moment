@@ -35,47 +35,33 @@
 							<li class="tab-id">아이디 찾기</li>
 							<li class="tab-password">비밀번호 찾기</li>
 						</ul>
-								
 						<!-- article-box : class 'show' 추가/제거 -->
 						<div class="article-box tab-box m-auto">
 							<article class="form-area">
-								<!-- [Dev] 페이지 연결 : 로그인 -->
 								<a href="${pageContext.request.contextPath}" class="button-back">돌아가기</a>
-								<!-- [Dev] 아이디 찾기 기능 구현 -->
 								<form action="${pageContext.request.contextPath}/user/searchId" method="post" name="findIdForm" onsubmit="return findIdFormCheck()">
 									<fieldset>
 										<legend class="blind">로그인</legend>
 										<input type="text" name="member_name" id="member_name" placeholder="이름">
 										<input type="email" name="member_email" id="member_email" placeholder="이메일 주소">
 										<div class="output-box">
-    										<p class="join-id">아이디 : ${Id }</p>
+    										<p class="join-id">아이디 : <span class="value">${Id }</span></p>
 										</div>
 										<button type="submit" class="button-find-id">아이디 찾기</button>
 									</fieldset>
 								</form>
 							</article>
 						</div>
-						
-						<!-- 
-						현재 문제 
-						1. 패스워드를 못찾음.
-						 - 예상
-						 - Controller에서 위부터 Data를 전달하므로 name값이 안되서?
-						 
-						 -->
-						
 						<div class="article-box tab-box m-auto">
 							<article class="form-area">
-								<!-- [Dev] 페이지 연결 : 로그인 -->
 								<a href="${pageContext.request.contextPath}" class="button-back">돌아가기</a>
-								<!-- [Dev] 아이디 찾기 기능 구현 -->
 								<form action="${pageContext.request.contextPath}/user/searchPw" method="post" name="findPasswordForm" onsubmit="return findPasswordFormCheck()">
 									<fieldset>
 										<legend class="blind">로그인</legend>
 										<input type="text" name="member_id" id="member_id" placeholder="아이디">
 										<input type="email" name="member_email" id="member_email" placeholder="이메일 주소">
 										<div class="output-box">
-											<p class="join-password">비밀번호 : ${Pw}</p>
+											<p class="join-password">비밀번호 : <span class="value">${Pw}</span></p>
 										</div>
 										<button type="submit" class="button-find-password">비밀번호 찾기</button>
 									</fieldset>

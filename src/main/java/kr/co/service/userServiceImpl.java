@@ -36,7 +36,17 @@ public class userServiceImpl implements userService{
 	public userVO searchPw(userVO uservo) {
 		return dao.searchPw(uservo);
 	}
-
 	
-
+	//회원정보수정
+	@Override
+	public void userUpdate(userVO vo) throws Exception {
+		//받은 vo를 DAO로 보내줍니다.
+		dao.userUpdate(vo);
+	}
+	
+	//회원탈퇴
+	@Override
+	public void userDelete(userVO vo) throws Exception {
+		dao.userDelete(vo);
+	}
 }

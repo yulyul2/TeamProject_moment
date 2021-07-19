@@ -5,7 +5,19 @@ $(document).ready(function(){
 
 // DOM & css, image, js Loading
 $(window).load(function(){
-
+	// id/pw find
+	var outputBox = $('.output-box');
+		hasValueId = outputBox.find('.join-id .value').text();
+		hasValuePw = outputBox.find('.join-password .value').text();
+		tabMenu = $('.tab-menu li');
+		
+	outputBox.hide();
+	if(hasValueId != ""){
+		$('.join-id').closest(outputBox).show();
+	}else if(hasValuePw != ""){
+		$('.join-password').closest(outputBox).show();
+		tabMenu.eq(1).click();
+	}
 });
 
 // login - form check
@@ -31,9 +43,7 @@ function joinFormCheck(){
         alert("아이디 값을 입력하세요.");
         form.member_id.focus();
         return false;
-    }
-    
-    if(form.member_pw.value == ""){
+    }else if(form.member_pw.value == ""){
         alert("비밀번호 값을 입력하세요.");
         form.member_pw.focus();
         return false;
