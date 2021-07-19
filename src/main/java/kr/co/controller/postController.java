@@ -27,8 +27,6 @@ import kr.co.vo.userVO;
 @Controller
 @RequestMapping("/post/*")
 public class postController {
-
-	
 	private static final Logger logger = LoggerFactory.getLogger(postController.class);
 	
 	@Inject
@@ -89,6 +87,11 @@ public class postController {
 		return "redirect:/board/main";
 		
 	}
+	
+	@GetMapping("/postView")
+	public String postView() {
+		return "post/postView";
+	};
 	
 	@RequestMapping("/postViewList")
 	public void postViewList() {

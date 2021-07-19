@@ -128,7 +128,7 @@
 			</div>
 		</section>
 	</div><!-- // section-wrap -->
-	<c:import url="../common/header.jsp"></c:import> 
+	<c:import url="../common/footer.jsp"></c:import> 
 </div>
 </body>
 </html>

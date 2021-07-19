@@ -13,7 +13,7 @@
 				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
@@ -23,7 +23,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">kim_hw</span>
 				</a>
@@ -32,7 +32,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
@@ -41,7 +41,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
@@ -50,7 +50,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">bubblyJang</span>
 				</a>
@@ -59,7 +59,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
@@ -68,7 +68,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
@@ -77,7 +77,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">bubblyJang</span>
 				</a>
@@ -97,7 +97,7 @@
 				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Jang_yr</span>
 				</a>
@@ -107,7 +107,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">kim_hw</span>
 				</a>
@@ -116,7 +116,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Park_hg</span>
 				</a>
@@ -125,7 +125,7 @@
 			<li>
 				<a href="javascript:void(0)">
 					<span class="profile-img image-parent">
-						<img src="./img/profile/default.png" alt="프로필 이미지" class="image-load">
+						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
 					</span>
 					<span class="profile-id">Lee_sy</span>
 				</a>
@@ -193,8 +193,8 @@
 		<div class="post-wrap comm-post parent-toggle">
 			<div class="head-area clearfix">
 				<div class="profile">
-					<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) -->
-					<span class="profile-img image-parent"><img src="./img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
+					<!-- [Dev] Default 프로필 이미지 경로 : ${pageContext.request.contextPath}/resources/img/profile/default.png (다른 이미지는 jpg) -->
+					<span class="profile-img image-parent"><img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
 					<span class="profile-id">yulyul2</span>
 				</div>
 				<div class="button">
@@ -219,8 +219,8 @@
 				</div>
 			</div>
 			<div class="photo-area image-parent">
-				<!-- [Dev] 게시물 사진 경로 : ./img/photo/sample_s_01.jpg -->
-				<img src="./img/photo/sample_b_01.jpg" alt="게시물 이미지" class="image-load">
+				<!-- [Dev] 게시물 사진 경로 : ${pageContext.request.contextPath}/resources/img/photo/sample_s_01.jpg -->
+				<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_01.jpg" alt="게시물 이미지" class="image-load">
 			</div>
 			<div class="info-area">
 				<div class="post-info">

@@ -80,11 +80,11 @@
 			<div class="comm-tab-wrap">
 				<ul class="tab-menu">
 					<!-- li : class 'on' 추가/제거 / 북마크로 링크 연결 -->
-					<li class="tab-post on">게시물</li>
-					<li class="tab-bookmark"><a href="/post/postViewBookmark">북마크</a></li>
+					<li class="tab-post">게시물</li>
+					<li class="tab-bookmark">북마크</li>
 				</ul>
 				<!-- [Dev] 게시물 : 최신 등록한 게시물부터 한 페이지당 10개씩 노출 -->
-				<article class="post-list">
+				<article class="post-list tab-box">
 					<h2 class="blind">게시물 리스트</h2>
 					<ul class="list">
 						<li class="image-parent">
@@ -256,10 +256,89 @@
 						</div>
 					</div>
 				</article>
+				<!-- [Dev] 북마크 게시물 : 최신 북마크한 게시물부터 한 페이지당 10개씩 노출 -->
+				<article class="bookmark-list tab-box">
+					<h2 class="blind">북마크 게시물</h2>
+					<ul class="list">
+						<li class="image-parent">
+							<!-- [Dev] 클릭 시 북마크된 게시물의 회원 페이지로 연결 -->
+							<a href="javascript:void(0)">
+								<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_11.jpg" alt="게시물 썸네일" class="image-load">
+								<div class="over-box table-parent">
+									<div class="box table-child">
+									<!-- [Dev] 게시물의 회원 아이디 가져옴 -->
+										<div class="icon sp-button"><span class="blind">아이콘</span></div>
+										<div class="text-box">
+											<span class="id">kim_hw</span>님의 게시물<br>
+											<span class="bold">바로가기</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="image-parent">
+							<a href="javascript:void(0)">
+								<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_12.jpg" alt="게시물 썸네일" class="image-load">
+								<div class="over-box table-parent">
+									<div class="box table-child">
+										<div class="icon sp-button"><span class="blind">아이콘</span></div>
+										<div class="text-box">
+											<span class="id">Lee_sy</span>님의 게시물<br>
+											<span class="bold">바로가기</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="image-parent">
+							<a href="javascript:void(0)">
+								<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_13.jpg" alt="게시물 썸네일" class="image-load">
+								<div class="over-box table-parent">
+									<div class="box table-child">
+										<div class="icon sp-button"><span class="blind">아이콘</span></div>
+										<div class="text-box">
+											<span class="id">Park_hg</span>님의 게시물<br>
+											<span class="bold">바로가기</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="image-parent">
+							<a href="javascript:void(0)">
+								<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_14.jpg" alt="게시물 썸네일" class="image-load">
+								<div class="over-box table-parent">
+									<div class="box table-child">
+										<div class="icon sp-button"><span class="blind">아이콘</span></div>
+										<div class="text-box">
+											<span class="id">Jang_yr</span>님의 게시물<br>
+											<span class="bold">바로가기</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<!-- [Dev] 게시물 10개 이상일 경우 페이징 처리 -->
+					<div class="pagination">
+						<div class="paging clearfix">
+							<button type="button" class="button-paging-prev sp-button"><span class="blind">이전 페이지</span></button>
+							<ul class="page-list">
+								<!-- [Dev] 현재 페이지에 class 'on' 추가 -->
+								<li class="on"><a href="javascript:void(0)">1</a></li>
+								<li><a href="javascript:void(0)">2</a></li>
+								<li><a href="javascript:void(0)">3</a></li>
+								<li><a href="javascript:void(0)">4</a></li>
+								<li><a href="javascript:void(0)">5</a></li>
+							</ul>
+							<button type="button" class="button-paging-next sp-button"><span class="blind">다음 페이지</span></button>
+						</div>
+					</div>
+				</article>
 			</div>
 		</section>
 	</div><!-- // section-wrap -->
-	<c:import url="../common/header.jsp"></c:import> 
+	<c:import url="../common/footer.jsp"></c:import> 
 </div>
 <c:import url="../common/popup.jsp"></c:import> 
 </body>

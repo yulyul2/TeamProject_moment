@@ -727,7 +727,7 @@
 			</article>
 		</section>
 	</div><!-- // section-wrap -->
-    <c:import url="../common/header.jsp"></c:import> 
+    <c:import url="../common/footer.jsp"></c:import> 
 </div>
 <c:import url="../common/popup.jsp"></c:import> 
 </body>
