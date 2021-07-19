@@ -84,7 +84,6 @@ public class postController {
 		vo.setPost_photo2(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 		vo.setPost_photo1(File.separator + "imgUpload" + ymdPath + File.separator + "s_" + fileName);
 		
-		
 		service.postWritePro(vo);
 		
 		

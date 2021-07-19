@@ -41,7 +41,7 @@
 					<!-- <input type="file" name="post_photo01"> -->
 				</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td colspan="2">
 					<div class="inputArea">
 					 <label for="post_photo2">이미지</label>
@@ -62,7 +62,7 @@
 					<%=request.getRealPath("/") %>
 					</div>
 				</td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td>
 					<input type="submit" value="작성하기">
