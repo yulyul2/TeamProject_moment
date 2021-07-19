@@ -157,13 +157,13 @@
 					<li class="tab-bookmark"><a href="${pageContext.request.contextPath}/user/myInfo">개인정보 수정</a></li>
 					<li class="tab-post on">회원탈퇴</li>
 				</ul>
-				<form action="${pageContext.request.contextPath}/user/form" method="post" name="myinfoDeleteFormCheck">
+				<form action="${pageContext.request.contextPath}/user/leave" method="post" name="myinfoDeleteFormCheck">
 					<article class="delete-member">
 						<h2>회원탈퇴 하기</h2>
 						<fieldset>
 							<legend class="blind">회원탈퇴 하기</legend>
 							<label for="label-password">비밀번호 확인</label>
-							<input type="password" name="password" id="label-password" placeholder="비밀번호를 입력해주세요." value="">
+							<input type="password" name="member_pw" id="label-password" placeholder="비밀번호를 입력해주세요." value="">
 							<label for="label-reason">탙퇴사유 작성</label>
 							<textarea name="reason" maxlength="100" id="label-reason" placeholder="탈퇴사유를 입력해주세요."></textarea>
 							<div class="button-area">
