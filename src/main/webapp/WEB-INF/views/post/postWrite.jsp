@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
+<%@ page import ="kr.co.vo.userVO" %>
 <%
-	String id = (String)session.getAttribute("id");
+	userVO currentSession = (userVO) session.getAttribute("loginUser");
+	
+	String id = currentSession.getmember_id();
+
+	// 세션 정보가 없으면 로그인 페이지로 리다이렉트
+	if(currentSession == null) response.sendRedirect("login");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -36,7 +42,7 @@
 		<section class="inner post-section">
 			<h2>게시물 작성하기</h2>
 			<article>
-				<form action="${pageContext.request.contextPath}/post/postWritePro" method="post" name="postWriteFormCheck">
+				<form action="${pageContext.request.contextPath}/post/postWritePro" method="post" name="postWriteForm" onsubmit="return postWriteFormCheck()">
 					<fieldset>
 						<legend class="blind">게시물 작성</legend>
 						<input type="hidden" value="<%=id %>" name="post_id">

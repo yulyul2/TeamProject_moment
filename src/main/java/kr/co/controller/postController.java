@@ -73,9 +73,9 @@ public class postController {
 		String fileName = null;
 
 		if(file != null) {
-		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
 		} else {
-		 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+			fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
 		}
 		//
 		vo.setPost_photo2(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
@@ -83,9 +83,7 @@ public class postController {
 		
 		service.postWritePro(vo);
 		
-		
-		return "redirect:/board/main";
-		
+		return "post/main";		
 	}
 	
 	@GetMapping("/postView")

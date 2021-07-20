@@ -47,7 +47,7 @@
 					<li class="tab-bookmark on">개인정보 수정</li>
 					<li class="tab-post"><a href="${pageContext.request.contextPath}/user/leave">회원탈퇴</a></li>
 				</ul>
-				<form action="${pageContext.request.contextPath}/user/myInfoPro" method="post" name="myInfoForm" onsubmit="return myInfoFormFormCheck()">
+				<form action="${pageContext.request.contextPath}/user/myInfoPro" method="post" name="myInfoForm" onsubmit="return myInfoFormCheck()">
 					<article class="edit-profile">
 						<h2>프로필 사진 / 소개글 수정</h2>
 						<fieldset>
