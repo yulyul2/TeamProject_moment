@@ -60,7 +60,7 @@
 					</a>
 				</div>
 				<div class="info-area">
-					<p class="my-id"><a href="/post/postViewList?id=<%=id%>"><%=id %></a></p>
+					<p class="my-id"><a href="/post/postView?id=<%=id%>"><%=id %></a></p>
 					<p class="my-name"><%=name %></p>
 				</div>
 				<!-- [Dev] 페이지 연결 : 게시물 작성 -->
@@ -272,6 +272,11 @@
 				</div>
 			</article>
 		</section>
+		
+		
+		
+		
+		
 		<!-- [Dev] 추천 게시물 : 5개 랜덤 노출 -->
 		<section class="main-section clearfix">
 			<article class="recommend-post">
@@ -341,6 +346,12 @@
 					<div class="button-next sp-button"><span class="blind">다음</span></div>
 				</div>
 			</article>
+			
+			
+			
+			
+			
+			
 			<!-- [Dev] 메인 게시물 : 5개씩 노출, 그 이상부터 페이징 처리 -->
 			<article class="main-post">
 				<h2 class="blind">최신 게시물</h2>

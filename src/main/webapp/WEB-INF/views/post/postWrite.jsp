@@ -11,7 +11,7 @@
 	if(currentSession == null) response.sendRedirect("login");
 %>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,5 +73,6 @@
 	</div><!-- // section-wrap -->
 	<c:import url="../common/footer.jsp"></c:import> 
 </div>
+
 </body>
 </html>

@@ -83,7 +83,7 @@ public class userController {
 	//회원가입 페이지 불러오기
 	@GetMapping("/join")
 	public String getjoin() {
-		logger.info("get userJoin");
+		logger.info("getjoin");
 		
 		return "user/join";
 	}
@@ -91,7 +91,7 @@ public class userController {
 	//회원가입 post
 	@PostMapping("/join")
 	public String postjoin(userVO uservo, RedirectAttributes rttr, MultipartFile file) throws Exception {
-		logger.info("post userJoin");
+		logger.info("postjoin");
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";
 		
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);

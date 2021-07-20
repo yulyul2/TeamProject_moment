@@ -32,8 +32,10 @@
 -->
 <div id="wrap">
 	<c:import url="../common/header.jsp"></c:import> 
+	
 	<div id="section-wrap" class="inner clearfix">
 		<c:import url="../common/sideMenu.jsp"></c:import> 
+		
 		<section class="main-section clearfix">
 			<div class="comm-tab-wrap">
 				<ul class="tab-menu">
@@ -214,6 +216,13 @@
 						</div>
 					</div>
 				</article>
+				
+				
+				
+				
+				
+				
+				
 				<!-- [Dev] 북마크 게시물 : 최신 북마크한 게시물부터 한 페이지당 10개씩 노출 -->
 				<article class="bookmark-list tab-box">
 					<h2 class="blind">북마크 게시물</h2>

@@ -4,7 +4,9 @@
 <%
 	userVO currentSession = (userVO) session.getAttribute("loginUser");
 	
-	String id = currentSession.getmember_id();
+	String id = currentSession.getmember_id();//세션으로 받은 id값
+	
+	String name = (String)request.getAttribute("name");
 %>
 <!-- 공통 : 사이드메뉴(게시물 상세보기, 회원정보 수정, 회원탈퇴) -->
 <section class="side-section clearfix full-height">
@@ -22,13 +24,17 @@
 			</div>
 			<div class="info-area">
 				<p class="my-id"><%=id %></p>
-				<p class="my-name">장유리</p>
+				<p class="my-name"><%=name %></p>
 			</div>
 		</a>
+		
+		
 		<!-- [Dev] 친구 게시물일 경우 노출되는 버튼 : 팔로우 기능 구현 (팔로우 버튼 누르면 "팔로우" -> "팔로잉" 으로 텍스트 변경) -->
 		<button type="button" class="button-follow"><span>팔로우</span></button>
 		<!-- [Dev] 내 게시물일 경우 노출되는 버튼 : 내 정보 수정 페이지로 연결  -->
 		<a href="javascript:void(0)" class="button-myinfo"><span>내 정보 수정</span></a>
+		
+		
 		<div class="intro-area">
 			<div class="count-box">
 				<!-- [Dev] 게시물의 수 -->

@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.co.service.postService;
 import kr.co.service.userService;
 import kr.co.utils.UploadFileUtils;
+import kr.co.vo.bookmarkVO;
 import kr.co.vo.postVO;
 import kr.co.vo.userVO;
 
@@ -54,6 +55,7 @@ public class postController {
 		return "post/main";
 	}
 	
+	
 	@GetMapping("/home")
 	public String home()throws Exception {
 		return "post/home";
@@ -64,8 +66,13 @@ public class postController {
 		return "post/postWrite";
 	}
 	
-	@RequestMapping(value="/postWritePro", method = RequestMethod.POST)
-	public String writepro(postVO vo, MultipartFile file)throws Exception{
+	@RequestMapping(value="/postWritePro", method=RequestMethod.POST)
+	public String postWritePro(HttpServletRequest req, postVO vo, MultipartFile file, Model model)throws Exception{
+		HttpSession session = req.getSession();
+		userVO id1 = (userVO)session.getAttribute("loginUser");
+		String id = id1.getmember_id();
+		System.out.println(id);
+		model.addAttribute("id", id);
 		
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";
 		
@@ -73,33 +80,50 @@ public class postController {
 		String fileName = null;
 
 		if(file != null) {
+<<<<<<< HEAD
 			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+=======
+		 fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+>>>>>>> origin/HW1
 		} else {
 			fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
 		}
 		//
 		vo.setPost_photo2(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 		vo.setPost_photo1(File.separator + "imgUpload" + ymdPath + File.separator + "s_" + fileName);
-		
+		vo.setPost_id(id);
 		service.postWritePro(vo);
 		
+<<<<<<< HEAD
 		return "post/main";		
+=======
+		
+		return "/post/main";
+		
+>>>>>>> origin/HW1
 	}
 	
 	@GetMapping("/postView")
-	public String postView() {
+	public String postView(userVO vo,HttpServletRequest req, Model model, bookmarkVO bvo)throws Exception {
+		logger.info("postView");
+		
+		HttpSession session = req.getSession();
+		userVO id1 = (userVO)session.getAttribute("loginUser");
+		String id = id1.getmember_id();
+		
+		bvo.setMark_id(id);
+		
+		bookmarkVO bbvo = service.checkBookmark(bvo);
+		
+		int mark_no = bbvo.getMark_no();
+		
+		model.addAttribute("mark_no",mark_no);
+		model.addAttribute("list", service.bookmarkList(bbvo));
+		
 		return "post/postView";
-	};
+	}
 	
-	@RequestMapping("/postViewList")
-	public void postViewList() {
-		
-	};
 	
-	@RequestMapping("/postViewBookmark")
-	public void PostViewBookmark() {
-		
-	};
 	
 }
 
