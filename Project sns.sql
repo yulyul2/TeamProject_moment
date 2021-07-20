@@ -33,7 +33,7 @@ create table post(
     re_level number not null,
     like_count number not null
 );
-select * from sns_post;
+select * from post;
 
 create SEQUENCE post_seq
     start with 1
@@ -74,3 +74,12 @@ create table user_follow(
 );
 
 commit
+
+create table post_bookmark(
+	mark_id varchar2(50) not null
+        constraint mark_fk1 references member(member_id)on delete cascade,
+    mark_no number not null
+        constraint mark_fk2 references post(post_no) on delete cascade,
+    mark_check number not null
+);
+

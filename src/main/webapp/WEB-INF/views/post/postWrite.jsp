@@ -1,74 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
 <%
-	String uiPath = "http://yul2study.dothome.co.kr";
 	String id = (String)session.getAttribute("id");
 %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-	<script type="text/javascript" src="<%= uiPath%>/js/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="<%= uiPath%>/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="<%= uiPath%>/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>게시물 작성하기</title>
+	<!-- css, javascript
+	* 게시물 작성하기 : post.css, post.js
+	-->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/libs/bxslider/4.2.12/jquery.bxslider.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/post.css" media="all" />
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/libs/mCustomScrollbar/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/post.js"></script>
 </head>
 <body>
+<!-- 이미지 리사이징 처리
+	* logo 이미지 제외 
+	* 모든 이미지의 부모에는 class 'image-parent' 추가
+	* 모든 이미지 자신에게는 class 'image-load' 추가 
+-->
+<div id="wrap">
+	<c:import url="../common/header.jsp"></c:import> 
+	<div id="section-wrap" class="bg-fafafa">
+		<section class="inner post-section">
+			<h2>게시물 작성하기</h2>
+			<article>
+				<form action="${pageContext.request.contextPath}/post/postWritePro" method="post" name="postWriteFormCheck">
+					<fieldset>
+						<legend class="blind">게시물 작성</legend>
+						<input type="hidden" value="<%=id %>" name="post_id">
+						<textarea name="post_content" maxlength="70" placeholder="내용 작성하기"></textarea>
+						<div class="photo-wrap">
+							<div class="photo table-parent image-parent">
+								<!-- [Dev] button-add : 사진 등록 후에 삭제 -->
+								<div class="button-add table-child">
+									<label for="post_photo2" class="photo-upload">
+										<span class="icon sp-button"><span class="blind">사진추가</span></span>
+										<span class="text">사진추가1</span>
+									</label>
+									<input type="file" name="post_photo2" id="post_photo2" style="display:none"/>
+								</div>
+							</div>
+							<!-- [Dev] button-delete, img : 사진 등록 후에 노출
+							<button type="button" class="button-delete sp-button"><span class="blind">사진삭제</span></button>
+							<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_12.jpg" alt="게시물 이미지" class="image-load">
+							-->
+						</div>
+						<div class="button-area">
+							<button type="submit" class="button-write">작성완료</button>
+						</div>
+					</fieldset>
+				</form>
+			</article>
+		</section>
+	</div><!-- // section-wrap -->
+	<c:import url="../common/footer.jsp"></c:import> 
+</div>
 
-	<form action="/post/postWritePro" method="post" enctype="multipart/form-data">
-		<table border="1">
-			<tr>
-				<td>
-					아이디
-				</td>
-				<td>
-					<input type="text" name="post_id">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					내용
-				</td>
-				<td>
-					<input type="text" name="post_content">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					사진올리기
-				</td>
-				<td>
-					<!-- <input type="file" name="post_photo01"> -->
-				</td>
-			</tr>
-			<!-- <tr>
-				<td colspan="2">
-					<div class="inputArea">
-					 <label for="post_photo2">이미지</label>
-					 <input type="file" id="post_photo2" name="post_photo2" />
-					 <div class="select_img"><img src="" /></div>
-					  
-					 <script>
-					  $("#post_photo2").change(function(){
-					   if(this.files && this.files[0]) {
-					    var reader = new FileReader;
-					    reader.onload = function(data) {
-					     $(".select_img img").attr("src", data.target.result);        
-					    }
-					    reader.readAsDataURL(this.files[0]);
-					   }
-					  });
-					 </script>
-					<%=request.getRealPath("/") %>
-					</div>
-				</td>
-			</tr> -->
-			<tr>
-				<td>
-					<input type="submit" value="작성하기">
-				</td>
-			</tr>
-		</table>
-	</form>
 </body>
 </html>

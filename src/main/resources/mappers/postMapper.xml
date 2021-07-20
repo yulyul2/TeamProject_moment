@@ -25,7 +25,7 @@
   		like_count)
   		
   		 values(
-  		post_seq.nextval,
+  		post_seq.nextval,<!-- 오류가 나도 카운터가 됨, 차라리 max+1이 낫다? -->
   		#{post_id},
   		#{post_content},
   		#{post_photo1},
@@ -46,4 +46,37 @@
   		from post
   		where 
   	</select> -->
+  	
+  	<!-- 북마커 추가시 실행되는 구문 -->
+  	<insert id="insertBookmark" parameterType="kr.co.vo.bookmarkVO">
+  		<selectKey resultType="int" keyProperty="mark_check" order="BEFORE">
+  			select NVL(Max(mark_check),0) + 1
+  			from post
+  		</selectKey>
+  		insert into post_bookmark(
+  			mark_id,
+  			mark_no,
+  			mark_check
+  		)values(
+  			#{mark_id},
+  			#{mark_no},
+  			#{mark_check}
+  		)
+  	</insert>
+  	
+  	<!-- 북마커 삭제시 실행되는 구문 -->
+  	<delete id="deleteBookmark" parameterType="kr.co.vo.bookmarkVO">
+  		delete from post_bookmark
+  		where mark_id=#{mark_id} and mark_no=#{mark_no}
+  	</delete>
+  	
+  	<!-- 북마커 확인 구문 -->
+  	<select id="checkBookmark" parameterType="kr.co.vo.bookmarkVO">
+  		select mark_id, mark_no
+  		from post_bookmark
+  		where mark_id = #{mark_id}
+  		order by mark_no desc
+  	</select>
+
+
 </mapper>

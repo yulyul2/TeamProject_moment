@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="kr.co.vo.userVO" %>
-
+<%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
 <%
 	userVO currentSession = (userVO) session.getAttribute("loginUser");
 
@@ -43,71 +43,7 @@
  * 호출할 레이어 팝업 id 값과 click 되는 버튼 data-name 값을 동일하게 줌 
 -->
 <div id="wrap">
-    <div id="header-wrap">
-        <header class="inner clearfix">
-			<h1 class="logo">
-				<!-- [Dev] 페이지 연결 : 메인 -->
-				<a href="/post/main"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="moment"></a>
-			</h1>
-			<div class="search-input-wrap has-comm-layer">
-				<h2 class="blind">검색하기</h2>
-				<div class="search-input">
-					<!-- [Dev] 검색 기능 구현 -->
-					<form action="javascript:void(0)" method="post" name="searchForm" >
-						<fieldset>
-							<legend class="blind">검색</legend>
-							<input type="text" placeholder="검색하기" class="input-search">
-							<button type="submit" class="button-search sp-button button-comm-layer-open"><span class="blind">검색하기</span></button>
-						</fieldset>
-					</form>
-				</div>
-				<!-- 레이어 : 검색 -->
-				<div class="layer-search comm-layer">
-					<h3 class="blind">검색 레이어</h3>
-					<button type="button" class="button-search-close sp-button button-comm-layer-close"><span class="blind">검색 레이어 닫기</span></button>
-					<div class="layer-inner">
-						<div class="list-area">
-							<p class="title">최근 검색 내역</p>
-							<ul class="list comm-list">
-								<li>
-									<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
-									<a href="javascript:void(0)">
-										<span class="profile-img image-parent">
-											<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-										</span>
-										<span class="profile-id">Lee_sy</span>
-									</a>
-									<!-- [Dev] 팔로우 기능 구현 -->
-									<button type="button" class="button-follow">팔로우</button>
-								</li>
-								<li>
-									<a href="javascript:void(0)">
-										<span class="profile-img image-parent">
-											<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-										</span>
-										<span class="profile-id">kim_hw</span>
-									</a>
-									<button type="button" class="button-follow">팔로우</button>
-								</li>
-								<li>
-									<a href="javascript:void(0)">
-										<span class="profile-img image-parent">
-											<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-										</span>
-										<span class="profile-id">Park_hg</span>
-									</a>
-									<button type="button" class="button-follow">팔로우</button>
-								</li>
-							</ul>
-							<p class="title">최근 검색 내역</p>
-							<p class="message">최근 검색 내역이 없습니다.</p>
-						</div>
-						<button type="button" class="button-search-delete comm-list-btn">검색내역 삭제</button>
-					</div>
-				</div>
-			</div>
-        </header>
-    </div><!-- // header-wrap -->
+	<c:import url="../common/header.jsp"></c:import> 
 	<div id="section-wrap" class="inner clearfix">
 		<section class="side-section clearfix full-height">
 			<article class="profile">
@@ -124,7 +60,7 @@
 					</a>
 				</div>
 				<div class="info-area">
-					<p class="my-id"><a href="/post/postViewList?id=<%=id%>"><%=id %></a></p>
+					<p class="my-id"><a href="/post/postView?id=<%=id%>"><%=id %></a></p>
 					<p class="my-name"><%=name %></p>
 				</div>
 				<!-- [Dev] 페이지 연결 : 게시물 작성 -->
@@ -336,6 +272,11 @@
 				</div>
 			</article>
 		</section>
+		
+		
+		
+		
+		
 		<!-- [Dev] 추천 게시물 : 5개 랜덤 노출 -->
 		<section class="main-section clearfix">
 			<article class="recommend-post">
@@ -405,6 +346,12 @@
 					<div class="button-next sp-button"><span class="blind">다음</span></div>
 				</div>
 			</article>
+			
+			
+			
+			
+			
+			
 			<!-- [Dev] 메인 게시물 : 5개씩 노출, 그 이상부터 페이징 처리 -->
 			<article class="main-post">
 				<h2 class="blind">최신 게시물</h2>
@@ -498,7 +445,7 @@
 								</li>
 							</ul>
 							<div class="comment-write">
-								<form action="javascript:void(0)" metohd="post" name="commentForm">
+								<form action="javascript:void(0)" method="post" name="commentForm">
 									<fieldset>
 										<legend class="blind">댓글 작성</legend>
 										<input type="text" placeholder="댓글 작성" class="input-comment">
@@ -564,7 +511,7 @@
 								</li>
 							</ul>
 							<div class="comment-write">
-								<form action="javascript:void(0)" metohd="post" name="commentForm">
+								<form action="javascript:void(0)" method="post" name="commentForm">
 									<fieldset>
 										<legend class="blind">댓글 작성</legend>
 										<input type="text" placeholder="댓글 작성" class="input-comment">
@@ -634,7 +581,7 @@
 								</li>
 							</ul>
 							<div class="comment-write">
-								<form action="javascript:void(0)" metohd="post" name="commentForm">
+								<form action="javascript:void(0)" method="post" name="commentForm">
 									<fieldset>
 										<legend class="blind">댓글 작성</legend>
 										<input type="text" placeholder="댓글 작성" class="input-comment">
@@ -700,7 +647,7 @@
 								</li>
 							</ul>
 							<div class="comment-write">
-								<form action="javascript:void(0)" metohd="post" name="commentForm">
+								<form action="javascript:void(0)" method="post" name="commentForm">
 									<fieldset>
 										<legend class="blind">댓글 작성</legend>
 										<input type="text" placeholder="댓글 작성" class="input-comment">
@@ -762,7 +709,7 @@
 								</li>
 							</ul>
 							<div class="comment-write">
-								<form action="javascript:void(0)" metohd="post" name="commentForm">
+								<form action="javascript:void(0)" method="post" name="commentForm">
 									<fieldset>
 										<legend class="blind">댓글 작성</legend>
 										<input type="text" placeholder="댓글 작성" class="input-comment">
@@ -791,146 +738,8 @@
 			</article>
 		</section>
 	</div><!-- // section-wrap -->
-    <div id="footer-wrap">
-        <footer class="inner">Copyright &copy; 2021 moment</footer>
-    </div><!-- // footer-wrap -->
+    <c:import url="../common/footer.jsp"></c:import> 
 </div>
-
-<!-- 팝업 : navi 1. 즐겨찾는 친구 -->
-<div class="comm-layerpop" id="layerpop-navi-bookmark">
-	<div class="layer-inner">
-		<button type="button" class="sp-button button-comm-layerpop-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-		<h3>즐겨찾는 친구</h3>
-		<ul class="list-inner comm-list">
-			<li>
-				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Jang_yr</span>
-				</a>
-			</li> 
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">kim_hw</span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Park_hg</span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Lee_sy</span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">bubblyJang</span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Park_hg</span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Lee_sy</span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">bubblyJang</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<!-- 팝업 : navi 2. 추천친구 목록 -->
-<div class="comm-layerpop" id="layerpop-navi-recommend">
-	<div class="layer-inner">
-		<button type="button" class="sp-button button-comm-layerpop-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-		<h3>추천친구 목록</h3>
-		<ul class="list-inner comm-list">
-			<li>
-				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Jang_yr</span>
-				</a>
-				<!-- [Dev] 팔로우 기능 구현 -->
-				<button type="button" class="button-follow">팔로우</button>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">kim_hw</span>
-				</a>
-				<button type="button" class="button-follow">팔로우</button>
-			</li>
-			<li>
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Park_hg</span>
-				</a>
-				<button type="button" class="button-follow">팔로우</button>
-			</li>
-		</ul>
-	</div>
-</div>
-<!-- 팝업 : navi 3. 공지사항 -->
-<div class="comm-layerpop" id="layerpop-navi-notice">
-	<div class="layer-inner">
-		<button type="button" class="sp-button button-comm-layerpop-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-		<h3>공지사항</h3>
-		<ul class="list-inner comm-list">
-			<li>
-				<p class="title"></p>
-			</li>
-			<li>
-				<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
-				<a href="javascript:void(0)">
-					<span class="profile-img image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load">
-					</span>
-					<span class="profile-id">Jang_yr</span>
-				</a>
-				<!-- [Dev] 팔로우 기능 구현 -->
-				<button type="button" class="button-follow">팔로우</button>
-			</li>
-		</ul>
-	</div>
-</div>
-
+<c:import url="../common/popup.jsp"></c:import> 
 </body>
 </html>

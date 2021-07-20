@@ -43,8 +43,8 @@ public class userController {
 	public String postlogin(userVO uservo, HttpServletRequest req,@RequestParam("member_pw") String member_pw,
 							//@RequestParam("member_id") String member_id,
 							Model model) {
-		userVO vo = service.loginPro(uservo);
 		
+		userVO vo = service.loginPro(uservo);
 		
 		HttpSession session = req.getSession();
 		
@@ -83,8 +83,7 @@ public class userController {
 	//회원가입 페이지 불러오기
 	@GetMapping("/join")
 	public String getjoin() {
-		logger.info("get userJoin");
-		
+		logger.info("getjoin");
 		
 		return "user/join";
 	}
@@ -92,7 +91,7 @@ public class userController {
 	//회원가입 post
 	@PostMapping("/join")
 	public String postjoin(userVO uservo, RedirectAttributes rttr, MultipartFile file) throws Exception {
-		logger.info("post userJoin");
+		logger.info("postjoin");
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";
 		
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
@@ -106,7 +105,6 @@ public class userController {
 		//
 		uservo.setImage_path(File.separator + "imgUpload" + ymdPath + File.separator + "s_" + fileName);
 		
-
 		service.userJoin(uservo);
 		return "user/login";
 	}

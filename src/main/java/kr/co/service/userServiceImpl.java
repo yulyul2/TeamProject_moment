@@ -17,7 +17,6 @@ public class userServiceImpl implements userService{
 	@Override
 	public void userJoin(userVO uservo) throws Exception {
 		dao.userJoin(uservo);
-		
 	}
 	
 	@Override
