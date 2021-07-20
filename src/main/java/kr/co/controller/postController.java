@@ -80,11 +80,7 @@ public class postController {
 		String fileName = null;
 
 		if(file != null) {
-<<<<<<< HEAD
-			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
-=======
-		 fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
->>>>>>> origin/HW1
+			fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
 		} else {
 			fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
 		}
@@ -94,13 +90,7 @@ public class postController {
 		vo.setPost_id(id);
 		service.postWritePro(vo);
 		
-<<<<<<< HEAD
-		return "post/main";		
-=======
-		
 		return "/post/main";
-		
->>>>>>> origin/HW1
 	}
 	
 	@GetMapping("/postView")
@@ -122,8 +112,5 @@ public class postController {
 		
 		return "post/postView";
 	}
-	
-	
-	
 }
 
