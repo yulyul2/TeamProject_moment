@@ -12,26 +12,26 @@
 .side-section .profile [class^='button']:first-of-type{margin-top:50px;}
 
 /* main-section - post-list, bookmark-list */
-.main-section [class$="-list"] .list{overflow:hidden;}
-.main-section [class$="-list"] .list li{overflow:hidden; position:relative; float:left; margin:0 20px 20px 0; width:320px; height:320px;}
-.main-section [class$="-list"] .list li:nth-child(2n){margin-right:0;}
-.main-section [class$="-list"] .list li:nth-child(9n),
-.main-section [class$="-list"] .list li:nth-child(10n){margin-bottom:0;}
-.main-section [class$="-list"] .list li > button,
-.main-section [class$="-list"] .list li > a{display:block; width:100%; height:100%;}
-.main-section [class$="-list"] .list li .over-box{display:none; position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgba(255,255,255,.9); -webkit-animation:fadeIn .7s; -moz-animation:fadeIn .7s; -o-animation:fadeIn .7s; animation:fadeIn .7s;}
-.main-section [class$="-list"] .list li .over-box .box > div .count{display:inline-block; margin-right:-50px; width:100px; color:#ee8059; font-weight:600; font-size:16px; text-align:left;}
-.main-section [class$="-list"] .list li .over-box .box > div .count::before{position:relative; top:3px; float:left; margin-right:15px; width:22px; height:20px;}
-.main-section [class$="-list"] .list li .over-box .box > div .count::after{content:''; display:table; clear:both;}
-.main-section [class$="-list"] .list li .over-box .box .like{margin-bottom:10px;}
-.main-section [class$="-list"] .list li .over-box .box .like .count::before{background-position:-33px -117px;}
-.main-section [class$="-list"] .list li .over-box .box .comment .count::before{background-position:-33px -147px;}
-.main-section [class$="-list"] .list li .over-box .box .icon{text-align:center;}
-.main-section [class$="-list"] .list li .over-box .box .icon::before{width:63px; height:63px; background-position:-33px -200px;}
-.main-section [class$="-list"] .list li .over-box .box .text-box{color:#ee8059; font-size:15px; text-align:center; line-height:2;}
-.main-section [class$="-list"] .list li .over-box .box .text-box .id{position:relative; top:-1.5px; display:inline-block; margin-right:6px; font-weight:bold;}
-.main-section [class$="-list"] .list li:hover .over-box{display:table;}
-.main-section [class$="-list"] .pagination{padding:70px 0;}
+.main-section [class*="-list"] .list{overflow:hidden;}
+.main-section [class*="-list"] .list li{overflow:hidden; position:relative; float:left; margin:0 20px 20px 0; width:320px; height:320px;}
+.main-section [class*="-list"] .list li:nth-child(2n){margin-right:0;}
+.main-section [class*="-list"] .list li:nth-child(9n),
+.main-section [class*="-list"] .list li:nth-child(10n){margin-bottom:0;}
+.main-section [class*="-list"] .list li > button,
+.main-section [class*="-list"] .list li > a{display:block; width:100%; height:100%;}
+.main-section [class*="-list"] .list li .over-box{display:none; position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgba(255,255,255,.9); -webkit-animation:fadeIn .7s; -moz-animation:fadeIn .7s; -o-animation:fadeIn .7s; animation:fadeIn .7s;}
+.main-section [class*="-list"] .list li .over-box .box > div .count{display:inline-block; margin-right:-50px; width:100px; color:#ee8059; font-weight:600; font-size:16px; text-align:left;}
+.main-section [class*="-list"] .list li .over-box .box > div .count::before{position:relative; top:3px; float:left; margin-right:15px; width:22px; height:20px;}
+.main-section [class*="-list"] .list li .over-box .box > div .count::after{content:''; display:table; clear:both;}
+.main-section [class*="-list"] .list li .over-box .box .like{margin-bottom:10px;}
+.main-section [class*="-list"] .list li .over-box .box .like .count::before{background-position:-33px -117px;}
+.main-section [class*="-list"] .list li .over-box .box .comment .count::before{background-position:-33px -147px;}
+.main-section [class*="-list"] .list li .over-box .box .icon{text-align:center;}
+.main-section [class*="-list"] .list li .over-box .box .icon::before{width:63px; height:63px; background-position:-33px -200px;}
+.main-section [class*="-list"] .list li .over-box .box .text-box{color:#ee8059; font-size:15px; text-align:center; line-height:2;}
+.main-section [class*="-list"] .list li .over-box .box .text-box .id{position:relative; top:-1.5px; display:inline-block; margin-right:6px; font-weight:bold;}
+.main-section [class*="-list"] .list li:hover .over-box{display:table;}
+.main-section [class*="-list"] .pagination{padding:70px 0;}
 
 /* post-section */
 .post-section{padding:75px 55px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
