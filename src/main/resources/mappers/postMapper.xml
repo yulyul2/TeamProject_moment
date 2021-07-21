@@ -78,5 +78,4 @@
   		order by mark_no desc
   	</select>
 
-
 </mapper>

@@ -38,7 +38,7 @@
 					<li class="tab-bookmark"><a href="${pageContext.request.contextPath}/user/myInfo">개인정보 수정</a></li>
 					<li class="tab-post on">회원탈퇴</li>
 				</ul>
-				<form action="${pageContext.request.contextPath}/user/leave" method="post" name="myinfoDeleteFormCheck">
+				<form action="${pageContext.request.contextPath}/user/leave" method="post" name="leaveForm" onsubmit="return leaveFormCheck()">
 					<article class="delete-member">
 						<h2>회원탈퇴 하기</h2>
 						<fieldset>

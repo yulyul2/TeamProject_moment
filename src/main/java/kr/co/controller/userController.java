@@ -102,7 +102,7 @@ public class userController {
 		} else {
 		 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
 		}
-		//
+		
 		uservo.setImage_path(File.separator + "imgUpload" + ymdPath + File.separator + "s_" + fileName);
 		
 		service.userJoin(uservo);
@@ -144,25 +144,20 @@ public class userController {
 	
 	//회원정보수정 post
 	@PostMapping("/myInfoPro")
-	public String postuserUpdate(HttpSession session, userVO vo, @RequestParam("member_pw") String member_pw, Model model) throws Exception {
+	public String postuserUpdate(userVO vo, HttpSession session, Model model) throws Exception {
 		logger.info("post userUpdate");
 		
-		userVO currentUser = (userVO) session.getAttribute("loginUser");
-	
-		if(!currentUser.getmember_id().equals("")) {
-			if(currentUser.getmember_pw().equals(member_pw)) {
-				vo.setmember_id(currentUser.getmember_id());
-				service.userUpdate(vo);
-				//회원정보수정 성공
-				model.addAttribute("message","회원정보 수정이 완료되었습니다.");
-	            model.addAttribute("url","/post/main");
-				return ("messageCheck");
-			}else{
-				//회원정보수정 실패 (비밀번호 틀림)
-	            model.addAttribute("message","비밀번호를 다시 확인해주세요.");
-	            model.addAttribute("url","/user/myInfo");
-				return ("messageCheck");
-			}
+		userVO user = (userVO) session.getAttribute("loginUser");
+		
+		if(user != null) {
+			String userId = user.getmember_id();
+			
+			vo.setmember_id(userId);
+			service.userUpdate(vo);
+			//회원정보수정 성공
+			model.addAttribute("message","회원정보 수정이 완료되었습니다.");
+            model.addAttribute("url","/post/main");
+			return ("messageCheck");
 		}else{
 			//회원정보수정 실패 (세션에 저장된 정보 없음)
             model.addAttribute("message","회원정보 수정에 실패했습니다. 다시 로그인 해주세요.");
@@ -180,32 +175,31 @@ public class userController {
 	
 	//회원탈퇴 post
 	@PostMapping("/leave")
-	public String postuserDelete(userVO vo, HttpSession session, RedirectAttributes rttr, Model model) throws Exception{
+	public String postuserDelete(userVO vo, HttpSession session, Model model) throws Exception{
 		logger.info("post userDelete");
 		
-		// 세션에 있는 loginUser 를 가져와 session 변수에 넣어줍니다.
-		userVO currentUser = (userVO) session.getAttribute("loginUser");
-		if(currentUser != null) {
-			// 세션에있는 비밀번호
-			Class<? extends userVO> sessionPass = currentUser.getClass();
-			// vo로 들어오는 비밀번호
-			Class<? extends userVO> voPass = vo.getClass();
-			if((sessionPass.equals(voPass))) {
-				currentUser.setmember_pw(vo.getmember_pw());
-				service.userDelete(currentUser);
+		userVO user = (userVO) session.getAttribute("loginUser");
+		
+		if(user != null) {
+			String userId = user.getmember_id();
+			String userPass = user.getmember_pw();
+			String inputPass = vo.getmember_pw();
+			
+			if(userPass.equals(inputPass)) {
+				vo.setmember_id(userId);
+				service.userDelete(vo);
 				session.invalidate();
 				//회원탈퇴 성공
 				model.addAttribute("message","회원탈퇴가 완료되었습니다.");
 	            model.addAttribute("url","/user/login");
 				return ("messageCheck");
 			}else{
-				rttr.addFlashAttribute("msg", false);
 				//회원탈퇴 실패 (비밀번호 틀림)
 	            model.addAttribute("message","비밀번호를 다시 확인해주세요.");
 	            model.addAttribute("url","/user/leave");
 				return ("messageCheck");
 			}
-		}else{
+		}else {
 			//회원탈퇴 실패 (세션에 저장된 정보 없음)
             model.addAttribute("message","회원탈퇴에 실패했습니다. 다시 로그인 해주세요.");
             model.addAttribute("url","/user/login");

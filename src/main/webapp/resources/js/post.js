@@ -8,7 +8,7 @@ $(window).load(function(){
    
 });
 
-// myinfo - form check
+// post write - form check
 function postWriteFormCheck(){
     var form = document.postWriteForm;
     if(form.post_content.value == ""){

@@ -56,8 +56,6 @@
 		where member_id = #{member_id}
 		
 	</select>
-
-
 	
 	<!-- 회원정보수정 -->
 	<update id="userUpdate" parameterType="kr.co.vo.userVO">
