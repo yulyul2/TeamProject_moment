@@ -49,19 +49,20 @@
 						<textarea name="post_content" maxlength="70" placeholder="내용 작성하기"></textarea>
 						<div class="photo-wrap">
 							<div class="photo table-parent image-parent">
-								<!-- [Dev] button-add : 사진 등록 후에 삭제 -->
-								<div class="button-add table-child">
+								<!-- ** type file 속성
+									accept : 서버로 업로드할 수 있는 파일의 타입을 명시 (img/* 의 경우 모든 타입의 이미지 파일이 허용)
+									multiple : 여러개 선택 가능
+								-->
+								<input type="file" name="post_photo2" id="post_photo2" class="blind" accept="img/*" />
+								<div id="photoAdd" class="button-add table-child">
 									<label for="post_photo2" class="photo-upload">
 										<span class="icon sp-button"><span class="blind">사진추가</span></span>
-										<span class="text">사진추가1</span>
+										<span class="text">사진추가</span>
 									</label>
-									<input type="file" name="post_photo2" id="post_photo2" style="display:none"/>
 								</div>
+								<button type="button" id="photoDelete" class="button-delete sp-button"><span class="blind">사진삭제</span></button>
+								<div id="photoPreview"></div>
 							</div>
-							<!-- [Dev] button-delete, img : 사진 등록 후에 노출
-							<button type="button" class="button-delete sp-button"><span class="blind">사진삭제</span></button>
-							<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_12.jpg" alt="게시물 이미지" class="image-load">
-							-->
 						</div>
 						<div class="button-area">
 							<button type="submit" class="button-write">작성완료</button>
