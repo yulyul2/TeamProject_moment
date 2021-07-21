@@ -70,7 +70,7 @@
 						<fieldset class="clearfix">
 							<legend class="blind">계정 정보 수정</legend>
 							<label for="label-id">아이디</label>
-							<input type="text" name="member_id" id="label-id" placeholder="아이디" value="<%= id %>" disabled>
+							<input type="text" name="member_id" id="label-id" placeholder="아이디" value="<%= id %>" readonly>
 							<label for="label-name">이름</label>
 							<input type="text" name="member_name" id="label-name" placeholder="이름" value="">
 							<label for="label-password">비밀번호</label>

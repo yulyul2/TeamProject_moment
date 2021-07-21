@@ -31,6 +31,7 @@ button{border:0; cursor:pointer; background:none;}
 .table-parent{display:table}
 .table-child{display:table-cell; vertical-align:middle;}
 .bold{font-weight:bold;}
+button, a{outline:0;}
 
 /* wrap */
 #wrap{position:relative; height:100%;}
@@ -48,8 +49,12 @@ button{border:0; cursor:pointer; background:none;}
 .image-parent{position:relative;}
 .image-load{position:absolute; left:50%; top:50%; -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
 
+/* form */
+input:read-only,
+input:disabled{background-color:#fff !important; color:#333;}
+::placeholder {color:#aaa !important;}
+
 /* button */
-button{outline:0;}
 .sp-button::before,
 .sp-button::after{content:''; display:inline-block; background-image:url('../img/sp_button.png'); background-repeat:no-repeat; vertical-align:middle;}
 .button-bookmark::before{width:23px; height:20px; background-position:0 -87px;}
