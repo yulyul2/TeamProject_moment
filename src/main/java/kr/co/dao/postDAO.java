@@ -21,4 +21,7 @@ public interface postDAO {
 	
 	//북마크 목록 조회
 	public List<bookmarkVO> bookmarkList(bookmarkVO vo);
+	
+	//북마크된 게시물 출력
+	public postVO selectPost(bookmarkVO vo);
 }

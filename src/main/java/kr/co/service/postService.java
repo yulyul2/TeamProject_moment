@@ -21,5 +21,8 @@ public interface postService {
 	
 	//북마크 목록 조회
 	public List<bookmarkVO> bookmarkList(bookmarkVO vo);
+	
+	//북마크한 게시물 출력
+	public postVO selectPost(bookmarkVO vo);
 
 }

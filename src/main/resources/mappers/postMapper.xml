@@ -47,19 +47,27 @@
   		where 
   	</select> -->
   	
+  	<select id="selectPost" parameterType="kr.co.vo.postVO">
+  		select post_no, post_id, post_content,
+  		 post_photo2, reg_date, ref, re_step, re_level, like_count
+  		from post
+  		where post_no = #{post_no}
+  	</select>
+  	
+  	
   	<!-- 북마커 추가시 실행되는 구문 -->
   	<insert id="insertBookmark" parameterType="kr.co.vo.bookmarkVO">
   		<selectKey resultType="int" keyProperty="mark_check" order="BEFORE">
   			select NVL(Max(mark_check),0) + 1
-  			from post
+  			from post_bookmark
   		</selectKey>
   		insert into post_bookmark(
-  			mark_id,
-  			mark_no,
+  			member_id,
+  			post_no,
   			mark_check
   		)values(
-  			#{mark_id},
-  			#{mark_no},
+  			#{member_id},
+  			#{post_no},
   			#{mark_check}
   		)
   	</insert>
@@ -67,15 +75,15 @@
   	<!-- 북마커 삭제시 실행되는 구문 -->
   	<delete id="deleteBookmark" parameterType="kr.co.vo.bookmarkVO">
   		delete from post_bookmark
-  		where mark_id=#{mark_id} and mark_no=#{mark_no}
+  		where member_id=#{member_id} and post_no=#{post_no}
   	</delete>
   	
   	<!-- 북마커 확인 구문 -->
-  	<select id="checkBookmark" parameterType="kr.co.vo.bookmarkVO">
-  		select mark_id, mark_no
+  	<select id="checkBookmark" parameterType="kr.co.vo.bookmarkVO" resultType="kr.co.vo.bookmarkVO">
+  		select member_id, post_id
   		from post_bookmark
-  		where mark_id = #{mark_id}
-  		order by mark_no desc
+  		where member_id = #{member_id}
+  		order by post_no desc
   	</select>
 
 

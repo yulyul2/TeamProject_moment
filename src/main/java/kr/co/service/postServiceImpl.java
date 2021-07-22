@@ -44,4 +44,9 @@ public class postServiceImpl implements postService {
 	public List<bookmarkVO> bookmarkList(bookmarkVO vo){
 		return dao.bookmarkList(vo);
 	}
+	
+	@Override
+	public postVO selectPost(bookmarkVO vo) {
+		return dao.selectPost(vo);
+	}
 }
