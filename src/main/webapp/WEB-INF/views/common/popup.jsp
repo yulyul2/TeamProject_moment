@@ -276,7 +276,7 @@
 						</li>
 					</ul>
 					<div class="comment-write">
-						<form action="javascript:void(0)" metohd="post" name="commentForm">
+						<form action="javascript:void(0)" method="post" name="commentForm">
 							<fieldset>
 								<legend class="blind">댓글 작성</legend>
 								<input type="text" placeholder="댓글 작성" class="input-comment">

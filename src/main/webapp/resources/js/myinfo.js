@@ -9,7 +9,7 @@ $(window).load(function(){
 });
 
 // myinfo - form check
-function myInfoFormFormCheck(){
+function myInfoFormCheck(){
     var form = document.myInfoForm;
     if(form.member_name.value == ""){
         alert("이름 값을 입력하세요.");
@@ -39,5 +39,17 @@ function myInfoFormFormCheck(){
         }else{
 			return true;
 		}
+    }
+}
+
+// leave - form check
+function leaveFormCheck(){
+    var form = document.leaveForm;
+    if(form.member_pw.value == ""){
+        alert("비밀번호 값을 입력하세요.");
+        form.member_pw.focus();
+        return false;
+    }else{
+        return true;
     }
 }

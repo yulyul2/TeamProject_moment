@@ -13,5 +13,5 @@ table{border-collapse:collapse;border-spacing:0}
 img,fieldset{border:0}
 hr,legend,caption{position:absolute;left:-99999px}
 textarea{resize:none}
-textarea,input{-webkit-border-radius:1px;-webkit-appearance:none;}
-label,button,input[type:"submit"],input[type:"reset"]{cursor:pointer}
+textarea,input{-webkit-border-radius:1px;border-radius:1px;-webkit-appearance:none;}
+label,button,input[type="submit"],input[type="reset"]{cursor:pointer}

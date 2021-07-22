@@ -64,7 +64,7 @@
 					<p class="my-name"><%=name %></p>
 				</div>
 				<!-- [Dev] 페이지 연결 : 게시물 작성 -->
-				<a href="/post/postWrite" class="button-post-write"><span class="sp-button">게시물 작성</span></a>
+				<a href="${pageContext.request.contextPath}/post/postWrite" class="button-post-write"><span class="sp-button">게시물 작성</span></a>
 			</article>
 			<article class="navigation">
 				<!-- navi 1. 즐겨찾는 친구 -->

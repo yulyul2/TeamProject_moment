@@ -28,12 +28,10 @@
 			</div>
 		</a>
 		
-		
 		<!-- [Dev] 친구 게시물일 경우 노출되는 버튼 : 팔로우 기능 구현 (팔로우 버튼 누르면 "팔로우" -> "팔로잉" 으로 텍스트 변경) -->
 		<button type="button" class="button-follow"><span>팔로우</span></button>
 		<!-- [Dev] 내 게시물일 경우 노출되는 버튼 : 내 정보 수정 페이지로 연결  -->
 		<a href="javascript:void(0)" class="button-myinfo"><span>내 정보 수정</span></a>
-		
 		
 		<div class="intro-area">
 			<div class="count-box">
@@ -46,7 +44,8 @@
 			</div>
 			<div class="intro-box">
 				<!-- [Dev] 소개글 : 기본으로는 "안녕하세요." 값 노출 / 내 정보 수정 페이지에서 수정 가능
-					disabled : 비활성화 (수정 불가)
+					disabled : 입력 비활성화 되고 값을 action 페이지에 전달되지 않음
+					readonly : 입력 비활성화 되지만 값을 폼으로 전송 가능
 				-->
 				<textarea name="myIntro" disabled>안녕하세요.</textarea>
 			</div>

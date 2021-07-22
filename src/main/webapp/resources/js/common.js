@@ -210,22 +210,30 @@ function imageReSize(){
 
     for (var i = 0; i < images.length; i++) {
         var img = images[i];
-            parent = img.parentElement;
+            parent = img.closest(".image-parent") ? img.closest(".image-parent") : img.parentElement;
         if(img.naturalWidth > img.naturalHeight){
             img.style.height = '100%';
             img.style.width = 'auto';
-            var division = parent.offsetWidth / img.width;
-            if(division > 1){
-                img.style.height = Math.floor(img.height * division) + 'px';
+            var divisionW = parent.offsetWidth / img.width;
+            var divisionH = parent.offsetHeight / img.height;
+            if(divisionW > 1){
+                img.style.height = Math.floor(img.height * divisionW) + 'px';
                 img.style.width = 'auto';
-            }
+            }else if(divisionH > 1){
+				img.style.width = Math.floor(img.width * divisionH) + 'px';
+                img.style.height = 'auto';
+			}
         }else{
             img.style.width = '100%';
             img.style.height = 'auto';
-            var division = parent.offsetHeight / img.height;
-            if(division > 1){
-                img.style.width = Math.floor(img.width * division) + 'px';
+            var divisionH = parent.offsetHeight / img.height;
+            var divisionW = parent.offsetWidth / img.width;
+            if(divisionH > 1){
+                img.style.width = Math.floor(img.width * divisionH) + 'px';
                 img.style.height = 'auto';
+            }else if(divisionW > 1){
+                img.style.height = Math.floor(img.height * divisionW) + 'px';
+                img.style.width = 'auto';
             }
         }
     }

@@ -65,5 +65,26 @@
 				</div>
 			</div>
 		</div>
+		<div class="all-menu-wrap parent-toggle">
+			<button type="button" class="button-all-menu sp-button button-parent-toggle"><span class="blind">전체 메뉴</span></button>
+			<div class="layer-all-menu comm-layer simple">
+				<h3 class="blind">전체 메뉴 레이어</h3>
+				<div class="layer-inner">
+					<ul class="list">
+					<!-- 관리자 계정 -->
+						<!-- [Dev] 회원관리 페이지로 연결 -->
+						<li><a href="javascript:void(0)">회원관리</a></li>
+						<!-- [Dev] 공지사항 작성 페이지로 연결 -->
+						<li><a href="javascript:void(0)">공지사항 작성</a></li>
+					<!-- 사용자 계정 -->
+						<!-- [Dev] 개인정보 페이지로 연결 -->
+						<li><a href="javascript:void(0)">로그아웃</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/myInfo">개인정보</a></li>
+						<!-- [Dev] 게시물 상세 페이지로 연결 -->
+						<li><a href="${pageContext.request.contextPath}/post/postView">게시물 관리</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</header>
 </div>

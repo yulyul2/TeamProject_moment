@@ -47,7 +47,7 @@
 					<li class="tab-bookmark on">개인정보 수정</li>
 					<li class="tab-post"><a href="${pageContext.request.contextPath}/user/leave">회원탈퇴</a></li>
 				</ul>
-				<form action="${pageContext.request.contextPath}/user/myInfoPro" method="post" name="myInfoForm" onsubmit="return myInfoFormFormCheck()">
+				<form action="${pageContext.request.contextPath}/user/myInfoPro" method="post" name="myInfoForm" onsubmit="return myInfoFormCheck()">
 					<article class="edit-profile">
 						<h2>프로필 사진 / 소개글 수정</h2>
 						<fieldset>
@@ -70,7 +70,7 @@
 						<fieldset class="clearfix">
 							<legend class="blind">계정 정보 수정</legend>
 							<label for="label-id">아이디</label>
-							<input type="text" name="member_id" id="label-id" placeholder="아이디" value="<%= id %>" disabled>
+							<input type="text" name="member_id" id="label-id" placeholder="아이디" value="<%= id %>" readonly>
 							<label for="label-name">이름</label>
 							<input type="text" name="member_name" id="label-name" placeholder="이름" value="">
 							<label for="label-password">비밀번호</label>
