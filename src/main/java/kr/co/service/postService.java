@@ -17,7 +17,7 @@ public interface postService {
 	public void deleteBookmark(bookmarkVO vo);
 	
 	//북마크 체크여부 확인
-	public bookmarkVO checkBookmark(bookmarkVO vo);
+	public List<postVO> selectBookmark(bookmarkVO vo);
 	
 	//북마크 목록 조회
 	public List<bookmarkVO> bookmarkList(bookmarkVO vo);

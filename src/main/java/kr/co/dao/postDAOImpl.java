@@ -36,15 +36,15 @@ public class postDAOImpl implements postDAO {
 	
 	//북마크 체크여부 확인
 	@Override
-	public bookmarkVO checkBookmark(bookmarkVO vo) {
+	public List<postVO>selectBookmark(bookmarkVO vo) {
 		
-		return (bookmarkVO) sqlSession.selectList("postMapper.checkBookmark", vo);
+		return sqlSession.selectList("postMapper.selectBookmark", vo);
 	}
 	
 	//북마크 목록 조회
 	@Override
 	public List<bookmarkVO> bookmarkList(bookmarkVO vo){
-		return sqlSession.selectList("postMapper.checkBookmark", vo);
+		return sqlSession.selectList("postMapper.selectBookmark", vo);
 	}
 	
 	//북마크된 게시물 출력

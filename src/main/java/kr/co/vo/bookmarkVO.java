@@ -2,8 +2,8 @@ package kr.co.vo;
 
 public class bookmarkVO {
 
-	String member_id;
-	int post_no;
+	String member_id;//로그인한 사용자 세션로그힌
+	int post_no;//게시물 number
 	int mark_check;
 	
 	

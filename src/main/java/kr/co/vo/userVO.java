@@ -1,8 +1,14 @@
 package kr.co.vo;
 
+import javax.validation.constraints.Size;
+
 public class userVO {
+	
 	private int member_no;
+	
+	@Size(min=4, max=16)//크기를 제한한다.
 	private String member_id;
+	
 	private String member_pw;
 	private String member_pw2;
 	private String member_name;

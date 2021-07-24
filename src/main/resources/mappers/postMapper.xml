@@ -79,10 +79,11 @@
   	</delete>
   	
   	<!-- 북마커 확인 구문 -->
-  	<select id="checkBookmark" parameterType="kr.co.vo.bookmarkVO" resultType="kr.co.vo.bookmarkVO">
-  		select member_id, post_id
-  		from post_bookmark
-  		where member_id = #{member_id}
+  	<select id="selectBookmark" parameterType="kr.co.vo.bookmarkVO" resultType="kr.co.vo.postVO">
+  		select post.post_no, post_id, post_content,
+  		 post_photo2, reg_date, ref, re_step, re_level, like_count
+  		from post join post_bookmark on post.post_no = post_bookmark.post_no
+		where post_bookmark.member_id = #{member_id}
   		order by post_no desc
   	</select>
 

@@ -36,8 +36,8 @@ public class postServiceImpl implements postService {
 	
 	//북마크 체크여부 확인
 	@Override
-	public bookmarkVO checkBookmark(bookmarkVO vo) {
-		return dao.checkBookmark(vo);
+	public List<postVO> selectBookmark(bookmarkVO vo) {
+		return dao.selectBookmark(vo);
 	}
 	
 	@Override
