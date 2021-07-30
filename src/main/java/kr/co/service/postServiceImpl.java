@@ -34,7 +34,7 @@ public class postServiceImpl implements postService {
 		dao.deleteBookmark(vo);
 	}
 	
-	//북마크 체크여부 확인
+	//북마크 목록 조회
 	@Override
 	public List<postVO> selectBookmark(bookmarkVO vo) {
 		return dao.selectBookmark(vo);

@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import ="kr.co.vo.userVO" %>
+<%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
 <%
 	userVO currentSession = (userVO) session.getAttribute("loginUser");
 	
 	String id = currentSession.getmember_id();//세션으로 받은 id값
-	
+	String name1 = request.getParameter("name");
 	String name = (String)request.getAttribute("name");
 %>
+		<c:out value="${param.name }"/>
 <!-- 공통 : 사이드메뉴(게시물 상세보기, 회원정보 수정, 회원탈퇴) -->
 <section class="side-section clearfix full-height">
 	<article class="profile">
@@ -24,7 +26,7 @@
 			</div>
 			<div class="info-area">
 				<p class="my-id"><%=id %></p>
-				<p class="my-name"><%=name %></p>
+				<p class="my-name">${UserInfo.member_name}</p>
 			</div>
 		</a>
 		

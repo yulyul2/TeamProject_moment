@@ -34,7 +34,7 @@ public class postDAOImpl implements postDAO {
 		sqlSession.delete("postMapper.deleteBookmark", vo);
 	}
 	
-	//북마크 체크여부 확인
+	//북마크 목록 조회
 	@Override
 	public List<postVO>selectBookmark(bookmarkVO vo) {
 		

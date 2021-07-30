@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/post.js"></script>
 </head>
 <body>
+
 <!-- 이미지 리사이징 처리
 	* logo 이미지 제외 
 	* 모든 이미지의 부모에는 class 'image-parent' 추가
@@ -34,7 +35,9 @@
 	<c:import url="../common/header.jsp"></c:import> 
 	
 	<div id="section-wrap" class="inner clearfix">
-		<c:import url="../common/sideMenu.jsp"></c:import> 
+		<c:import url="../common/sideMenu.jsp">
+			<c:param name="name" value="${UserInfo.member_name }"/>
+		</c:import> 
 		
 		<section class="main-section clearfix">
 			<div class="comm-tab-wrap">
@@ -219,7 +222,8 @@
 				
 				
 				
-				
+				<c:set var="name" value="${UserInfo}"></c:set>
+				<c:out value="${UserInfo.member_name }"></c:out>
 				
 				
 				
@@ -227,22 +231,24 @@
 				<article class="bookmark-list tab-box">
 					<h2 class="blind">북마크 게시물</h2>
 					<ul class="list">
+					<c:forEach items="${list}" var="list">
 						<li class="image-parent">
 							<!-- [Dev] 클릭 시 북마크된 게시물의 회원 페이지로 연결 -->
 							<a href="javascript:void(0)">
-								<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_11.jpg" alt="게시물 썸네일" class="image-load">
+								<img src="${list.post_photo2}" alt="게시물 썸네일" class="image-load">
 								<div class="over-box table-parent">
 									<div class="box table-child">
 									<!-- [Dev] 게시물의 회원 아이디 가져옴 -->
 										<div class="icon sp-button"><span class="blind">아이콘</span></div>
 										<div class="text-box">
-											<span class="id">kim_hw</span>님의 게시물<br>
+											<span class="id">${list.post_id}</span>님의 게시물<br>
 											<span class="bold">바로가기</span>
 										</div>
 									</div>
 								</div>
 							</a>
 						</li>
+					</c:forEach>
 						<li class="image-parent">
 							<a href="javascript:void(0)">
 								<img src="${pageContext.request.contextPath}/resources/img/photo/sample_b_12.jpg" alt="게시물 썸네일" class="image-load">

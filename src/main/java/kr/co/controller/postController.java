@@ -101,14 +101,19 @@ public class postController {
 	public String bookmarkView(userVO vo,HttpServletRequest req, Model model, bookmarkVO bvo, postVO pvo)throws Exception {
 		logger.info("postView");
 		
+		
+		
 		HttpSession session = req.getSession();//세션생성하기.
 		userVO id1 = (userVO)session.getAttribute("loginUser");//세션 loginUser에 담긴 id 불러와서 userVO를 id1객체로 만들어 담기
+		
 		String id = id1.getmember_id();// id1객체의 member_id()를 불러와서 id에 담기.
 		bvo.setMember_id(id);//로그인된 id를 
-
-		model.addAttribute("list",service.selectBookmark(bvo));
+		vo.setmember_id(id);
+		userVO vo1 = uservice.userInfo(vo);
+		model.addAttribute("list",service.selectBookmark(bvo));//예상 : selectBookmark구문에 bvo에 담긴 member_id 값을 전달후 postvo에 리턴값들을 담아옴.
+		model.addAttribute("UserInfo",vo1);
 		
-		
+		//System.out.println(vo1.getmember_name() + " 이름은");
 		return "post/postView";
 	}
 }
