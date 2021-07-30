@@ -42,8 +42,8 @@
 		<section class="inner post-section">
 			<h2>게시물 작성하기</h2>
 			<article>
-				<form action="${pageContext.request.contextPath}/post/postWritePro" method="post" name="postWriteForm" onsubmit="return postWriteFormCheck()">
-					<fieldset>
+				<form action="/post/postWritePro" method="post" name="postWriteForm" onsubmit="return postWriteFormCheck()" enctype="multipart/form-data">
+					<fieldset><!--   -->
 						<legend class="blind">게시물 작성</legend>
 						<input type="hidden" value="<%=id %>" name="post_id">
 						<textarea name="post_content" maxlength="70" placeholder="내용 작성하기"></textarea>
@@ -53,7 +53,7 @@
 									accept : 서버로 업로드할 수 있는 파일의 타입을 명시 (img/* 의 경우 모든 타입의 이미지 파일이 허용)
 									multiple : 여러개 선택 가능
 								-->
-								<input type="file" name="post_photo2" id="post_photo2" class="blind" accept="img/*" />
+								<input type="file" name="file" id="post_photo2" class="blind"  accept="img/*/><!-- " -->
 								<div id="photoAdd" class="button-add table-child">
 									<label for="post_photo2" class="photo-upload">
 										<span class="icon sp-button"><span class="blind">사진추가</span></span>

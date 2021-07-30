@@ -65,7 +65,7 @@ public class postController {
 	}
 	
 	@RequestMapping(value="/postWritePro", method=RequestMethod.POST)
-	public String postWritePro(HttpServletRequest req, postVO vo, MultipartFile file, Model model)throws Exception{
+	public String postWritePro( postVO vo, MultipartFile file, Model model)throws Exception{
 		/*HttpSession session = req.getSession();
 		userVO id1 = (userVO)session.getAttribute("loginUser");
 		String id = id1.getmember_id();
