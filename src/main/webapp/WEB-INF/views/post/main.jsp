@@ -351,18 +351,19 @@
 			
 			
 			
-			
+			<c:forEach items="${board}" var="board">
 			<!-- [Dev] 메인 게시물 : 5개씩 노출, 그 이상부터 페이징 처리 -->
 			<article class="main-post">
 				<h2 class="blind">최신 게시물</h2>
 				<!-- 게시물 1 -->
+			
 				<div class="post-wrap comm-post">
 					<div class="head-area clearfix has-comm-layer">
 						<!-- [Dev] 페이지 연결 : 회원 상세 보기 -->
 						<a href="javascript:void(0)" class="profile">
 							<!-- [Dev] Default 프로필 이미지 경로 : ./img/profile/default.png (다른 이미지는 jpg) -->
 							<span class="profile-img image-parent"><img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
-							<span class="profile-id">yulyul2</span>
+							<span class="profile-id">${board.post_id }</span>
 						</a>
 						<div class="button">
 							<!-- [Dev] 게시물 즐겨찾기 기능 구현 : 회원 상세 페이지에서 노출 -->
@@ -388,14 +389,14 @@
 					</div>
 					<div class="photo-area image-parent">
 						<!-- [Dev] 게시물 사진 경로 : ./img/photo/sample_s_01.jpg -->
-						<img src="${pageContext.request.contextPath}/resources/img/photo/sample01.jpg" alt="게시물 이미지" class="image-load">
+						<img src="${board.post_photo2}" alt="게시물 이미지" class="image-load">
 					</div>
 					<div class="info-area">
 						<div class="post-info">
 							<!-- [Dev] 좋아요 기능 구현, 개수 카운트 -->
 							<button type="button" class="button-like button-toggle on">
 								<span class="icon sp-button"><span class="blind">좋아요</span></span>
-								<span class="text">좋아요 <span class="count">99</span>개</span>
+								<span class="text">좋아요 <span class="count">${board.like_count }</span>개</span>
 							</button>
 							<!-- [Dev] 댓글 개수 카운트 -->
 							<button type="button" class="button-comment">
@@ -456,270 +457,10 @@
 						</div>
 					</div>
 				</div>
-				<!-- 게시물 2 -->
-				<div class="post-wrap comm-post">
-					<div class="head-area clearfix has-comm-layer">
-						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
-							<span class="profile-id">kim_hw</span>
-						</a>
-						<div class="button">
-							<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">즐겨찾기</span></button>
-							<button type="button" class="button-menu sp-button button-comm-layer-open"><span class="blind">게시물 메뉴</span></button>
-						</div>
-						<!-- 레이어 : 게시물 메뉴 2 -->
-						<div class="layer-menu comm-layer">
-							<h3 class="blind">게시물 메뉴 레이어</h3>
-							<button type="button" class="button-menu-close sp-button button-comm-layer-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-							<div class="layer-inner">
-								<ul class="list">
-									<li><a href="javascript:void(0)" class="button-edit">수정하기</a></li>
-									<li><button type="button" class="button-delete">삭제하기</button></li>
-									<li><button type="button" class="button-share">공유하기</button></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="photo-area image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/photo/sample02.jpg" alt="게시물 이미지" class="image-load">
-					</div>
-					<div class="info-area">
-						<div class="post-info">
-							<button type="button" class="button-like button-toggle">
-								<span class="icon sp-button"><span class="blind">좋아요</span></span>
-								<span class="text">좋아요 <span class="count">54</span>개</span>
-							</button>
-							<button type="button" class="button-comment">
-								<span class="icon sp-button"><span class="blind">댓글</span></span>
-								<span class="text">댓글  <span class="count">2</span>개</span>
-							</button>
-						</div>
-						<div class="post-content">
-							<span class="id">kim_hw</span>
-							<p class="content">작년 이탈리아 여행</p>
-						</div>
-						<div class="post-comment">
-							<button type="button" class="button-allcomment">댓글 모두보기</button>
-							<ul class="comment-list short-bar">
-								<li>
-									<span class="id">Lee_sy</span>
-									<span class="comment">사진 잘 찍었다 ㅎㅎ</span>
-								</li>
-								<li>
-									<span class="id">Park_hg</span>
-									<span class="comment">또 가고싶다~~~</span>
-								</li>
-							</ul>
-							<div class="comment-write">
-								<form action="javascript:void(0)" method="post" name="commentForm">
-									<fieldset>
-										<legend class="blind">댓글 작성</legend>
-										<input type="text" placeholder="댓글 작성" class="input-comment">
-										<button type="submit" class="button-comment sp-button"><span class="blind">댓글 작성하기</span></button>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 게시물 3 -->
-				<div class="post-wrap comm-post">
-					<div class="head-area clearfix has-comm-layer">
-						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
-							<span class="profile-id">Lee_sy</span>
-						</a>
-						<div class="button">
-							<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">즐겨찾기</span></button>
-							<button type="button" class="button-menu sp-button button-comm-layer-open"><span class="blind">게시물 메뉴</span></button>
-						</div>
-						<!-- 레이어 : 게시물 메뉴 3 -->
-						<div class="layer-menu comm-layer">
-							<h3 class="blind">게시물 메뉴 레이어</h3>
-							<button type="button" class="button-menu-close sp-button button-comm-layer-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-							<div class="layer-inner">
-								<ul class="list">
-									<li><a href="javascript:void(0)" class="button-edit">수정하기</a></li>
-									<li><button type="button" class="button-delete">삭제하기</button></li>
-									<li><button type="button" class="button-share">공유하기</button></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="photo-area image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/photo/sample03.jpg" alt="게시물 이미지" class="image-load">
-					</div>
-					<div class="info-area">
-						<div class="post-info">
-							<button type="button" class="button-like button-toggle">
-								<span class="icon sp-button"><span class="blind">좋아요</span></span>
-								<span class="text">좋아요 <span class="count">64</span>개</span>
-							</button>
-							<button type="button" class="button-comment">
-								<span class="icon sp-button"><span class="blind">댓글</span></span>
-								<span class="text">댓글  <span class="count">3</span>개</span>
-							</button>
-						</div>
-						<div class="post-content">
-							<span class="id">Lee_sy</span>
-							<p class="content">드디어 고단했던 작업의 끝이 보이기 시작한다.</p>
-						</div>
-						<div class="post-comment">
-							<button type="button" class="button-allcomment">댓글 모두보기</button>
-							<ul class="comment-list short-bar">
-								<li>
-									<span class="id">Park_hg</span>
-									<span class="comment">오 고생했다</span>
-								</li>
-								<li>
-									<span class="id">enjoy_moment</span>
-									<span class="comment">이번 프로젝트 결과물 기대되네요 :)</span>
-								</li>
-								<li>
-									<span class="id">yulyul2</span>
-									<span class="comment">기대할게!</span>
-								</li>
-							</ul>
-							<div class="comment-write">
-								<form action="javascript:void(0)" method="post" name="commentForm">
-									<fieldset>
-										<legend class="blind">댓글 작성</legend>
-										<input type="text" placeholder="댓글 작성" class="input-comment">
-										<button type="submit" class="button-comment sp-button"><span class="blind">댓글 작성하기</span></button>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 게시물 4 -->
-				<div class="post-wrap comm-post">
-					<div class="head-area clearfix has-comm-layer">
-						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
-							<span class="profile-id">Park_hg</span>
-						</a>
-						<div class="button">
-							<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">즐겨찾기</span></button>
-							<button type="button" class="button-menu sp-button button-comm-layer-open"><span class="blind">게시물 메뉴</span></button>
-						</div>
-						<!-- 레이어 : 게시물 메뉴 4 -->
-						<div class="layer-menu comm-layer">
-							<h3 class="blind">게시물 메뉴 레이어</h3>
-							<button type="button" class="button-menu-close sp-button button-comm-layer-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-							<div class="layer-inner">
-								<ul class="list">
-									<li><a href="javascript:void(0)" class="button-edit">수정하기</a></li>
-									<li><button type="button" class="button-delete">삭제하기</button></li>
-									<li><button type="button" class="button-share">공유하기</button></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="photo-area image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/photo/sample04.jpg" alt="게시물 이미지" class="image-load">
-					</div>
-					<div class="info-area">
-						<div class="post-info">
-							<button type="button" class="button-like button-toggle">
-								<span class="icon sp-button"><span class="blind">좋아요</span></span>
-								<span class="text">좋아요 <span class="count">49</span>개</span>
-							</button>
-							<button type="button" class="button-comment">
-								<span class="icon sp-button"><span class="blind">댓글</span></span>
-								<span class="text">댓글  <span class="count">2</span>개</span>
-							</button>
-						</div>
-						<div class="post-content">
-							<span class="id">Park_hg</span>
-							<p class="content">더울 땐 역시 바다를 가야돼</p>
-						</div>
-						<div class="post-comment">
-							<button type="button" class="button-allcomment">댓글 모두보기</button>
-							<ul class="comment-list short-bar">
-								<li>
-									<span class="id">kim_hw</span>
-									<span class="comment">잘 놀러다니는구만 ^_^</span>
-								</li>
-								<li>
-									<span class="id">Lee_sy</span>
-									<span class="comment">더울 땐 역시 집이 최고..</span>
-								</li>
-							</ul>
-							<div class="comment-write">
-								<form action="javascript:void(0)" method="post" name="commentForm">
-									<fieldset>
-										<legend class="blind">댓글 작성</legend>
-										<input type="text" placeholder="댓글 작성" class="input-comment">
-										<button type="submit" class="button-comment sp-button"><span class="blind">댓글 작성하기</span></button>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 게시물 5 -->
-				<div class="post-wrap comm-post">
-					<div class="head-area clearfix has-comm-layer">
-						<a href="javascript:void(0)" class="profile">
-							<span class="profile-img image-parent"><img src="${pageContext.request.contextPath}/resources/img/profile/default.png" alt="프로필 이미지" class="image-load"></span>
-							<span class="profile-id">bubblyJang</span>
-						</a>
-						<div class="button">
-							<button type="button" class="button-bookmark sp-button button-toggle"><span class="blind">즐겨찾기</span></button>
-							<button type="button" class="button-menu sp-button button-comm-layer-open"><span class="blind">게시물 메뉴</span></button>
-						</div>
-						<!-- 레이어 : 게시물 메뉴 5 -->
-						<div class="layer-menu comm-layer">
-							<h3 class="blind">게시물 메뉴 레이어</h3>
-							<button type="button" class="button-menu-close sp-button button-comm-layer-close"><span class="blind">게시물 메뉴 레이어 닫기</span></button>
-							<div class="layer-inner">
-								<ul class="list">
-									<li><a href="javascript:void(0)" class="button-edit">수정하기</a></li>
-									<li><button type="button" class="button-delete">삭제하기</button></li>
-									<li><button type="button" class="button-share">공유하기</button></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="photo-area image-parent">
-						<img src="${pageContext.request.contextPath}/resources/img/photo/sample05.jpg" alt="게시물 이미지" class="image-load">
-					</div>
-					<div class="info-area">
-						<div class="post-info">
-							<button type="button" class="button-like button-toggle">
-								<span class="icon sp-button"><span class="blind">좋아요</span></span>
-								<span class="text">좋아요 <span class="count">225</span>개</span>
-							</button>
-							<button type="button" class="button-comment">
-								<span class="icon sp-button"><span class="blind">댓글</span></span>
-								<span class="text">댓글  <span class="count">1</span>개</span>
-							</button>
-						</div>
-						<div class="post-content">
-							<span class="id">bubblyJang</span>
-							<p class="content">오늘의 꽃</p>
-						</div>
-						<div class="post-comment">
-							<button type="button" class="button-allcomment">댓글 모두보기</button>
-							<ul class="comment-list short-bar">
-								<li>
-									<span class="id">yulyul2</span>
-									<span class="comment">오늘도 잘 구경하고 갑니다~~</span>
-								</li>
-							</ul>
-							<div class="comment-write">
-								<form action="javascript:void(0)" method="post" name="commentForm">
-									<fieldset>
-										<legend class="blind">댓글 작성</legend>
-										<input type="text" placeholder="댓글 작성" class="input-comment">
-										<button type="submit" class="button-comment sp-button"><span class="blind">댓글 작성하기</span></button>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
+				
+				
+				
 				<!-- [Dev] 게시물 5개 이상일 경우 페이징 처리 -->
 				<div class="pagination">
 					<div class="paging clearfix">

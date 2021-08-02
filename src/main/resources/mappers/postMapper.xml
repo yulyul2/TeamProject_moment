@@ -47,11 +47,11 @@
   		where 
   	</select> -->
   	
-  	<select id="selectPost" parameterType="kr.co.vo.postVO">
-  		select post_no, post_id, post_content,
-  		 post_photo2, reg_date, ref, re_step, re_level, like_count
-  		from post
-  		where post_no = #{post_no}
+  	<!-- 메인페이지 모든 게시물 출력 쿼리 -->
+  	<select id="viewAllPost" resultType="kr.co.vo.postVO">
+  		select post_no,	post_id, post_content, post_photo2, reg_date, ref, like_count
+  		from post 
+  		order by ref desc
   	</select>
   	
   	

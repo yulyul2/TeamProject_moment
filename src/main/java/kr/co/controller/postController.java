@@ -49,6 +49,8 @@ public class postController {
 		String name = uvo.getmember_name();
 		
 		model.addAttribute("name",name);
+		//모든 게시물 조회 = service.viewAllPost
+		model.addAttribute("board", service.viewAllPost());
 		
 		return "post/main";
 	}

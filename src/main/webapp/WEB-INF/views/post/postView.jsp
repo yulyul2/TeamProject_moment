@@ -220,11 +220,30 @@
 					</div>
 				</article>
 				
-				
-				
-				<c:set var="name" value="${UserInfo}"></c:set>
-				<c:out value="${UserInfo.member_name }"></c:out>
-				
+			
+				<!-- [Dev] 북마크 게시물 : 최신 북마크한 게시물부터 한 페이지당 10개씩 노출 -->
+			<!-- 	<article class="bookmark-list tab-box">
+					<h2 class="blind">북마크 게시물</h2>
+					<ul class="list">
+					<c:forEach items="${list}" var="list">
+						<li class="image-parent">  -->
+							<!-- [Dev] 클릭 시 북마크된 게시물의 회원 페이지로 연결 -->
+						<!-- 	<a href="javascript:void(0)">
+								<img src="${list.post_photo2}" alt="게시물 썸네일" class="image-load">
+								<div class="over-box table-parent">
+									<div class="box table-child">
+									<!-- [Dev] 게시물의 회원 아이디 가져옴 -->
+							<!-- 			<div class="icon sp-button"><span class="blind">아이콘</span></div>
+										<div class="text-box">
+											<span class="id">${list.post_id}</span>님의 게시물<br>
+											<span class="bold">바로가기</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</c:forEach>
+				 -->
 				
 				
 				<!-- [Dev] 북마크 게시물 : 최신 북마크한 게시물부터 한 페이지당 10개씩 노출 -->

@@ -39,14 +39,15 @@ public class postServiceImpl implements postService {
 	public List<postVO> selectBookmark(bookmarkVO vo) {
 		return dao.selectBookmark(vo);
 	}
-	
+	/*
 	@Override
 	public List<bookmarkVO> bookmarkList(bookmarkVO vo){
 		return dao.bookmarkList(vo);
-	}
+	}*/
 	
+	//메인페이지 모든 게시물 조회
 	@Override
-	public postVO selectPost(bookmarkVO vo) {
-		return dao.selectPost(vo);
+	public List<postVO> viewAllPost() {
+		return dao.viewAllPost();
 	}
 }
